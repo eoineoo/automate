@@ -1,30 +1,35 @@
 <?php
 
-	$directory = 'csv';
+	/**
+	* Sources:
+	* 	1) http://stackoverflow.com/questions/5593473/how-to-upload-and-parse-a-csv-file-in-php
+	* Displays the contents of the uploaded CSV file
+	*/
 	
-	//Display files in /csv directory
+	include("../inc/header.php");
+	
+	$directory 	= 'csv';
+		
+	#Display files in /csv directory
 	echo "Available Files: ";
-	//Remove "." and ".."
+	#Remove "." and ".."
 	$files = array_diff(scandir($directory), array('..', '.')); 
 	foreach ($files as &$value)	{
-		echo  "<a href=display.php?csv=$value>$value</a> | ";
-	}
+		echo  "<a href=display.php?csv=$value>$value</a> | ";		
+	}	
 
-?>
+	echo "<hr /><hr />";
 
-<hr>
-
-<?php
-
-	//Determine what CSV file was selected
+	#Determine what CSV file was selected
 	if(isset($_GET['csv']))	{
 			$csv = $_GET['csv'];		
-		}
-		else	{
+	}
+	else	{
 			$csv = "test.csv";
-		}
-		
-	//Read selected CSV file, open it and print out each line	
+	}
+
+	echo "Selected file: " . $csv;
+	#Read selected CSV file, open it and print out each line	
 	if (($handle = fopen("csv/".$csv, "r")) !== FALSE) {
 		while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
 			$row = 1;
@@ -37,4 +42,9 @@
 		}
 		fclose($handle);
 	}
+	
+	#Execute MySQL import script: Importer.py
+	echo "<p><a href=\"execute.php?csv=$csv\">Click here to perform the import.</a></p>";
+	
+	include("../inc/footer.php");
 ?>
