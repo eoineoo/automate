@@ -1,0 +1,124 @@
+*{
+margin: 0;
+padding: 0;
+}
+html, body{
+	background: #616161;
+	height: 95%;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	line-height: 1.6em;
+}
+#wrapper{
+	background: white;
+	margin: 0 auto;
+	min-height: 100%;
+	width: 800px;
+}
+* html #wrapper{
+	height: 100%;
+}
+div#banner {
+	height: 150px;
+	text-align:center;
+    margin-top:0px;
+    margin-bottom:0px;
+    padding:0px;
+	width:800px;
+}
+div#loginForm {
+	padding:30 0 0 0;
+}
+#content{
+	
+}
+p.orders	{
+	padding: 0 0 15 0
+}
+p.stats	{
+	padding: 15 0 15 0
+}
+table.orders	{
+	text-align:center;
+}
+table.orders th {
+	padding: 10 10 10 10;
+}
+table.orders td	{
+	padding: 5 5 5 5;
+	font-size:80%;
+}
+table.users	{
+	text-align:center;
+}
+table.users th {
+	padding: 10 10 10 10; 
+}
+table.users td	{
+	padding: 10 10 10 10;
+	font-size:80%;
+}
+td.incomplete	{
+	background-color:#FF9900;
+}
+td.complete	{
+	background-color:#00B800;
+}
+table.loginTable td	{
+	padding:10px;
+}
+#footer{
+	background: #09c;
+	color: #000;
+	height: 100px;
+	margin: -100px auto 0;
+	width: 800px;
+}
+p.footer	{
+	padding: 35 0 0 0;
+}
+p.navigation	{
+	padding:15; /* top, right, bottom, left */
+}
+p.loginDetails	{
+	padding:10;
+	font-size:60%;
+}
+#clearfooter{ /* same height as footer */
+	clear:both;
+	height:100px;
+} 
+img {
+    display: block;
+    margin: 0 auto;
+}
+/* Table for user accounts: http://coding.smashingmagazine.com/2008/08/13/top-10-css-table-designs/*/
+#hor-minimalist-a
+{
+	font-size: 12px;
+	background: #fff;
+	margin: 5px;
+	width: 85%;
+	border-collapse: collapse;
+	text-align: center;
+}
+#hor-minimalist-a th
+{
+	font-size: 14px;
+	font-weight: strong;
+	padding: 10px 8px;
+	border-bottom: 2px solid #6678b1;
+}
+#hor-minimalist-a td
+{
+	padding: 10px 10px 10px 10px; /*top, right, bottom, left */
+}
+#hor-minimalist-a tbody tr:hover td
+{
+	color: #009;
+	background-color:#fff;
+}
+#hor-minimalist-a a
+{
+display:block;
+text-decoration:none;
+}

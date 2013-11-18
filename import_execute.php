@@ -7,8 +7,8 @@
 	* 	3) http://php.net/manual/en/reserved.variables.argv.php
 	* Uploads a file to /csv directory
 	*/
-
-	include("../inc/header.php");
+	$pagetitle = "Executing import..";
+	include("layout/header.php");
 	
 	#Determine what CSV file was selected
 	if(isset($_GET['csv']))	{
@@ -19,12 +19,12 @@
 	}
 
 	#Execute MySQL import script: Importer.py
-	$tmp = exec("importer.py $csv");
+	$tmp = exec("import_importer.py $csv");
 	
 	echo $tmp;
 	
-	header("refresh:5; url=form.php");
+	header("refresh:5; url=import_form.php");
 	
-	include("../inc/footer.php");
+	include("layout/footer.php");
 	
 ?>

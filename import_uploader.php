@@ -7,8 +7,8 @@
 	* 	3) http://stackoverflow.com/questions/17153624/using-php-to-upload-file-and-add-the-path-to-mysql-database
 	* Uploads a file to the "/csv" directory
 	*/
-	
-	include("../inc/header.php");
+	$pagetitle = "Uploader";
+	include("layout/header.php");
 	
 	if ( isset($_POST["submit"]) ) {
 		if ( isset($_FILES["file"]) ) {
@@ -30,29 +30,29 @@
 				echo "Return Code: " . $_FILES["file"]["error"] . "<br />";
 			}
 			else {
-                #Print file details
+                #Print file details - Debugging
 				#echo "<b>File name</b>: " 		. $filename 	. "<br /><br />";
-				echo "<b>File type</b>: " 		. $filetype 	. "<br /><br />";
+				#echo "<b>File type</b>: " 		. $filetype 	. "<br /><br />";
 				#echo "<b>File size</b>: " 		. $filesize 	. " Kb<br /><br />";
 				#echo "<b>Temp file name</b>: " . $temp_file 	. "<br /><br />";
 				#echo "<b>Description</b>: " 	. $description 	. "<br /><br />";
 				#echo "<b>Timestamp</b>: "		. $time 		. "<br /><br />";
 				#echo "<b>Full path</b>: "		. $path 		. "<br /><br />";
 								
-				#if file already exists
-				if (file_exists("upload/" . $filename)) {
+				#If file already exists
+				if (file_exists("csv/" . $filename)) {
 					echo $filename . " already exists. ";
 				}
 				#Check the mimetype to see if it's a valid CSV file - additional security is required
 				else if (!(in_array($filetype, $allowed_types)))	{
 					echo "File type <b>$filetype</b> is not allowed. Please upload a CSV file.";
-					#header("refresh:8; url=form.php");
+					header("refresh:8; url=import_form.php");
 				}
 				else {
 					#Move the file to the /csv directory
 					move_uploaded_file($temp_file, "csv/" . $new_filename);
 					#echo "<b>Stored in</b>: " . "csv/" . $new_filename . "<br /><br />";
-					echo "Click <a href=\"display.php?csv=$new_filename\">here</a> to review its contents.<br /><br />";
+					echo "Click <a href=\"import_display.php?csv=$new_filename\">here</a> to review its contents.<br /><br />";
 					
 					#Connect to MySQL database
 					mysql_connect("127.0.0.1", "root", "") or die(mysql_error());
@@ -68,5 +68,5 @@
 		}
 	}	
 
-	include("../inc/footer.php");
+	include("layout/footer.php");
 ?>

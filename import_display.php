@@ -5,8 +5,8 @@
 	* 	1) http://stackoverflow.com/questions/5593473/how-to-upload-and-parse-a-csv-file-in-php
 	* Displays the contents of the uploaded CSV file
 	*/
-	
-	include("../inc/header.php");
+	$pagetitle = "Display File";
+	include("layout/header.php");
 	
 	$directory 	= 'csv';
 		
@@ -15,7 +15,7 @@
 	#Remove "." and ".."
 	$files = array_diff(scandir($directory), array('..', '.')); 
 	foreach ($files as &$value)	{
-		echo  "<a href=display.php?csv=$value>$value</a> | ";		
+		echo  "<a href=import_display.php?csv=$value>$value</a> | ";		
 	}	
 
 	echo "<hr /><hr />";
@@ -44,7 +44,7 @@
 	}
 	
 	#Execute MySQL import script: Importer.py
-	echo "<p><a href=\"execute.php?csv=$csv\">Click here to perform the import.</a></p>";
+	echo "<p><a href=\"import_execute.php?csv=$csv\">Click here to perform the import.</a></p>";
 	
-	include("../inc/footer.php");
+	include("layout/footer.php");
 ?>

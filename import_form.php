@@ -3,14 +3,13 @@
 	/**
 	* Basic HTML form that sends file to uploader.php
 	*/
-	
-	include("../inc/header.php");
+	$pagetitle = "File Selection Form";
+	include("layout/header.php");
 ?>
 
 <!-- File upload form -->
 	<table width="600">
-		<!--<form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post" enctype="multipart/form-data">-->
-		<form action="uploader.php" method="post" enctype="multipart/form-data">
+		<form action="import_uploader.php" method="post" enctype="multipart/form-data">
 		<!--<input type="hidden" name="MAX_FILE_SIZE" value="30000" />-->
 			<tr>
 				<td>Select file:</td>
@@ -23,7 +22,7 @@
 			</tr>
 			
 			<tr>
-				<td>Submit:</td>
+				<td>Upload:</td>
 				<td><input type="submit" name="submit" /></td>
 			</tr>
 
@@ -31,5 +30,5 @@
 	</table>
 
 <?php	
-	include("../inc/footer.php");
+	include("layout/footer.php");
 ?>	
