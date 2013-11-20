@@ -31,14 +31,16 @@
 	echo "Selected file: " . $csv;
 	#Read selected CSV file, open it and print out each line	
 	if (($handle = fopen("csv/".$csv, "r")) !== FALSE) {
+		$row = 1;
 		while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
-			$row = 1;
 			$num = count($data);
 			echo "<p> $num fields in line $row: <br /></p>\n";
 			$row++;
 			for ($c=0; $c < $num; $c++) {
+				#This is probably where the MySQL imports will go
 				echo $data[$c] . ", \n";
 			}
+			
 		}
 		fclose($handle);
 	}
