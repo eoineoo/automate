@@ -7,6 +7,7 @@
 	* 	3) http://stackoverflow.com/questions/17153624/using-php-to-upload-file-and-add-the-path-to-mysql-database
 	* Uploads a file to the "/csv" directory
 	*/
+	
 	$pagetitle = "Uploader";
 	include("layout/header.php");
 	
@@ -51,22 +52,32 @@
 				else {
 					#Move the file to the /csv directory
 					move_uploaded_file($temp_file, "csv/" . $new_filename);
-					#echo "<b>Stored in</b>: " . "csv/" . $new_filename . "<br /><br />";
-					echo "Click <a href=\"import_display.php?csv=$new_filename\">here</a> to review its contents.<br /><br />";
 					
+					#Find out how many rows are in the CSV file
+					if (($handle = fopen("csv/".$new_filename, "r")) !== FALSE) {	
+						$rows = 0;
+						while (($data = fgetcsv ($handle, 1024, ",")) !== FALSE)	{
+							$rows++;							
+						}
+						fclose($handle);
+					}
+				
 					#Connect to MySQL database
 					mysql_connect("127.0.0.1", "root", "") or die(mysql_error());
 					mysql_select_db("automate_test") or die(mysql_error());
 				
-					#Write information to database
-					mysql_query("INSERT INTO import_data (orig_name, new_name, user, num_entries, description, url) VALUES ('$filename', '$new_filename', '$user', 100, '$description', '$path')");
+					#Write information about the CSV file (not its contents) to database
+					mysql_query("INSERT INTO import_data (orig_name, new_name, user, num_entries, description, url) VALUES ('$filename', '$new_filename', '$user', '$rows', '$description', '$path')");
+					
+					#Successful upload
+					echo "File uploaded successfully. Redirecting to review and import page.<br />Click <a href=import_display.php?csv=$new_filename>here</a> if your browser does not redirect you automatically.";
+					header("refresh:3; url=import_display.php?csv=$new_filename");
 				}
 			}
 		} 
 		else {
 			echo "No file selected <br />";
 		}
-	}	
-
+	}
 	include("layout/footer.php");
 ?>

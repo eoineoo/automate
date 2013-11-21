@@ -23,7 +23,7 @@ div#banner {
     margin-top:0px;
     margin-bottom:0px;
     padding:0px;
-	width:800px;
+	width: 800px;
 }
 div#loginForm {
 	padding:30 0 0 0;
@@ -57,11 +57,11 @@ table.users td	{
 	padding: 10 10 10 10;
 	font-size:80%;
 }
-td.incomplete	{
-	background-color:#FF9900;
-}
-td.complete	{
+tr.valid	{
 	background-color:#00B800;
+}
+tr.invalid	{
+	background-color:#FF9900;
 }
 table.loginTable td	{
 	padding:10px;
@@ -97,7 +97,7 @@ img {
 	font-size: 12px;
 	background: #fff;
 	margin: 5px;
-	width: 85%;
+	width: 95%;
 	border-collapse: collapse;
 	text-align: center;
 }
@@ -110,12 +110,12 @@ img {
 }
 #hor-minimalist-a td
 {
-	padding: 10px 10px 10px 10px; /*top, right, bottom, left */
+	padding: 5px 5px 5px 5px; /*top, right, bottom, left */
 }
 #hor-minimalist-a tbody tr:hover td
 {
-	color: #009;
-	background-color:#fff;
+	color: #fff;
+	/** background-color:#fff; **/
 }
 #hor-minimalist-a a
 {
