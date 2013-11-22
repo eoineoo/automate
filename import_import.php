@@ -53,7 +53,7 @@
 		#Loop through each value
 		while (($csvData = fgetcsv ($handle, 1024, ",")) !== FALSE)	{
 			
-			#echo $csvData[0] . "; " . $csvData[1] . "; " . $csvData[2] . "; " . $csvData[3] . "; " . $csvData[4] . "; " . $csvData[5] . "; " . $csvData[6] . "; " . $csvData[7] . "; " . $csvData[8] . "; " . $csvData[9] . "; " . $csvData[10] . "; " . $csvData[11] . "; " . $csvData[12] . "; " . $csvData[13] . "; " . $csvData[14] . "; " . $csvData[15] . "; " . $csvData[16] . "; " . $csvData[17] . "; " . $csvData[18] . "; " . $csvData[19] . "<br />";
+			#echo "0: " . $csvData[0] . "; 1:" . $csvData[1] . "; 2:" . $csvData[2] . "; 3:" . $csvData[3] . "; 4:" . $csvData[4] . "; 5:" . $csvData[5] . "; 6:" . $csvData[6] . "; 7:" . $csvData[7] . "; 8:" . $csvData[8] . "; 9:" . $csvData[9] . "; 10:" . $csvData[10] . "; 11:" . $csvData[11] . "; " . $csvData[12] . "; " . $csvData[13] . "; " . $csvData[14] . "; " . $csvData[15] . "; " . $csvData[16] . "; " . $csvData[17] . "; " . $csvData[18] . "; " . $csvData[19] . "<br />";
 	
 			#Bind parameters to the query
 			$rc = $stmt->bind_param('sssissssssssssssssii', $csvData[0], $csvData[1], $csvData[2], $csvData[3], $csvData[4], $csvData[5], $csvData[6], $csvData[7], $csvData[8], $csvData[9], $csvData[10], $csvData[11], $csvData[12], $csvData[13], $csvData[14], $csvData[15], $csvData[16], $csvData[17], $csvData[18], $csvData[19]);
@@ -74,16 +74,19 @@
 			
 			$rows++;
 			
-			#Find the last_insert_id() of each entry
-			#$query = "SELECT last_insert_id()";
-			#$result = mysqli_query($mysqli, $query);
-			#$row = mysqli_fetch_array($result, MYSQLI_NUM);
+			#Find the ID's of each of our inserted values using the serial as the unique identifier
+			#last_insert_id() is not 100% reliable as another INSERT may occur on the 'assets' table while we're running our script
+			$query = "SELECT id, serial_num FROM assets WHERE serial_num = '$csvData[9]'";
+			$result = mysqli_query($mysqli, $query);
+			$row = mysqli_fetch_array($result, MYSQLI_NUM);
 			
 			#Here it is! Store this somewhere and do something with it
-			#echo $row[0] . "<br />";
+			echo $row[0] . ", " . $row[1] ."<br />";
 			
 			#Free the result set
-			#$result->free();			
+			$result->free();			
+			
+			
 		
 		}
 	
@@ -95,7 +98,7 @@
 	
 	#Successful import, return to main page
 	echo "<div id=\"successfulImport\"><img src=\"images/success.png\" /> <b>" . $rows . "</b> rows imported successfully.</div>";
-	header("refresh:8; url=home.php");
+	#header("refresh:8; url=home.php");
 	
 	include("layout/footer.php");
 	
