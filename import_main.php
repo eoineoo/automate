@@ -3,7 +3,7 @@
 	/**
 	* Basic HTML form that sends file to uploader.php
 	*/
-	$pagetitle = "Import to CMDB";
+	$pagetitle = "Upload and Import";
 	include("layout/header.php");
 ?>
 
@@ -13,7 +13,7 @@
 <table id="hor-minimalist-a" border = 1>
 	<tr>
 		<td width="90"><a href="import_form.php"><img src="images/cmdb.png" /></a></td>
-		<td><a href="import_form.php">Configuration Management Database</a></td>
+		<td><a href="import_form.php">Configuration Management Database</a></td>		
 	</tr>
 	
 	<tr>
@@ -22,8 +22,8 @@
 	</tr>
 	
 	<tr>
-		<td><img src="images/mdt.jpg" /></td>
-		<td>Microsoft Deployment Toolkit Database</td>
+		<td width="90"><a href="#"><img src="images/mdt.jpg" /></a></td>
+		<td><a href="#">Microsoft Deployment Toolkit Database</a></td>
 	</tr>
 </table>
 

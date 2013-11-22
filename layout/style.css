@@ -12,50 +12,29 @@ html, body{
 	background: white;
 	margin: 0 auto;
 	min-height: 100%;
-	width: 800px;
+	width: 1000px;
 }
 * html #wrapper{
 	height: 100%;
 }
 div#banner {
-	height: 150px;
+	height: 200px;
 	text-align:center;
     margin-top:0px;
     margin-bottom:0px;
     padding:0px;
-	width: 800px;
+	width: 1000px;
 }
 div#loginForm {
 	padding:30 0 0 0;
 }
-#content{
+div#importTableWrapper	{
+	width: 1000px;
+	overflow-x: auto;
+	height:500px;
+}
+div#successfulImport	{
 	
-}
-p.orders	{
-	padding: 0 0 15 0
-}
-p.stats	{
-	padding: 15 0 15 0
-}
-table.orders	{
-	text-align:center;
-}
-table.orders th {
-	padding: 10 10 10 10;
-}
-table.orders td	{
-	padding: 5 5 5 5;
-	font-size:80%;
-}
-table.users	{
-	text-align:center;
-}
-table.users th {
-	padding: 10 10 10 10; 
-}
-table.users td	{
-	padding: 10 10 10 10;
-	font-size:80%;
 }
 tr.valid	{
 	background-color:#00B800;
@@ -63,15 +42,12 @@ tr.valid	{
 tr.invalid	{
 	background-color:#FF9900;
 }
-table.loginTable td	{
-	padding:10px;
-}
 #footer{
 	background: #09c;
 	color: #000;
 	height: 100px;
 	margin: -100px auto 0;
-	width: 800px;
+	width: 1000px;
 }
 p.footer	{
 	padding: 35 0 0 0;
@@ -79,9 +55,8 @@ p.footer	{
 p.navigation	{
 	padding:15; /* top, right, bottom, left */
 }
-p.loginDetails	{
-	padding:10;
-	font-size:60%;
+p.die	{
+	
 }
 #clearfooter{ /* same height as footer */
 	clear:both;
@@ -91,7 +66,8 @@ img {
     display: block;
     margin: 0 auto;
 }
-/* Table for user accounts: http://coding.smashingmagazine.com/2008/08/13/top-10-css-table-designs/*/
+/* Table for user accounts: http://coding.smashingmagazine.com/2008/08/13/top-10-css-table-designs/
+	- Might need to be tweaked for gap between footer and main content on some pages*/
 #hor-minimalist-a
 {
 	font-size: 12px;
@@ -114,11 +90,63 @@ img {
 }
 #hor-minimalist-a tbody tr:hover td
 {
-	color: #fff;
-	/** background-color:#fff; **/
+	color: #fff;	
 }
 #hor-minimalist-a a
 {
-display:block;
-text-decoration:none;
+	display:block;
+	text-decoration:none;
+}
+body {
+    padding: 0;
+}
+
+/* Alert http://joshnh.com/2011/11/07/how-to-make-an-alert-bar/ */
+
+#alert {
+    position: relative;
+}
+.alert {
+    background-color: #c4453c;
+    background-image: -webkit-linear-gradient(135deg, transparent,
+                      transparent 25%, hsla(0,0%,0%,.05) 25%,
+                      hsla(0,0%,0%,.05) 50%, transparent 50%,
+                      transparent 75%, hsla(0,0%,0%,.05) 75%,
+                      hsla(0,0%,0%,.05));
+    background-image: -moz-linear-gradient(135deg, transparent,
+                      transparent 25%, hsla(0,0%,0%,.1) 25%,
+                      hsla(0,0%,0%,.1) 50%, transparent 50%,
+                      transparent 75%, hsla(0,0%,0%,.1) 75%,
+                      hsla(0,0%,0%,.1));
+    background-image: -ms-linear-gradient(135deg, transparent,
+                      transparent 25%, hsla(0,0%,0%,.1) 25%,
+                      hsla(0,0%,0%,.1) 50%, transparent 50%,
+                      transparent 75%, hsla(0,0%,0%,.1) 75%,
+                      hsla(0,0%,0%,.1));
+    background-image: -o-linear-gradient(135deg, transparent,
+                      transparent 25%, hsla(0,0%,0%,.1) 25%,
+                      hsla(0,0%,0%,.1) 50%, transparent 50%,
+                      transparent 75%, hsla(0,0%,0%,.1) 75%,
+                      hsla(0,0%,0%,.1));
+    background-image: linear-gradient(135deg, transparent,
+                      transparent 25%, hsla(0,0%,0%,.1) 25%,
+                      hsla(0,0%,0%,.1) 50%, transparent 50%,
+                      transparent 75%, hsla(0,0%,0%,.1) 75%,
+                      hsla(0,0%,0%,.1));
+    background-size: 20px 20px;
+    box-shadow: 0 5px 0 hsla(0,0%,0%,.1);
+    color: #f6f6f6;
+    display: block;
+    font: bold 16px/40px sans-serif;
+    height: 75px;
+    position: center;
+    text-align: center;
+    text-decoration: none;
+    top: -45px;
+    width: 50%;
+    -webkit-animation: alert 1s ease forwards;
+       -moz-animation: alert 1s ease forwards;
+        -ms-animation: alert 1s ease forwards;
+         -o-animation: alert 1s ease forwards;
+            animation: alert 1s ease forwards;
 }

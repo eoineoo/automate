@@ -17,14 +17,36 @@
 			$csv = "test.csv";
 	}
 
-	#echo "<p>Selected file: " . $csv . "</p>";
-	
 	echo "<hr><h3>Review contents before import</h3><hr>";
 	
-	#loop through and print out each row
+	#Loop through and print out each row
 	if (($handle = fopen("csv/".$csv, "r")) !== FALSE) {	
 		$row = 0;
+		echo "<div id=importTableWrapper>";
 		echo "<table width=100% border=1 id=hor-minimalist-a>";
+		echo "<tr>
+				<td>Rows</td>
+				<td>impacted</td>
+				<td>deactivated</td>
+				<td>faulty</td>
+				<td>baseline</td>
+				<td>urgency_level</td>
+				<td>activebaseline</td>
+				<td>impact_level</td>
+				<td>manufacturer</td>
+				<td>hardware_type</td>
+				<td>serial_num</td>
+				<td>username</td>
+				<td>status_level</td>
+				<td>owner</td>
+				<td>active</td>
+				<td>comp_name</td>
+				<td>purchase_order_number</td>
+				<td>asset_tag</td>
+				<td>cmdb_status</td>
+				<td>purchase_date</td>
+				<td>warranty_expires_date</td>
+			</tr>";
 		while (($data = fgetcsv ($handle, 1024, ",")) !== FALSE)	{
 			#$num = the number of comma-separated values in a row
 			$num = count($data);
@@ -34,7 +56,6 @@
 			#Change row colour depending on how many rows it has (20 = good)
 			for ($array_value = 0; $array_value < $num; $array_value++)	{
 			
-				#if (($num == '20') && ($data[$array_value] != '7P49'))	{
 				if ($num == '20')	{
 					$trclass = "valid";
 				}
@@ -44,7 +65,7 @@
 				
 			}
 			echo "<tr class=\"$trclass\">";
-			echo "<td>$num</td>";
+			echo "<td>[$num]</td>";
 			
 			for ($i = 0; $i < $num; $i++)	{
 				echo "<td>$data[$i]</td>";
@@ -52,29 +73,12 @@
 			echo "</tr>";			
 		}
 		echo "</table>";
-		echo "<p>Rows: " . $row . "</p><br />";
+		echo "<p>Rows: " . $row . "</p><br /></div>";
 		fclose($handle);		
 	}
 	
-	#Execute MySQL import script: Importer.py
-	echo "<p><a href=\"import_import.php?csv=$csv\">Import PHP script.</a></p><br />";
-	echo "<p><a href=\"import_execute.php?csv=$csv\">Import using Python script.</a></p><br />";
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	#Execute PHP import script
+	echo "<br /><h2><a href=\"import_import.php?csv=$csv\">>> Import values <<</a></h2><br />";	
 	
 	include("layout/footer.php");
 	

@@ -5,7 +5,8 @@
 	* 	1) http://stackoverflow.com/questions/5593473/how-to-upload-and-parse-a-csv-file-in-php
 	* 	2) http://us2.php.net/manual/en/features.file-upload.post-method.php
 	* 	3) http://stackoverflow.com/questions/17153624/using-php-to-upload-file-and-add-the-path-to-mysql-database
-	* Uploads a file to the "/csv" directory
+	*
+	* Uploads a file to the "/csv" directory and writes its details (e.g. filename, number of rows etc.) to the database
 	*/
 	
 	$pagetitle = "Uploader";
@@ -40,11 +41,11 @@
 				#echo "<b>Timestamp</b>: "		. $time 		. "<br /><br />";
 				#echo "<b>Full path</b>: "		. $path 		. "<br /><br />";
 								
-				#If file already exists
+				#If file already exists - unlikely considering we're using uniqid()
 				if (file_exists("csv/" . $filename)) {
 					echo $filename . " already exists. ";
 				}
-				#Check the mimetype to see if it's a valid CSV file - additional security is required
+				#Check the mimetype to see if it's a valid CSV file - additional security may be required
 				else if (!(in_array($filetype, $allowed_types)))	{
 					echo "File type <b>$filetype</b> is not allowed. Please upload a CSV file.";
 					header("refresh:8; url=import_form.php");

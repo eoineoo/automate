@@ -1,9 +1,7 @@
 <html>
 	<head>
 		<?php echo "<title>Automate - $pagetitle</title>"; ?>
-		<link rel="stylesheet" type="text/css" href="layout/style.css">
-		<script src="scripts/jquery-1.9.1.js"></script>
-		<script type="text/javascript" src="scripts/scripts.js"></script>
+		<link rel="stylesheet" type="text/css" href="layout/style.css">		
 	</head>
 	
 	<body>
@@ -11,7 +9,7 @@
 		
 			<!-- New banner div -->
 			<div id="banner">
-				<img src="images/banner.jpg" alt="Let's Order!" />
+				<img src="images/banner.png" alt="Let's Order!" />
 			</div>
 			<!-- end banner div --> 
 		
