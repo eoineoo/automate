@@ -6,11 +6,12 @@
 	* 	2) http://us2.php.net/manual/en/features.file-upload.post-method.php
 	* 	3) http://stackoverflow.com/questions/17153624/using-php-to-upload-file-and-add-the-path-to-mysql-database
 	*
-	* Uploads a file to the "/csv" directory and writes its details (e.g. filename, number of rows etc.) to the database
+	* Uploads a CSV file to the "/csv" directory and writes its details (e.g. filename, number of rows etc.) to the database using a prepared statement
 	*/
 	
 	$pagetitle = "Uploader";
 	include("layout/header.php");
+	include("inc/functions.php");
 	
 	if ( isset($_POST["submit"]) ) {
 		if ( isset($_FILES["file"]) ) {
@@ -32,16 +33,7 @@
 				echo "Return Code: " . $_FILES["file"]["error"] . "<br />";
 			}
 			else {
-                #Print file details - Debugging
-				#echo "<b>File name</b>: " 		. $filename 	. "<br /><br />";
-				#echo "<b>File type</b>: " 		. $filetype 	. "<br /><br />";
-				#echo "<b>File size</b>: " 		. $filesize 	. " Kb<br /><br />";
-				#echo "<b>Temp file name</b>: " . $temp_file 	. "<br /><br />";
-				#echo "<b>Description</b>: " 	. $description 	. "<br /><br />";
-				#echo "<b>Timestamp</b>: "		. $time 		. "<br /><br />";
-				#echo "<b>Full path</b>: "		. $path 		. "<br /><br />";
-								
-				#If file already exists - unlikely considering we're using uniqid()
+                #If file already exists - unlikely considering we're using uniqid()
 				if (file_exists("csv/" . $filename)) {
 					echo $filename . " already exists. ";
 				}
@@ -63,12 +55,36 @@
 						fclose($handle);
 					}
 				
-					#Connect to MySQL database
-					mysql_connect("127.0.0.1", "root", "") or die(mysql_error());
-					mysql_select_db("automate_test") or die(mysql_error());
+					#Connect
+					$mysqli = mysqli_connect("localhost", "root", "", "automate_test");
 				
-					#Write information about the CSV file (not its contents) to database
-					mysql_query("INSERT INTO import_data (orig_name, new_name, user, num_entries, description, url) VALUES ('$filename', '$new_filename', '$user', '$rows', '$description', '$path')");
+					#SQL Query
+					$tablename = "csv_details";
+					$sql = "INSERT INTO $tablename (orig_name, new_name, user, num_entries, description, url) VALUES (?, ?, ?, ?, ?, ?)";
+					
+					#Create and check prepared statement
+					$stmt = $mysqli->prepare($sql);
+					if ( false === $stmt )	{
+						die_and_display('<p class=die>Preparing the statement failed: ' . htmlspecialchars($mysqli->error) . "</p>");		
+					}
+					
+					#Initialise array
+					$csvData = array("","","","","","","","","","","","","","","","","","","","");
+					
+					#Bind parameters to the query and check for errors
+					$rc = $stmt->bind_param('sssiss', $filename, $new_filename, $user, $rows, $description, $path);
+					if ( false === $rc )	{
+						die_and_display('Binding parameters failed: ' . htmlspecialchars($stmt->error));
+					}
+					
+					#Run and check the prepared statement
+					$rc = $stmt->execute();	
+					if ( false === $rc )	{
+						die_and_display('<div id="alert"><a class="alert">Executing import failed: ' . htmlspecialchars($stmt->error) . '</a></div>');
+					}
+					
+					#Close connection
+					$stmt->close();
 					
 					#Successful upload
 					echo "File uploaded successfully. Redirecting to review and import page.<br />Click <a href=import_display.php?csv=$new_filename>here</a> if your browser does not redirect you automatically.";
