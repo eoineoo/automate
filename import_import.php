@@ -5,7 +5,7 @@
 	* 	1) http://stackoverflow.com/questions/16340086/looping-through-a-csv-file-to-insert-data-to-mysql-using-php-mysqli-prepared-sta
 	* 	2) http://stackoverflow.com/questions/19106963/php-prepared-statements-and-transactions-in-a-loop
 	* 	3) http://php.net/manual/en/function.fgetcsv.php
-	*	4) http://php.net/manual/en/mysqli-stmt_cmdb.bind-param.php
+	*	4) http://php.net/manual/en/mysqli-stmt.bind-param.php
 	*	5) http://us2.php.net/mysqli_fetch_array
 	*	6) http://stackoverflow.com/questions/2552545/mysqli-prepared-statements-error-reporting
 	*	7) http://www.iconfinder.com
@@ -112,6 +112,7 @@
 	
 	#Close open connections
 	$stmt_cmdb->close();
+	$stmt_hdw->close();
 	fclose($handle);
 	
 	#Successful import, return to main page
