@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 22, 2013 at 06:16 PM
+-- Generation Time: Nov 25, 2013 at 03:20 PM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.19
 
@@ -102,9 +102,48 @@ CREATE TABLE IF NOT EXISTS `asset_details` (
   `serial` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `model` varchar(255) NOT NULL,
+  `it_owner` varchar(255) NOT NULL,
+  `it_admin` varchar(255) NOT NULL,
+  `encryption_level` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `name` (`name`,`model`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `asset_details`
+--
+
+INSERT INTO `asset_details` (`id`, `serial`, `name`, `model`, `it_owner`, `it_admin`, `encryption_level`) VALUES
+(1, 'JF27', 'IEJF27', 'Latitude E6430', 'Peter McNeill', 'Eoin McCrann', 'Yes'),
+(2, 'G517', 'IEG517', 'Latitude E6430', 'Peter McNeill', 'Eoin McCrann', 'Yes'),
+(3, '7D17', 'IE7D17', 'Latitude E6430', 'Peter McNeill', 'Eoin McCrann', 'Yes'),
+(4, 'DF17', 'IEDF17', 'Latitude E6430', 'Peter McNeill', 'Eoin McCrann', 'Yes'),
+(5, 'B627', 'IEB627', 'Latitude E6430', 'Peter McNeill', 'Eoin McCrann', 'Yes'),
+(6, '5S07', 'IE5S07', 'Latitude E6430', 'Peter McNeill', 'Eoin McCrann', 'Yes'),
+(7, '7627', 'IE7627', 'Latitude E6430', 'Peter McNeill', 'Eoin McCrann', 'Yes'),
+(8, 'J727', 'IEJ727', 'Latitude E6430', 'Peter McNeill', 'Eoin McCrann', 'Yes'),
+(9, '1717', 'IE1717', 'Latitude E6430', 'Peter McNeill', 'Eoin McCrann', 'Yes'),
+(10, '3F17', 'IE3F17', 'Latitude E6430', 'Peter McNeill', 'Eoin McCrann', 'Yes'),
+(11, 'BV17', 'IEBV17', 'Latitude E6430', 'Peter McNeill', 'Eoin McCrann', 'Yes'),
+(12, '6N27', 'IE6N27', 'Latitude E6430', 'Peter McNeill', 'Eoin McCrann', 'Yes'),
+(13, 'D637', 'IED637', 'Latitude E6430', 'Peter McNeill', 'Eoin McCrann', 'Yes'),
+(14, '9127', 'IE9127', 'Latitude E6430', 'Peter McNeill', 'Eoin McCrann', 'Yes'),
+(15, '9727', 'IE9727', 'Latitude E6430', 'Peter McNeill', 'Eoin McCrann', 'Yes'),
+(16, 'HR17', 'IEHR17', 'Latitude E6430', 'Peter McNeill', 'Eoin McCrann', 'Yes'),
+(17, '1S17', 'IE1S17', 'Latitude E6430', 'Peter McNeill', 'Eoin McCrann', 'Yes'),
+(18, '2C17', 'IE2C17', 'Latitude E6430', 'Peter McNeill', 'Eoin McCrann', 'Yes'),
+(19, '3527', 'IE3527', 'Latitude E6430', 'Peter McNeill', 'Eoin McCrann', 'Yes'),
+(20, 'C717', 'IEC717', 'Latitude E6430', 'Peter McNeill', 'Eoin McCrann', 'Yes'),
+(21, 'BR17', 'IEBR17', 'Latitude E6430', 'Peter McNeill', 'Eoin McCrann', 'Yes'),
+(22, '8S07', 'IE8S07', 'Latitude E6430', 'Peter McNeill', 'Eoin McCrann', 'Yes'),
+(23, '2D17', 'IE2D17', 'Latitude E6430', 'Peter McNeill', 'Eoin McCrann', 'Yes'),
+(24, 'CK27', 'IECK27', 'Latitude E6430', 'Peter McNeill', 'Eoin McCrann', 'Yes'),
+(25, '9N27', 'IE9N27', 'Latitude E6430', 'Peter McNeill', 'Eoin McCrann', 'Yes'),
+(26, '5037', 'IE5037', 'Latitude E6430', 'Peter McNeill', 'Eoin McCrann', 'Yes'),
+(27, 'B209', 'IEB209', 'Latitude E6430', 'Peter McNeill', 'Eoin McCrann', 'Yes'),
+(28, '7P09', 'IE7P09', 'Latitude E6430', 'Peter McNeill', 'Eoin McCrann', 'Yes'),
+(29, '7P49', 'IE7P49', 'Latitude E6430', 'Peter McNeill', 'Eoin McCrann', 'Yes'),
+(30, '7P50', 'IE7P50', 'Latitude E6430', 'Peter McNeill', 'Eoin McCrann', 'Yes');
 
 -- --------------------------------------------------------
 
@@ -123,21 +162,14 @@ CREATE TABLE IF NOT EXISTS `csv_details` (
   `url` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `user` (`user`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `csv_details`
 --
 
 INSERT INTO `csv_details` (`id`, `orig_name`, `new_name`, `timestamp`, `user`, `num_entries`, `description`, `url`) VALUES
-(1, '_hw_import.csv', '528f8731d1b45_hw_import.csv', '2013-11-22 16:32:50', 'emccrann', 271, '', '/automate/csv/528f8731d1b45_hw_import.csv'),
-(2, '_assets.csv', '528f87684f4e8_assets.csv', '2013-11-22 16:33:45', 'emccrann', 30, '', '/automate/csv/528f87684f4e8_assets.csv'),
-(3, '_assets.csv', '528f8ad0006ca_assets.csv', '2013-11-22 16:48:17', 'emccrann', 30, '', '/automate/csv/528f8ad0006ca_assets.csv'),
-(4, '_assets.csv', '528f8b244e9eb_assets.csv', '2013-11-22 16:49:41', 'emccrann', 30, '', '/automate/csv/528f8b244e9eb_assets.csv'),
-(5, '_assets.csv', '528f8b4e5caf8_assets.csv', '2013-11-22 16:50:23', 'emccrann', 30, '', '/automate/csv/528f8b4e5caf8_assets.csv'),
-(6, '_assets.csv', '528f8bcbaab59_assets.csv', '2013-11-22 16:52:28', 'emccrann', 30, '', '/automate/csv/528f8bcbaab59_assets.csv'),
-(7, '_assets.csv', '528f8c2a5da86_assets.csv', '2013-11-22 16:54:03', 'emccrann', 30, '', '/automate/csv/528f8c2a5da86_assets.csv'),
-(8, '_assets.csv', '528f8c6890d7f_assets.csv', '2013-11-22 16:55:05', 'emccrann', 30, '', '/automate/csv/528f8c6890d7f_assets.csv');
+(1, '_assets_new.csv', '52936a5188d09_assets_new.csv', '2013-11-25 15:18:42', 'emccrann', 30, 'Import of 30 new Dell E6430''s', '/automate/csv/52936a5188d09_assets_new.csv');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

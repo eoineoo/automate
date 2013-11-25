@@ -46,6 +46,10 @@
 				<td>cmdb_status</td>
 				<td>purchase_date</td>
 				<td>warranty_expires_date</td>
+				<td>model</td>
+				<td>it_owner</td>
+				<td>it_admin</td>
+				<td>encryption_level</td>				
 			</tr>";
 		while (($data = fgetcsv ($handle, 1024, ",")) !== FALSE)	{
 			#$num = the number of comma-separated values in a row
@@ -53,10 +57,10 @@
 			#echo "<p>$num fields in row $row</p>";
 			$row++;
 			
-			#Change row colour depending on how many rows it has (20 = good)
+			#Change row colour depending on how many rows it has (24 = good)
 			for ($array_value = 0; $array_value < $num; $array_value++)	{
 			
-				if ($num == '20')	{
+				if ($num == '24')	{
 					$trclass = "valid";
 				}
 				else	{
