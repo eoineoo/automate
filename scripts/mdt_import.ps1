@@ -1,10 +1,11 @@
-#http://www.windowsnetworking.com/articles-tutorials/windows-7/Deploying-Windows-7-Part22.html
-#http://www.vkernel.ro/blog/bulk-import-computers-into-the-mdt-database-using-powershell
-Import-Module -name .\MDTDB.psm1
+#Source: http://www.windowsnetworking.com/articles-tutorials/windows-7/Deploying-Windows-7-Part22.html
+#This file takes in a CSV filename as a parameter, loops through it and adds each computer to the MDT database, it also assigns a role to each
+param([string]$csv)
+Import-Module -name C:\xampp\htdocs\automate\scripts\MDTDB.psm1
 Connect-MDTDatabase -sqlServer EOINWIN8 -instance SQLEXPRESS -database MDT
 
-#CSV file containing our computers
-$machines = Import-Csv ..\sql\_mdt_import.csv
+Write-Host "CSV FILE: " . $csv
+$machines = Import-Csv C:\xampp\htdocs\automate\csv\$csv
 
 #Loop through each row in the CSV file and add each to the MDT database
 For ($i = 1; $i -le $machines.count; $i++)	{

@@ -2,14 +2,11 @@
 	
 	/**
 	* Sources:
-	* 	1) http://stackoverflow.com/questions/5593473/how-to-upload-and-parse-a-csv-file-in-php
-	* 	2) http://us2.php.net/manual/en/features.file-upload.post-method.php
-	* 	3) http://stackoverflow.com/questions/17153624/using-php-to-upload-file-and-add-the-path-to-mysql-database
-	*
+	* 	
 	* Uploads a CSV file to the "/csv" directory and writes its details (e.g. filename, number of rows etc.) to the database using a prepared statement
 	*/
 	
-	$pagetitle = "Uploader";
+	$pagetitle = "MDT Uploader";
 	include("layout/header.php");
 	include("inc/functions.php");
 	
@@ -25,7 +22,7 @@
 			$time 			= 	time();
 			$description 	= 	$_POST['Description'];
 			$temp_file 		= 	$_FILES["file"]["tmp_name"];
-			$new_filename 	= 	"cmdb_" . uniqid() . $filename;
+			$new_filename 	= 	"mdt_" . uniqid() . $filename;
 			$path 			= 	dirname($_SERVER['REQUEST_URI']) . "/csv/" . $new_filename; 
 			
 			#if there was an error uploading the file
@@ -69,7 +66,7 @@
 					}
 					
 					#Initialise array
-					$csvData = array("","","","","","","","","","","","","","","","","","","","");
+					$csvData = array("","","","");
 					
 					#Bind parameters to the query and check for errors
 					$rc = $stmt->bind_param('sssiss', $filename, $new_filename, $user, $rows, $description, $path);
@@ -87,8 +84,8 @@
 					$stmt->close();
 					
 					#Successful upload
-					echo "File uploaded successfully. Redirecting to review and import page.<br />Click <a href=import_display.php?csv=$new_filename>here</a> if your browser does not redirect you automatically.";
-					header("refresh:3; url=import_display.php?csv=$new_filename");
+					echo "File uploaded successfully. Redirecting to review and import page.<br />Click <a href=import_mdt_display.php?csv=$new_filename>here</a> if your browser does not redirect you automatically.";
+					header("refresh:3; url=import_mdt_display.php?csv=$new_filename");
 				}
 			}
 		} 

@@ -23,7 +23,7 @@
 	
 	<tr>
 		<td width="90"><a href="#"><img src="images/mdt.jpg" /></a></td>
-		<td><a href="#">Microsoft Deployment Toolkit Database</a></td>
+		<td><a href="import_mdt_form.php">Microsoft Deployment Toolkit Database</a></td>
 	</tr>
 </table>
 
