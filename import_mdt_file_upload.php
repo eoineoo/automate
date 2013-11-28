@@ -53,7 +53,7 @@
 					}
 				
 					#Connect
-					$mysqli = mysqli_connect("localhost", "root", "", "automate_test");
+					$mysqli = mysqli_connect("localhost", "root", "", "automate");
 				
 					#SQL Query
 					$tablename = "csv_details";

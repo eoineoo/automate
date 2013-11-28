@@ -30,7 +30,7 @@
 	}
 	
 	#Connect
-	$mysqli = mysqli_connect("localhost", "root", "", "automate_test");
+	$mysqli = mysqli_connect("localhost", "root", "", "swdata");
 	
 	#SQL Query
 	$tablename_cmdb	= "assets";
