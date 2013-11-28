@@ -60,7 +60,7 @@ p.die	{
 }
 #clearfooter{ /* same height as footer */
 	clear:both;
-	height:100px;
+	height:90px;
 } 
 img {
     display: block;
@@ -73,16 +73,9 @@ img {
 	font-size: 12px;
 	background: #fff;
 	margin: 5px;
-	width: 95%;
+	width: 75%;
 	border-collapse: collapse;
 	text-align: center;
-}
-#hor-minimalist-a th
-{
-	font-size: 14px;
-	font-weight: strong;
-	padding: 10px 8px;
-	border-bottom: 2px solid #6678b1;
 }
 #hor-minimalist-a td
 {
@@ -96,9 +89,6 @@ img {
 {
 	display:block;
 	text-decoration:none;
-}
-body {
-    padding: 0;
 }
 
 /* Alert http://joshnh.com/2011/11/07/how-to-make-an-alert-bar/ */

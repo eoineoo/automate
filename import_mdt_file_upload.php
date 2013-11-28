@@ -84,8 +84,8 @@
 					$stmt->close();
 					
 					#Successful upload
-					echo "File uploaded successfully. Redirecting to review and import page.<br />Click <a href=import_mdt_display.php?csv=$new_filename>here</a> if your browser does not redirect you automatically.";
-					header("refresh:3; url=import_mdt_display.php?csv=$new_filename");
+					echo "File uploaded successfully. Redirecting to review and import page.<br />Click <a href=import_mdt_display_csv.php?csv=$new_filename>here</a> if your browser does not redirect you automatically.";
+					header("refresh:3; url=import_mdt_display_csv.php?csv=$new_filename");
 				}
 			}
 		} 

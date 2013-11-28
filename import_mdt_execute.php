@@ -6,7 +6,6 @@
 	$pagetitle = "Executing import..";
 	include("layout/header.php");
 	include("inc/functions.php");
-	#include("inc/db_connect.php");
 	
 	#Determine what CSV file was selected
 	if(isset($_GET['csv']))	{
@@ -15,7 +14,6 @@
 	else	{
 			$csv = "";
 	}
-	echo $csv;
 	
 	#Execute PowerShell import script
 	$psDir = "C:\\xampp\\ps\\";

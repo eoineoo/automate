@@ -2,7 +2,9 @@
 
 	/**
 	* Sources:
-	*
+	*	1) http://php.net/manual/en/function.fgetcsv.php
+	* 
+	* 	1. Display contents of CSV file for purpose of visual validation
 	*/
 	$pagetitle = "Automate - Import Using Loop";
 	include("layout/header.php");
@@ -23,21 +25,42 @@
 		echo "<div id=importTableWrapper>";
 		echo "<table width=100% border=1 id=hor-minimalist-a>";
 		echo "<tr>
-				<td>rows</td>
-				<td>serial</td>
-				<td>name</td>
-				<td>asset</td>
-				<td>mac</td>				
+				<td>Rows</td>
+				<td>impacted</td>
+				<td>deactivated</td>
+				<td>faulty</td>
+				<td>baseline</td>
+				<td>urgency_level</td>
+				<td>activebaseline</td>
+				<td>impact_level</td>
+				<td>manufacturer</td>
+				<td>hardware_type</td>
+				<td>serial_num</td>
+				<td>username</td>
+				<td>status_level</td>
+				<td>owner</td>
+				<td>active</td>
+				<td>comp_name</td>
+				<td>purchase_order_number</td>
+				<td>asset_tag</td>
+				<td>cmdb_status</td>
+				<td>purchase_date</td>
+				<td>warranty_expires_date</td>
+				<td>model</td>
+				<td>it_owner</td>
+				<td>it_admin</td>
+				<td>encryption_level</td>				
 			</tr>";
 		while (($data = fgetcsv ($handle, 1024, ",")) !== FALSE)	{
 			#$num = the number of comma-separated values in a row
 			$num = count($data);
+			#echo "<p>$num fields in row $row</p>";
 			$row++;
 			
-			#Change row colour depending on how many rows it has (4 = good)
+			#Change row colour depending on how many rows it has (24 = good)
 			for ($array_value = 0; $array_value < $num; $array_value++)	{
 			
-				if ($num == '4')	{
+				if ($num == '24')	{
 					$trclass = "valid";
 				}
 				else	{
@@ -59,7 +82,7 @@
 	}
 	
 	#Execute PHP import script
-	echo "<br /><h2><a href=\"import_mdt_import.php?csv=$csv\">>> Import values <<</a></h2><br />";	
+	echo "<br /><h2><a href=\"import_cmdb_execute.php?csv=$csv\">>> Import values <<</a></h2><br />";	
 	
 	include("layout/footer.php");
 	
