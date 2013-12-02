@@ -1,7 +1,8 @@
 <html>
 	<head>
 		<?php echo "<title>Automate - $pagetitle</title>"; ?>
-		<link rel="stylesheet" type="text/css" href="layout/style.css">		
+		<link rel="stylesheet" type="text/css" href="layout/style.css">
+		<script type="text/javascript" src="scripts/jquery-1.10.2.min.js"></script>
 	</head>
 	
 	<body>
