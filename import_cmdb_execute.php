@@ -92,7 +92,7 @@
 			
 			#Error checking the execution of the prepared statement
 			if ( false === $bp_hdw )	{
-				die_and_display('Binding parameters for HARDWARE failed: ' . htmlspecialchars($stmt_hdw->error));
+				die_and_display('<div id="alert"><a class="alert">Binding parameters for HARDWARE failed: ' . htmlspecialchars($stmt_hdw->error) . '</a></div>');
 			}
 			
 			#Run the prepared statement

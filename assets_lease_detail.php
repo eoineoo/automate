@@ -1,9 +1,9 @@
 <?php
 	
 	/**
-	* Display overview of all current leases by querying asset database.
+	* Display details of selected lease.
 	*/
-	$pagetitle = "View Lease Agreements";
+	$pagetitle = "View Lease Detail";
 	include("layout/header.php");
 	include("inc/functions.php");
 	
@@ -39,7 +39,7 @@
 	while($row = mysqli_fetch_array($result))	{
 		
 		echo "<tr class=\"parent\" id=\"$counter\">";
-		echo "<td><a href = assets_lease_detail.php?invoice=" . $row['Invoice'] . ">" . $row['Invoice'] . "</a></td>";
+		echo "<td><a href = assets_view_lease_detail.php?invoice=" . $row['Invoice'] . ">" . $row['Invoice'] . "</a></td>";
 		echo "<td>" . $row['Purchased'] . "</td>";
 		echo "<td>" . $row['ReturnOn'] . "</td>";
 		echo "<td>" . $row['Units'] . "</td>";		
