@@ -30,6 +30,7 @@
 	$where		= 	"WHERE purchase_order_number = $invoice ";
 	$order		=	"ORDER BY last_logon ASC"; #doesn't work
 	$sql		= 	$select . $from . $join . $where;
+	echo $sql;
 	
 	$result = mysqli_query($connection, $sql);
 
