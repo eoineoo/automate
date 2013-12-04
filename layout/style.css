@@ -42,6 +42,12 @@ tr.valid	{
 tr.invalid	{
 	background-color:#FF9900;
 }
+tr.row_call_logged	{
+	background-color:orange;
+}
+tr.row_call_not_logged	{
+	background-color:#fff;
+}
 #footer{
 	background: #09c;
 	color: #000;
