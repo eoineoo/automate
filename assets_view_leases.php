@@ -38,14 +38,14 @@
 	
 	while($row = mysqli_fetch_array($result))	{
 		
-		echo "<tr class=\"parent\" id=\"$counter\">";
+		echo "<tr>";
 		echo "<td><a href = assets_lease_detail.php?invoice=" . $row['Invoice'] . ">" . $row['Invoice'] . "</a></td>";
 		echo "<td>" . $row['Purchased'] . "</td>";
 		echo "<td>" . $row['ReturnOn'] . "</td>";
 		echo "<td>" . $row['Units'] . "</td>";		
 	
 	}
-	echo "</table>";
+	echo "</tr></table>";
 	
 	mysqli_free_result($result);
 	
