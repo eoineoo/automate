@@ -34,8 +34,13 @@
 	#echo $sql;
 	
 	$result = mysqli_query($connection, $sql);
+	$row_count = mysqli_num_rows($result);
 	
-	#Create table
+	#Control panel
+	echo "<table id='hor-minimalist-a' border='1'><tr><td>aaa</td><td>aaa</td><td>aaa</td><td>aaa</td></tr></table>";
+	echo "<br />";
+	
+	#Create table of assets
 	echo 	"<table id='hor-minimalist-a' border='1'>
 			<tr>";
 	
@@ -51,15 +56,20 @@
 			
 			</tr>";
 	
+	$logged = 0;
+	$outstanding = 0;
+	
 	#Loop and print contents of SQL query
 	while($row = mysqli_fetch_array($result))	{
 		
 		#Highlight row rules
 		if (($row['Call Ref'] != NULL)	|| ($row['Status'] == 'Unassigned')) {
 			$trclass = "row_call_logged";
+			$logged++;
 		}
 		else	{
 			$trclass = "row_call_not_logged";	
+			$outstanding++;
 		}
 		
 		echo "<tr class = $trclass>";
@@ -71,10 +81,14 @@
 		echo "<td>" . $row['Status'] . "</td>";		
 		echo "<td>" . $row['Model'] . "</td>";		
 		echo "<td>" . $row['Call Ref'] . "</td>";
-		echo "<td>" . $row['Status'] . "</td>";
+		echo "<td><<>></td>";
 	
 	}
 	echo "</tr></table>";
+	
+	#Numbers
+	echo "<p>Total: $row_count <br />Logged: $logged <br /> Outstanding: $outstanding</p>";
+	echo "<br />";
 	
 	#Free the result
 	mysqli_free_result($result);

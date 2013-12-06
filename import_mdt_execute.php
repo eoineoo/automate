@@ -18,25 +18,27 @@
 	#Execute PowerShell import script
 	$psDir = "C:\\xampp\\ps\\";
 	$psApp = "powershell.exe";
-	$psCmd = "-NoExit -Command {Set-ExecutionPolicy unrestricted}";
+	#$psCmd = "-NoExit -Command {Set-ExecutionPolicy unrestricted}";
 	$psScriptDir = getcwd() . "\\scripts\\";
 	$psScript = "mdt_import.ps1";
 	$parameter = $csv;
-	$runCMD = $psDir . $psApp . " " . $psCmd . " " . $psScriptDir . $psScript . " " . $parameter . " 2>&1";
-	echo $runCMD;
+	#$runCMD = $psDir . $psApp . " " . $psCmd . " " . $psScriptDir . $psScript . " " . $parameter . " 2>&1";
+	$runCMD = $psDir . $psApp . " " . $psScriptDir . $psScript . " " . $parameter . " 2>&1";
 	
 	#Debugging
+	#echo $runCMD;
 	#$output = shell_exec($runCMD);
 	#echo( '<pre>' );
 	#echo($output);
 	#echo( '</pre>' );
-	
-	exec($runCMD);
 	#exec($runCMD,$output);
+	#var_dump($output);
+	
+	#Execute command
+	exec($runCMD);
 	
 	#Successful import, return to main page
 	echo "<div id=\"successfulImport\"><img src=\"images/success.png\" /> <b> Import successful.</div>";
-	#var_dump($output);
 	header("refresh:8; url=home.php");
 	
 	include("layout/footer.php");

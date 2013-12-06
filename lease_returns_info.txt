@@ -1,0 +1,7 @@
+- initially an email should be sent to the owner of ALL laptops that have status "Assigned", within the designated invoice
+- record of this email logged in automate.email
+	- id
+	- serial
+	- owner
+	- email
+	- timestamp
