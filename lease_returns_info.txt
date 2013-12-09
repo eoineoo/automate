@@ -1,7 +1,46 @@
-- initially an email should be sent to the owner of ALL laptops that have status "Assigned", within the designated invoice
+<?php
+
+- initially an email should be sent to the owner of ALL laptops that have status "Assigned" & blank "Call Ref"  within the designated invoice ("2011")
 - record of this email logged in automate.email
 	- id
 	- serial
 	- owner
 	- email
 	- timestamp
+- subsequent emails target users with a blank "Call Ref" and "Assigned" status
+
+==============
+SCHEDULED TASK
+==============
+
+** ADD EMAIL ADDRESS FIELDS TO swdata.assets **
+
+1. Query swdata (work database), return list of email addresses ($email_address) for $lease = "2011", $call_ref = "", $status = "Assigned"
+
+2. Array of email addresses returned: 
+	
+	$email_address = array();
+	
+	while($row = mysqli_fetch_array($sql)	{
+		$email_address[] = $row[$key];
+	}
+	
+3. Pass each element into a mail function that sends an email to each specified: mail($email_address)
+
+	function mailUsers($a)	{
+		#Magical code here that will email a user, probably using PHPMailer
+	}
+	
+	foreach ($email_address as $a) mailUsers($a);
+	
+4. When email is sent the following information is written to automate.contact
+	- auto ID
+	- serial of laptop assigned to user (select serial where email = $email)
+	- purchase_order_number of laptop (select po_num where email = $email)
+	- owner of laptop (select owner where email = $email)
+	- email address ($email)
+	- timestamp
+	- subject
+	- contents
+	
+?>

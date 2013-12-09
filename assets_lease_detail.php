@@ -31,7 +31,7 @@
 	$where		= 	"WHERE purchase_order_number = $invoice ";
 	$order		=	"ORDER BY last_logon ASC"; #doesn't work because of data type
 	$sql		= 	$select . $from . $join_a . $join_o . $where;
-	#echo $sql;
+	echo $sql;
 	
 	$result = mysqli_query($connection, $sql);
 	$row_count = mysqli_num_rows($result);
