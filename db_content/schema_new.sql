@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 09, 2013 at 07:57 PM
+-- Generation Time: Dec 11, 2013 at 08:40 PM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.19
 
@@ -35,10 +35,32 @@ CREATE TABLE IF NOT EXISTS `contact` (
   `owner` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `subject` varchar(255) NOT NULL,
   `contents` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=157 ;
+
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`id`, `serial`, `purchase_order_number`, `owner`, `email`, `timestamp`, `contents`) VALUES
+(140, '0048KJ', '2011', 'Xander Dixon', 'eoinmc@gmail.com', '2013-12-11 19:37:05', 'Hello <b>Xander Dixon</b>. Your laptop (<b>0048KJ</b>) is due to be returned.</b>'),
+(141, '2048HV', '2011', 'Melvin Acevedo', 'eoinmc@gmail.com', '2013-12-11 19:37:07', 'Hello <b>Melvin Acevedo</b>. Your laptop (<b>2048HV</b>) is due to be returned.</b>'),
+(142, '2992LK', '2011', 'Rafael Carson', 'eoinmc@gmail.com', '2013-12-11 19:37:08', 'Hello <b>Rafael Carson</b>. Your laptop (<b>2992LK</b>) is due to be returned.</b>'),
+(143, '8377JX', '2011', 'Kareem Whitley', 'eoinmc@gmail.com', '2013-12-11 19:37:09', 'Hello <b>Kareem Whitley</b>. Your laptop (<b>8377JX</b>) is due to be returned.</b>'),
+(144, '2011XB', '2011', 'Nash Sanders', 'eoinmc@gmail.com', '2013-12-11 19:37:10', 'Hello <b>Nash Sanders</b>. Your laptop (<b>2011XB</b>) is due to be returned.</b>'),
+(145, '7213GR', '2011', 'Leo Kennedy', 'eoin.mccrann@kpmg.ie', '2013-12-11 19:37:12', 'Hello <b>Leo Kennedy</b>. Your laptop (<b>7213GR</b>) is due to be returned.</b>'),
+(146, '2302AC', '2011', 'Harper Poole', 'eoinmc@gmail.com', '2013-12-11 19:37:13', 'Hello <b>Harper Poole</b>. Your laptop (<b>2302AC</b>) is due to be returned.</b>'),
+(147, '8606KY', '2011', 'Patrick Cole', 'eoinmc@gmail.com', '2013-12-11 19:37:14', 'Hello <b>Patrick Cole</b>. Your laptop (<b>8606KY</b>) is due to be returned.</b>'),
+(148, '2051EO', '2011', 'Damian Alvarado', 'eoinmc@gmail.com', '2013-12-11 19:37:15', 'Hello <b>Damian Alvarado</b>. Your laptop (<b>2051EO</b>) is due to be returned.</b>'),
+(149, '3761YV', '2011', 'Eric Beach', 'eoinmc@gmail.com', '2013-12-11 19:37:16', 'Hello <b>Eric Beach</b>. Your laptop (<b>3761YV</b>) is due to be returned.</b>'),
+(150, '6755SM', '2011', 'Gregory Ayers', 'eoinmc@gmail.com', '2013-12-11 19:37:16', 'Hello <b>Gregory Ayers</b>. Your laptop (<b>6755SM</b>) is due to be returned.</b>'),
+(151, '3001YJ', '2011', 'Wyatt Acevedo', 'eoinmc@gmail.com', '2013-12-11 19:37:18', 'Hello <b>Wyatt Acevedo</b>. Your laptop (<b>3001YJ</b>) is due to be returned.</b>'),
+(152, '4278IL', '2011', 'Vernon Eaton', 'eoinmc@gmail.com', '2013-12-11 19:37:19', 'Hello <b>Vernon Eaton</b>. Your laptop (<b>4278IL</b>) is due to be returned.</b>'),
+(153, '0513KI', '2011', 'Calvin Mercado', 'eoinmc@gmail.com', '2013-12-11 19:37:19', 'Hello <b>Calvin Mercado</b>. Your laptop (<b>0513KI</b>) is due to be returned.</b>'),
+(154, '0515VW', '2011', 'Kennan Randolph', 'eoinmc@gmail.com', '2013-12-11 19:37:20', 'Hello <b>Kennan Randolph</b>. Your laptop (<b>0515VW</b>) is due to be returned.</b>'),
+(155, '9384QQ', '2011', 'Macaulay Bradley', 'eoinmc@gmail.com', '2013-12-11 19:37:21', 'Hello <b>Macaulay Bradley</b>. Your laptop (<b>9384QQ</b>) is due to be returned.</b>'),
+(156, '7739AH', '2011', 'Kenneth Wolf', 'eoinmc@gmail.com', '2013-12-11 19:37:22', 'Hello <b>Kenneth Wolf</b>. Your laptop (<b>7739AH</b>) is due to be returned.</b>');
 
 -- --------------------------------------------------------
 
@@ -248,7 +270,7 @@ CREATE TABLE IF NOT EXISTS `assets` (
 
 INSERT INTO `assets` (`id`, `impacted`, `deactivated`, `faulty`, `baseline`, `urgency_level`, `activebaseline`, `impact_level`, `manufacturer`, `hardware_type`, `serial_num`, `username`, `status_level`, `owner`, `email_address`, `active`, `comp_name`, `purchase_order_number`, `asset_tag`, `cmdb_status`, `purchase_date`, `warranty_expires_date`, `last_logon`) VALUES
 (1, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Dell Products', 'Laptop', 'JF27', 'mmorgan', 'Assigned', 'Mufutau Morgan', 'eoinmc@gmail.com', 'Yes', 'IEJF27', '2013', '18140', 'Active', 1376006400, 1470700800, '03/12/2013'),
-(2, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Dell Products', 'Laptop', 'G517', 'rrosario', 'Assigned', 'Rajah Rosario', 'eoinmc@gmail.com', 'Yes', 'IEG517', '2013', '18141', 'Active', 1376006400, 1470700800, '03/12/2013'),
+(2, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Dell Products', 'Laptop', 'G517', 'rrosario', 'Assigned', 'Rajah Rosario', 'eoin.mccrann@kpmg.ie', 'Yes', 'IEG517', '2013', '18141', 'Active', 1376006400, 1470700800, '03/12/2013'),
 (3, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Dell Products', 'Laptop', '7D17', 'mlott', 'Assigned', 'Malcolm Lott', 'eoinmc@gmail.com', 'Yes', 'IE7D17', '2013', '18142', 'Active', 1376006400, 1470700800, '03/12/2013'),
 (4, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Dell Products', 'Laptop', 'DF17', 'plogan', 'Assigned', 'Palmer Logan', 'eoinmc@gmail.com', 'Yes', 'IEDF17', '2013', '18143', 'Active', 1376006400, 1470700800, '03/12/2013'),
 (5, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Dell Products', 'Laptop', 'B627', 'jturner', 'Assigned', 'Jamal Turner', 'eoinmc@gmail.com', 'Yes', 'IEB627', '2013', '18144', 'Active', 1376006400, 1470700800, '03/12/2013'),
@@ -282,7 +304,7 @@ INSERT INTO `assets` (`id`, `impacted`, `deactivated`, `faulty`, `baseline`, `ur
 (33, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Hewlett-Packard', 'Laptop', '2992LK', 'rcarson', 'Assigned', 'Rafael Carson', 'eoinmc@gmail.com', 'Yes', 'IE2992LK', '2011', '15002', 'Active', 1288569600, 1385856000, '01/10/2013'),
 (34, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Hewlett-Packard', 'Laptop', '8377JX', 'kwhitley', 'Assigned', 'Kareem Whitley', 'eoinmc@gmail.com', 'Yes', 'IE8377JX', '2011', '15003', 'Active', 1288569600, 1385856000, '03/10/2013'),
 (35, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Hewlett-Packard', 'Laptop', '2011XB', 'nsanders', 'Assigned', 'Nash Sanders', 'eoinmc@gmail.com', 'Yes', 'IE2011XB', '2011', '15004', 'Active', 1288569600, 1385856000, '05/10/2013'),
-(36, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Hewlett-Packard', 'Laptop', '7213GR', 'lkennedy', 'Assigned', 'Leo Kennedy', 'eoinmc@gmail.com', 'Yes', 'IE7213GR', '2011', '15005', 'Active', 1288569600, 1385856000, '07/10/2013'),
+(36, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Hewlett-Packard', 'Laptop', '7213GR', 'lkennedy', 'Assigned', 'Leo Kennedy', 'eoin.mccrann@kpmg.ie', 'Yes', 'IE7213GR', '2011', '15005', 'Active', 1288569600, 1385856000, '07/10/2013'),
 (37, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Hewlett-Packard', 'Laptop', '2302AC', 'hpoole', 'Assigned', 'Harper Poole', 'eoinmc@gmail.com', 'Yes', 'IE2302AC', '2011', '15006', 'Active', 1288569600, 1385856000, '09/10/2013'),
 (38, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Hewlett-Packard', 'Laptop', '8606KY', 'pcole', 'Assigned', 'Patrick Cole', 'eoinmc@gmail.com', 'Yes', 'IE8606KY', '2011', '15007', 'Active', 1288569600, 1385856000, '11/10/2013'),
 (39, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Hewlett-Packard', 'Laptop', '2051EO', 'dalvarado', 'Assigned', 'Damian Alvarado', 'eoinmc@gmail.com', 'Yes', 'IE2051EO', '2011', '15008', 'Active', 1288569600, 1385856000, '13/10/2013'),
@@ -290,7 +312,7 @@ INSERT INTO `assets` (`id`, `impacted`, `deactivated`, `faulty`, `baseline`, `ur
 (41, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Hewlett-Packard', 'Laptop', '4536UB', 'rallen', 'Assigned', 'Rajah Allen', 'eoinmc@gmail.com', 'Yes', 'IE4536UB', '2011', '15010', 'Active', 1288569600, 1385856000, '02/12/2013'),
 (42, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Hewlett-Packard', 'Laptop', '7354VP', 'lhenson', 'Assigned', 'Lawrence Henson', 'eoinmc@gmail.com', 'Yes', 'IE7354VP', '2011', '15011', 'Active', 1288569600, 1385856000, '02/12/2013'),
 (43, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Hewlett-Packard', 'Laptop', '3761YV', 'ebeach', 'Assigned', 'Eric Beach', 'eoinmc@gmail.com', 'Yes', 'IE3761YV', '2011', '15012', 'Active', 1288569600, 1385856000, '02/12/2013'),
-(44, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Hewlett-Packard', 'Laptop', '8596QD', 'jspence', 'Assigned', 'Jeremy Spence', 'eoinmc@gmail.com', 'Yes', 'IE8596QD', '2011', '15013', 'Active', 1288569600, 1385856000, '02/12/2013'),
+(44, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Hewlett-Packard', 'Laptop', '8596QD', 'aquigley', 'Assigned', 'Alex Quigley', 'quigley.alex@gmail.com', 'Yes', 'IE8596QD', '2011', '15013', 'Active', 1288569600, 1385856000, '02/12/2013'),
 (45, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Hewlett-Packard', 'Laptop', '3585TJ', 'czimmerman', 'Assigned', 'Connor Zimmerman', 'eoinmc@gmail.com', 'Yes', 'IE3585TJ', '2011', '15014', 'Active', 1288569600, 1385856000, '02/12/2013'),
 (46, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Hewlett-Packard', 'Laptop', '6755SM', 'gayers', 'Assigned', 'Gregory Ayers', 'eoinmc@gmail.com', 'Yes', 'IE6755SM', '2011', '15015', 'Active', 1288569600, 1385856000, '02/12/2013'),
 (47, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Hewlett-Packard', 'Laptop', '3001YJ', 'wacevedo', 'Assigned', 'Wyatt Acevedo', 'eoinmc@gmail.com', 'Yes', 'IE3001YJ', '2011', '15016', 'Active', 1288569600, 1385856000, '02/12/2013'),
@@ -366,7 +388,7 @@ INSERT INTO `opencall` (`callref`, `status`, `cust_id`, `cust_name`, `cust_usern
 (69235, 2, '5500041', 'Brendan Carey', 'bcarey', '03/04/2013 10:17', 'Dieter', '05/04/2013 15:37', 'at', ' nisi. Cum sociis natoque penatibus et magnis dis parturient montes'),
 (76910, 2, '5500013', 'Rajah Allen', 'rallen', '09/04/2013 13:00', 'Mason', '11/04/2013 09:00', 'ut', ' pellentesque eget'),
 (81603, 2, '5500027', 'Lawrence Henson', 'lhenson', '12/04/2013 14:39', 'Bruno', '14/04/2013 15:46', 'facilisis lorem tristique aliquet. Phasellus fermentum convallis ligula. Donec luctus aliquet odio. Etiam ligula tortor', ' dictum eu'),
-(146602, 2, '5500104', 'Jeremy Spence', 'jspence', '12/04/2013 10:14', 'Chase', '14/04/2013 09:00', 'nec', ' mollis vitae'),
+(146602, 2, '5500104', 'Alex Quigley', 'aquigley', '12/04/2013 10:14', 'Chase', '14/04/2013 09:00', 'nec', ' mollis vitae'),
 (150089, 1, '5500048', 'Connor Zimmerman', 'czimmerman', '15/04/2013 10:58', 'Vincent', '17/04/2013 15:51', 'et magnis dis parturient montes', ' nascetur ridiculus mus. Proin vel nisl. Quisque fringilla euismod enim. Etiam gravida molestie arcu. Sed'),
 (163939, 1, '5500031', 'Baxter Mcmahon', 'bmcmahon', '21/04/2013 15:20', 'Rafael', '23/04/2013 14:09', 'quam vel sapien imperdiet ornare. In faucibus. Morbi vehicula. Pellentesque tincidunt tempus risus. Donec egestas. Duis ac arcu. Nunc mauris.', 'dolor dapibus gravida. Aliquam tincidunt'),
 (183537, 1, '5500033', 'Austin Calhoun', 'acalhoun', '27/04/2013 11:06', 'Wesley', '29/04/2013 10:37', 'Nullam scelerisque neque sed sem egestas blandit. Nam nulla magna', ' malesuada vel'),

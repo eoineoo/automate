@@ -7,41 +7,44 @@
 		die();
 	}
 	
-	#Mail user
-	function mailUser($address, $owner)	{
-		#Does not appear to work when connected to the internal work network / proxy server
-		include("inc/PHPMailerAutoLoad.php");
-	
-		$mail = new PHPMailer;
+	function messageUser($address, $owner, $serial)	{
 		
-		$mail->isSMTP();
-		$mail->Host = 'smtp.gmail.com';
-		$mail->Port = 587;
-		$mail->SMTPAuth = true;
-		$mail->Username = 'automatemailertest@gmail.com';
-		$mail->Password = 'P@ssword13';
-		$mail->SMTPSecure = 'tls';
-		$mail->SMTPDebug  = 2;
+		global $body; 
+		$body = 'Hello <b>' . $owner . '</b>. Your laptop (<b>' . $serial . '</b>) is due to be returned.</b>';
 		
-		$mail->From = 'automatemailertest@gmail.com';
-		$mail->FromName = 'Sender - Eoin';
+		$message = new PHPMailer;
+		
+		#Gmail connection settings
+		$message->isSMTP();
+		$message->Host = 'smtp.gmail.com';
+		$message->Port = 587;
+		$message->SMTPAuth = true;
+		$message->Username = 'automatemailertest@gmail.com';
+		$message->Password = 'P@ssword13';
+		$message->SMTPSecure = 'tls';
+		#$message->SMTPDebug  = 2;
+		
+		$message->From = 'automatemailertest@gmail.com';
+		$message->FromName = 'Sender - Automate Emailer';
 		
 		#Pass in email address and plaintext name of owner - e.g. addAddres('eoinmc@gmail.com', 'Eoin McCrann');
-		$mail->addAddress($address, $owner);
+		$message->addAddress($address, $owner);
 			
-		$mail->isHTML(true);
+		$message->isHTML(true);
 		
-		$mail->Subject = 'SUBJECT!';
-		$mail->Body = '<b>HTML BODY</b>!';
-		$mail->AltBody = 'Normal body!';
+		$message->Subject = 'Laptop Replacement - Action Required';
+		$message->Body = $body;
+		$message->AltBody = 'Alt Body';
 		
-		if(!$mail->send())	{
+		if(!$message->send())	{
 			echo 'Could not be sent to user: ' . $owner;
-			echo 'Error: ' . $mail->ErrorInfo;
+			echo 'Error: ' . $message->ErrorInfo;
 			exit;
 		}
 		
-		echo 'Message sent to user: ' . $owner;
+		echo 'Message sent to user: ' . $owner . ')<br />';
+		
+		return $body;
 	}
 	
 ?>

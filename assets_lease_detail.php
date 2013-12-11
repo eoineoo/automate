@@ -23,7 +23,7 @@
 		die_and_display('<div id="alert"><a class="alert">Connection failed: ' . htmlspecialchars(mysqli_connect_error()) . "</a></div>");			
 	}
 	
-	#Query
+	#Query - Need to include last email time from automate.contact
 	$select		=  	"SELECT serial_num AS 'Serial', last_logon AS 'Last Logon', username AS 'Last User', owner AS 'Assigned To', status_level AS 'Status', model as 'Model', callref as 'Call Ref' ";
 	$from		= 	"FROM assets ";
 	$join_a		= 	"LEFT OUTER JOIN asset_details ON asset_details.id = assets.id ";
