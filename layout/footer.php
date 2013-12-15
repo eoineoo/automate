@@ -11,7 +11,7 @@
 			
 			<?php
 				//Display the username of the currently logged in user
-				session_start();
+				#session_start();
 				
 				if (isset($_SESSION['username']))	{
 					echo "<p class=\"loginDetails\">Currently logged in as: ".$_SESSION['username'];

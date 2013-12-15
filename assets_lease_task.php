@@ -11,6 +11,7 @@
 	$select = "SELECT serial_num AS 'Serial', owner AS 'Assigned To', email_address AS 'Email', status_level AS 'Status', callref as 'Call Ref', purchase_order_number AS 'Invoice' ";
 	$from 	= "FROM assets ";
 	$join 	= "LEFT OUTER JOIN opencall ON opencall.cust_name = assets.owner ";
+	#Will need to get the invoice rather than having it set here
 	$where 	= "WHERE purchase_order_number = '2011' AND callref IS NULL AND status_level = 'Assigned'";
 	$sql 	= $select . $from . $join . $where;
 	

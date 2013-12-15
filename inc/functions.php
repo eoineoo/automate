@@ -7,14 +7,14 @@
 		die();
 	}
 	
+	#Function to send email using PHPMailer
 	function messageUser($address, $owner, $serial)	{
 		
 		global $body; 
 		$body = 'Hello <b>' . $owner . '</b>. Your laptop (<b>' . $serial . '</b>) is due to be returned.</b>';
 		
 		$message = new PHPMailer;
-		
-		#Gmail connection settings
+
 		$message->isSMTP();
 		$message->Host = 'smtp.gmail.com';
 		$message->Port = 587;
@@ -26,12 +26,8 @@
 		
 		$message->From = 'automatemailertest@gmail.com';
 		$message->FromName = 'Sender - Automate Emailer';
-		
-		#Pass in email address and plaintext name of owner - e.g. addAddres('eoinmc@gmail.com', 'Eoin McCrann');
 		$message->addAddress($address, $owner);
-			
 		$message->isHTML(true);
-		
 		$message->Subject = 'Laptop Replacement - Action Required';
 		$message->Body = $body;
 		$message->AltBody = 'Alt Body';
@@ -42,7 +38,7 @@
 			exit;
 		}
 		
-		echo 'Message sent to user: ' . $owner . ')<br />';
+		echo 'Message sent to user: ' . $owner . '<br />';
 		
 		return $body;
 	}
