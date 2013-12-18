@@ -38,8 +38,7 @@
 			exit;
 		}
 		
-		echo 'Message sent to user: ' . $owner . '<br />';
-		
+		echo 'Message sent to user: ' . $owner . ' (' . $address . ')<br />';
 		return $body;
 	}
 	

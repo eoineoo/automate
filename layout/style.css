@@ -25,29 +25,6 @@ div#banner {
     padding:0px;
 	width: 1000px;
 }
-div#loginForm {
-	padding:30 0 0 0;
-}
-div#importTableWrapper	{
-	width: 1000px;
-	overflow-x: auto;
-	height:500px;
-}
-div#successfulImport	{
-	
-}
-tr.valid	{
-	background-color:#00B800;
-}
-tr.invalid	{
-	background-color:#FF9900;
-}
-tr.row_call_logged	{
-	background-color:orange;
-}
-tr.row_call_not_logged	{
-	background-color:#fff;
-}
 #footer{
 	background: #09c;
 	color: #000;
@@ -55,19 +32,28 @@ tr.row_call_not_logged	{
 	margin: -100px auto 0;
 	width: 1000px;
 }
+/* Row highlighting */
+tr.row_call_logged	{
+	background-color:orange;
+}
+tr.row_call_completed	{
+	background-color:#3bbc46;
+	* color:#fff;
+}
+tr.row_call_not_logged	{
+	background-color:#fff;
+}
 p.footer	{
 	padding: 35 0 0 0;
-}
-p.navigation	{
-	padding:15; /* top, right, bottom, left */
-}
-p.die	{
-	
 }
 #clearfooter{ /* same height as footer */
 	clear:both;
 	height:90px;
 } 
+
+p.navigation	{
+	padding:15; /* top, right, bottom, left */
+}
 img {
     display: block;
     margin: 0 auto;
@@ -87,18 +73,44 @@ img {
 {
 	padding: 5px 5px 5px 5px; /*top, right, bottom, left */
 }
-#hor-minimalist-a tbody tr:hover td
+
+/* Apply CLASS to table on Assets page with DataTables (ID is taken)*/
+table.hor-minimalist-a a
 {
-/*	color: #fff;	*/
+	display:block;
+	text-decoration:none;
 }
-#hor-minimalist-a a
+table.hor-minimalist-a
+{
+	font-size: 12px;
+	background: #fff;
+	margin: 5px;
+	width: 75%;
+	border-collapse: collapse;
+	text-align: center;
+}
+table.hor-minimalist-a td
+{
+	padding: 5px 5px 5px 5px; /*top, right, bottom, left */
+}
+table.hor-minimalist-a a
 {
 	display:block;
 	text-decoration:none;
 }
 
-/* Alert http://joshnh.com/2011/11/07/how-to-make-an-alert-bar/ */
+/* DataTables */
+.dataTables_filter {
+	padding: 0 0 10 0;
+}
+table.assets thead th {
+	padding: 3px 18px 3px 10px;
+	border-bottom: 1px solid black;
+	font-weight: bold;
+	cursor: pointer;	
+}
 
+/* Alert http://joshnh.com/2011/11/07/how-to-make-an-alert-bar/ */
 #alert {
     position: relative;
 }
