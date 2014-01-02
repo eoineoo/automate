@@ -24,13 +24,14 @@
 	}
 	
 	#Query - Need to include last email time from automate.contact
-	$select		=  	"SELECT serial_num AS 'Serial', last_logon AS 'Last Logon', username AS 'Last User', owner AS 'Assigned To', status_level AS 'Status', model as 'Model', callref as 'Call Ref' ";
-	$from		= 	"FROM assets ";
-	$join_a		= 	"LEFT OUTER JOIN asset_details ON asset_details.id = assets.id ";
-	$join_o		= 	"LEFT OUTER JOIN opencall ON opencall.cust_name = assets.owner ";
-	$where		= 	"WHERE purchase_order_number = $invoice ";
-	$order		=	"ORDER BY last_logon ASC"; #doesn't work because of data type
-	$sql		= 	$select . $from . $join_a . $join_o . $where;
+	$select		=  	"SELECT DISTINCT(serial_num) AS 'Serial', last_logon AS 'Last Logon', username AS 'Last User', a.owner AS 'Assigned To', status_level AS 'Status', model as 'Model', callref as 'Call Ref', MAX(timestamp) AS 'Last Email' ";
+	$from		= 	"FROM swdata.assets a ";
+	$join_a		= 	"LEFT OUTER JOIN asset_details a_d ON a_d.id = a.id ";
+	$join_o		= 	"LEFT OUTER JOIN swdata.opencall o ON o.cust_name = a.owner ";
+	$join_c		= 	"LEFT OUTER JOIN automate.contact c ON c.serial = a.serial_num ";
+	$where		= 	"WHERE a.purchase_order_number = $invoice ";
+	$group		= 	"GROUP BY serial_num";
+	$sql		= 	$select . $from . $join_a . $join_o . $join_c . $where . $group;
 	
 	$result = mysqli_query($connection, $sql);
 	$row_count = mysqli_num_rows($result);
@@ -99,7 +100,7 @@
 			echo "<td>" . $row['Status'] . "</td>";		
 			echo "<td>" . $row['Model'] . "</td>";		
 			echo "<td>" . $row['Call Ref'] . "</td>";
-			echo "<td><<>></td>";
+			echo "<td>" . $row['Last Email'] . "</td>";
 			#echo "<td><a href=\"assets_contact_history.php?uid=" . urlencode($row['Last User']) . "\"><img src=\"images\\log.png\" /></a></td>";
 			echo "<td><a href=\"assets_test.php?uid=" . urlencode('test') . "\"><img src=\"images\\log.png\" /></a></td>";
 		
