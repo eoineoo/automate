@@ -43,6 +43,12 @@ tr.row_call_completed	{
 tr.row_call_not_logged	{
 	background-color:#fff;
 }
+tr.valid	{
+	background-color:#3bbc46;
+}
+tr.invalid	{
+	background-color:orange;
+}
 p.footer	{
 	padding: 35 0 0 0;
 }
