@@ -23,6 +23,14 @@
 		die_and_display('<div id="alert"><a class="alert">Connection failed: ' . htmlspecialchars(mysqli_connect_error()) . "</a></div>");			
 	}
 	
+	#Summary screen query
+	$sselect = "SELECT purchase_order_number AS 'Invoice', FROM_UNIXTIME(purchase_date, \"%d %M %Y\") AS 'Purchased', FROM_UNIXTIME(warranty_expires_date, \"%d %M %Y\") AS 'ReturnOn', COUNT(model) AS 'Units', model ";
+	$sfrom = "FROM assets ";
+	$sjoin = "JOIN asset_details ON asset_details.id = assets.id AND purchase_order_number = '$invoice' ";
+	$sgroup = "GROUP BY model ";
+	$sorder = "ORDER BY purchase_order_number DESC";
+	$ssql = $sselect . $sfrom . $sjoin . $sgroup . $sorder;
+	
 	#Main Query - multiple databases
 	$select		=  	"SELECT DISTINCT(serial_num) AS 'Serial', last_logon AS 'Last Logon', username AS 'Last User', a.owner AS 'Assigned To', status_level AS 'Status', model as 'Model', callref as 'Call Ref', MAX(timestamp) AS 'Last Email' ";
 	$from		= 	"FROM swdata.assets a ";
@@ -36,10 +44,6 @@
 	$result = mysqli_query($connection, $sql);
 	$row_count = mysqli_num_rows($result);
 	
-	#Control panel
-	echo "<table id='hor-minimalist-a' border='1'><tr><th colspan=4>Control Panel</th></tr><tr><td><a href='assets_lease_task.php'>Mail Outstanding Users</a></td><td>View Contact History</td></tr></table>";
-	echo "<br />";
-
 	#Counters
 	$completed = 0;
 	$logged = 0;
@@ -63,7 +67,7 @@
 			$(document).ready(function() {
 				var oTable = $('#assets').dataTable( {
 					"oLanguage": {
-						"sSearch": "Search all columns:"
+						"sSearch": "Search:"
 					},
 					"bPaginate": false
 				} );
@@ -92,7 +96,24 @@
 	</script>
   </head>
   <body>
-    <div id="container">
+	
+	<!-- Control panel - Drill down table: http://datatables.net/blog/Drill-down_rows -->
+	<table id='hor-minimalist-a' border='1'>
+		<thead>
+			<tr>
+				<th colspan="4">Control Panel</th>
+			</tr>
+			<tr>
+				<td width="10%"></td>
+				<td width="30%">Lease Summary</td>
+				<td width="30%"><a href='assets_lease_task.php'>Mail Outstanding Users</a></td>
+				<td width="30%">View Contact History</td>
+			</tr>
+		</thead>
+	</table>
+	<br />
+	
+	<div id="container">
       <table cellpadding="0" cellspacing="0" border="1" class="hor-minimalist-a" id="assets">
         <thead>
 			<tr>

@@ -1,0 +1,78 @@
+<script type="text/javascript" language="javascript" src="scripts/jquery.js"></script>
+<script class="jsbin" src="scripts/jquery.dataTables.nightly.js"></script>
+<style type="text/css" media="screen">
+			@import "site.ccss";
+</style>
+<style type="text/css" title="currentStyle">
+table.display td.details { border: 0; padding: 0; background-color: #ccc; }
+div.innerDetails { display: none }
+</style>
+<script type="text/javascript" charset="utf-8">
+	$(document).ready(function() {
+    var anOpen = [];
+    var sImageUrl = "images/";
+     
+    var oTable = $('#example').dataTable( {
+    	"bProcessing": true,
+    	//Want to use PHP/MySQL instead of JSON objects
+		"sAjaxSource": "objects.txt",
+    	"aoColumns": [
+    		{ 
+    		 "mDataProp": null, 
+    		 "sClass": "control center", 
+    		 "sDefaultContent": '<img src="'+sImageUrl+'details_open.png'+'">'
+    		},
+    		{ "mDataProp": "engine" },
+    		{ "mDataProp": "browser" },
+    		{ "mDataProp": "grade" }
+    	]
+    } );
+    
+    $('#example td.control').live( 'click', function () {
+       var nTr = this.parentNode;
+       var i = $.inArray( nTr, anOpen );
+       
+       if ( i === -1 ) {
+          $('img', this).attr( 'src', sImageUrl+"details_close.png" );
+          var nDetailsRow = oTable.fnOpen( nTr, fnFormatDetails(oTable, nTr), 'details' );
+          $('div.innerDetails', nDetailsRow).slideDown();
+          anOpen.push( nTr );
+        }
+        else {
+          $('img', this).attr( 'src', sImageUrl+"details_open.png" );
+           $('div.innerDetails', $(nTr).next()[0]).slideUp( function () {
+             oTable.fnClose( nTr );
+             anOpen.splice( i, 1 );
+           } );
+         }
+     } );
+	} );
+	
+	function fnFormatDetails( oTable, nTr )
+	{
+	  var oData = oTable.fnGetData( nTr );
+		var sOut = 
+		   '<div class="innerDetails">'+
+		      '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
+		         '<tr><td>Rendering engine:</td><td>'+oData.engine+'</td></tr>'+
+		         '<tr><td>Browser:</td><td>'+oData.browser+'</td></tr>'+
+		         '<tr><td>Platform:</td><td>'+oData.platform+'</td></tr>'+
+		         '<tr><td>Version:</td><td>'+oData.version+'</td></tr>'+
+		         '<tr><td>Grade:</td><td>'+oData.grade+'</td></tr>'+
+		      '</table>'+
+		   '</div>';
+		return sOut;
+   }
+</script>
+<table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
+	<thead>
+		<tr>
+			<th></th>
+			<th>Rendering engine</th>
+			<th>Browser</th>
+			<th>CSS grade</th>
+		</tr>
+	</thead>
+	<tbody></tbody>
+</table>
+<div class="clear"></div>

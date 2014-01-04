@@ -22,7 +22,6 @@
 	$group		= 	"GROUP BY purchase_order_number ";
 	$order		=	"ORDER BY purchase_order_number DESC";
 	$sql		= 	$select . $from . $join . $group . $order;
-	echo $sql;
 	
 	$result = mysqli_query($connection, $sql);
 
