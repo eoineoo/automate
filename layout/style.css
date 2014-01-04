@@ -109,6 +109,10 @@ table.assets thead th {
 	font-weight: bold;
 	cursor: pointer;	
 }
+td.last {
+    width: 1px;
+    white-space: nowrap;
+}
 
 /* Alert http://joshnh.com/2011/11/07/how-to-make-an-alert-bar/ */
 #alert {

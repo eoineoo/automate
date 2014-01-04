@@ -1,7 +1,7 @@
 <?php
 	
 	/**
-	* Display details of selected lease.
+	* Display details of selected lease. Contact outstanding users.
 	*/
 	$pagetitle = "View Lease Detail";
 	include("layout/header.php");
@@ -12,7 +12,7 @@
 			$invoice = $_GET['invoice'];		
 	}
 	else	{
-			$csv = "";
+			$invoice = "";
 	}
 	
 	#Connect
@@ -23,7 +23,7 @@
 		die_and_display('<div id="alert"><a class="alert">Connection failed: ' . htmlspecialchars(mysqli_connect_error()) . "</a></div>");			
 	}
 	
-	#Query - Need to include last email time from automate.contact
+	#Main Query - multiple databases
 	$select		=  	"SELECT DISTINCT(serial_num) AS 'Serial', last_logon AS 'Last Logon', username AS 'Last User', a.owner AS 'Assigned To', status_level AS 'Status', model as 'Model', callref as 'Call Ref', MAX(timestamp) AS 'Last Email' ";
 	$from		= 	"FROM swdata.assets a ";
 	$join_a		= 	"LEFT OUTER JOIN asset_details a_d ON a_d.id = a.id ";
@@ -52,23 +52,71 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <script type="text/javascript" language="javascript" src="scripts/jquery.js"></script>
-    <script class="jsbin" src="scripts/jquery.dataTables.nightly.js"></script>	
+    <script class="jsbin" src="scripts/jquery.dataTables.nightly.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		/* 
+		 * Filter data using text boxes 
+		 * http://datatables.net/examples/api/multi_filter.html
+		 */
+		var asInitVals = new Array();
+			
+			$(document).ready(function() {
+				var oTable = $('#assets').dataTable( {
+					"oLanguage": {
+						"sSearch": "Search all columns:"
+					},
+					"bPaginate": false
+				} );
+				
+				$("thead input").keyup( function () {
+					/* Filter on the column (the index) of this element */
+					oTable.fnFilter( this.value, $("thead input").index(this) );
+				} );
+				
+				
+				/*
+				 * Support functions to provide a little bit of 'user friendlyness' to the textboxes in 
+				 * the footer
+				 */
+				$("thead input").each( function (i) {
+					asInitVals[i] = this.value;
+				} );
+				
+				$("thead input").blur( function (i) {
+					if ( this.value == "" )
+					{
+						this.value = asInitVals[$("thead input").index(this)];
+					}
+				} );
+			} );
+	</script>
   </head>
   <body>
     <div id="container">
       <table cellpadding="0" cellspacing="0" border="1" class="hor-minimalist-a" id="assets">
         <thead>
-          <tr>
-            <th>Serial</th>
-            <th>Last Logon</th>
-            <th>Last User</th>
-            <th>Assigned To</th>
-            <th>Status</th>
-			<th>Model</th>
-			<th>Call Ref</th>
-			<th>Last Mailed</th>
-			<th>History</th>
-          </tr>
+			<tr>
+				<th><input type="text" name="search_serial" size="10"/></th>
+				<th><input type="text" name="search_logon" size="10"/></th>
+				<th><input type="text" name="search_user" size="10"/></th>
+				<th><input type="text" name="search_owner" size="10"/></th>
+				<th><input type="text" name="search_status" size="10"/></th>
+				<th><input type="text" name="search_model" size="10"/></th>
+				<th><input type="text" name="search_call_ref" size="10"/></th>
+				<th><input type="text" name="search_mailed" size="10"/></th>				
+				<th><input type="text" name="search_history" size="10"/></th>				
+			</tr>
+			<tr>
+				<th>Serial</th>
+				<th>Last Logon</th>
+				<th>Last User</th>
+				<th>Assigned To</th>
+				<th>Status</th>
+				<th>Model</th>
+				<th>Call Ref</th>
+				<th>Last Mailed</th>
+				<th>History</th>
+			  </tr>
         </thead>
         <tbody>
           
@@ -94,32 +142,20 @@
 			echo "<tr class = $trclass>";
 			echo "<td>" . $row['Serial'] . "</td>";
 			echo "<td>" . $row['Last Logon'] . "</td>";
-			#For now the 'Last User' is just pulling the last logged-on user field from the username field in the asset database but in the live system it's populated by WMI/SCCM (out of the scope of this project)
 			echo "<td>" . $row['Last User'] . "</td>";
 			echo "<td>" . $row['Assigned To'] . "</td>";
 			echo "<td>" . $row['Status'] . "</td>";		
 			echo "<td>" . $row['Model'] . "</td>";		
 			echo "<td>" . $row['Call Ref'] . "</td>";
 			echo "<td>" . $row['Last Email'] . "</td>";
-			#echo "<td><a href=\"assets_contact_history.php?uid=" . urlencode($row['Last User']) . "\"><img src=\"images\\log.png\" /></a></td>";
-			echo "<td><a href=\"assets_test.php?uid=" . urlencode('test') . "\"><img src=\"images\\log.png\" /></a></td>";
-		
+			echo "<td><a href=\"assets_contact_history.php?id=" .$row['Serial'] . "\"><img src=\"images\\log.png\" /></a></td>";
+					
 		}
 ?>
-		  
-        </tbody>
+		<body>
       </table>
     </div>
-  <script>  
-/* 
- * Initialise the DataTable, removing pagination
- */
-$(document).ready(function(){
-	$('#assets').dataTable(	{
-		"bPaginate": false
-	});
-});
-</script>
+
 <?php
 
 	#Numbers - add CSS
