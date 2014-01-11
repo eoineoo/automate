@@ -104,7 +104,6 @@
 				<th colspan="4">Control Panel</th>
 			</tr>
 			<tr>
-				<td width="10%"></td>
 				<td width="30%">Lease Summary</td>
 				<td width="30%"><a href='assets_lease_task.php'>Mail Outstanding Users</a></td>
 				<td width="30%">View Contact History</td>
@@ -169,7 +168,7 @@
 			echo "<td>" . $row['Model'] . "</td>";		
 			echo "<td>" . $row['Call Ref'] . "</td>";
 			echo "<td>" . $row['Last Email'] . "</td>";
-			echo "<td><a href=\"assets_contact_history.php?id=" .$row['Serial'] . "\"><img src=\"images\\log.png\" /></a></td>";
+			echo "<td><a href=\"assets_contact_history.php?serial=" .$row['Serial'] . "\"><img src=\"images\\log.png\" /></a></td>";
 					
 		}
 ?>
