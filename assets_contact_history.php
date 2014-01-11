@@ -24,7 +24,7 @@
 	}
 	
 	#Query to return contact details
-	$select = "SELECT serial AS 'Serial', contents AS 'Contents', owner AS 'Owner', TIMESTAMP AS 'Time Sent' ";
+	$select = "SELECT TIMESTAMP AS 'Time Sent', serial AS 'Serial', contents AS 'Contents', owner AS 'Owner' ";
 	$from 	= "FROM  contact ";
 	$where 	= "WHERE serial = '$serial' ";
 	$order 	= "ORDER BY timestamp DESC";
@@ -44,10 +44,10 @@
       <table cellpadding="0" cellspacing="0" border="1" class="hor-minimalist-a" id="contact">
         <thead>
 			<tr>
+				<th>Time Sent</th>
 				<th>Serial</th>
 				<th>Contents</th>
 				<th>Owner</th>
-				<th>Time Sent</th>
 			</tr>
         </thead>
         <tbody>
@@ -58,10 +58,10 @@
 		while($row = mysqli_fetch_array($result))	{
 		
 			echo "<tr>";
+			echo "<td>" . $row['Time Sent'] . "</td>";
 			echo "<td>" . $row['Serial'] . "</td>";
 			echo "<td>" . $row['Contents'] . "</td>";
 			echo "<td>" . $row['Owner'] . "</td>";
-			echo "<td>" . $row['Time Sent'] . "</td>";
 			echo "</tr>";
 		}
 ?>

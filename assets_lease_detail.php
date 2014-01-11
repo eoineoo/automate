@@ -168,7 +168,8 @@
 			echo "<td>" . $row['Model'] . "</td>";		
 			echo "<td>" . $row['Call Ref'] . "</td>";
 			echo "<td>" . $row['Last Email'] . "</td>";
-			echo "<td><a href=\"assets_contact_history.php?serial=" .$row['Serial'] . "\"><img src=\"images\\log.png\" /></a></td>";
+			#echo "<td><a href=\"assets_contact_history.php?serial=" .$row['Serial'] . "\"><img src=\"images\\log.png\" /></a></td>";
+			echo "<td><a href=javascript:window.open('assets_contact_history.php?serial=" .$row['Serial'] . "','Contact%20History','width=1024,height=450')><img src=\"images\\log.png\" /></a></td>";
 					
 		}
 ?>
