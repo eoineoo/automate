@@ -23,7 +23,7 @@
 		die_and_display('<div id="alert"><a class="alert">Connection failed: ' . htmlspecialchars(mysqli_connect_error()) . "</a></div>");			
 	}
 	
-	#Summary screen query
+	#Summary screen query - Needs to be done
 	$sselect = "SELECT purchase_order_number AS 'Invoice', FROM_UNIXTIME(purchase_date, \"%d %M %Y\") AS 'Purchased', FROM_UNIXTIME(warranty_expires_date, \"%d %M %Y\") AS 'ReturnOn', COUNT(model) AS 'Units', model ";
 	$sfrom = "FROM assets ";
 	$sjoin = "JOIN asset_details ON asset_details.id = assets.id AND purchase_order_number = '$invoice' ";
@@ -106,7 +106,7 @@
 			<tr>
 				<td width="30%">Lease Summary</td>
 				<td width="30%"><a href='assets_lease_task.php'>Mail Outstanding Users</a></td>
-				<td width="30%">View Contact History</td>
+				<?php echo "<td width=\"30%\"><a href='assets_contact_history_all.php?invoice=$invoice'>View Contact History</a></td>"; ?>
 			</tr>
 		</thead>
 	</table>
