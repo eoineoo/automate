@@ -1,20 +1,29 @@
 <?php 
 	
 	/**
-	 * Scheduled task: Get list of users who have not yet logged a call, send an email to each one, store record of this email in automate.contact and output to /logs/<current_timestamp>.txt
+	 * Get list of users who have not yet logged a call, send an email to each one, store record of this email in automate.contact, display results
 	 */
+	$pagetitle = "Contact Outstanding Users";
 	
+	include("layout/header.php");
 	include("inc/functions.php");
 	include("inc/PHPMailerAutoLoad.php");
 	
 	global $mail_counter;
 	
+	#Determine what invoice file was selected
+	if(isset($_GET['invoice']))	{
+			$invoice = $_GET['invoice'];		
+	}
+	else	{
+			$invoice = "";
+	}
+	
 	#Users who have not yet logged a call
 	$select = "SELECT serial_num AS 'Serial', owner AS 'Assigned To', email_address AS 'Email', status_level AS 'Status', callref as 'Call Ref', purchase_order_number AS 'Invoice' ";
 	$from 	= "FROM assets ";
 	$join 	= "LEFT OUTER JOIN opencall ON opencall.cust_name = assets.owner ";
-	#Will need to get the invoice rather than having it set here
-	$where 	= "WHERE purchase_order_number = '2011' AND callref IS NULL AND status_level = 'Assigned'";
+	$where 	= "WHERE purchase_order_number = '$invoice' AND callref IS NULL AND status_level = 'Assigned'";
 	$sql 	= $select . $from . $join . $where;
 	
 	$insert = "INSERT INTO contact(serial, purchase_order_number, owner, email, contents) VALUES (?, ?, ?, ?, ?)";
@@ -35,6 +44,8 @@
 	}
 	
 	$insertArray = array("","","","","","","");
+	
+	echo "<table cellpadding='5' cellspacing='10' border='1' class='hor-minimalist-a'>";
 	
 	#Get the email addresses for each result
 	while($row = mysqli_fetch_array($result))	{
@@ -57,9 +68,14 @@
 		
 		$mail_counter++;
 	}
-	echo "Total number of users mailed: " . $mail_counter;
+	
+	echo "</table>";
+	
+	echo "<p>Total number of users mailed: " . $mail_counter . "</p><br />";
 	
 	$stmt_insert->close();
 	mysqli_free_result($result);
+	
+	include("layout/footer.php");
 	
 ?>

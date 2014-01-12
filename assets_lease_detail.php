@@ -105,8 +105,10 @@
 			</tr>
 			<tr>
 				<td width="30%">Lease Summary</td>
-				<td width="30%"><a href='assets_lease_task.php'>Mail Outstanding Users</a></td>
-				<?php echo "<td width=\"30%\"><a href='assets_contact_history_all.php?invoice=$invoice'>View Contact History</a></td>"; ?>
+				<?php 
+					echo "<td width=\"30%\"><a href='assets_contact_users.php?invoice=$invoice' target=_blank>Mail Outstanding Users</a></td>";
+					echo "<td width=\"30%\"><a href='assets_contact_history_all.php?invoice=$invoice' target=_blank>View Contact History</a></td>"; 
+				?>
 			</tr>
 		</thead>
 	</table>

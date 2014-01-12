@@ -1,5 +1,28 @@
 <?php
 
+	#Write to file
+	function writeToFile($output)	{
+		
+		$logfile = "logs/". date('m.d.y') . ".txt";
+		#$output = "Add this to the file\r\n";
+
+		#Open file in append-mode
+		if (!$handle = fopen($logfile, 'a')) {
+			 echo "Cannot open file ($logfile)";
+			 exit;
+		}
+
+		#Write $output to our opened file.
+		if (fwrite($handle, $output) === FALSE) {
+			echo "Cannot write to file ($logfile)";
+			exit;
+		}
+
+		#echo "Success, wrote ($output) to file ($logfile)";
+
+		fclose($handle);
+	}
+
 	#Custom die() function to ensure that the page display is not broken when die() is called
 	function die_and_display($message) {
 		print $message;
@@ -12,6 +35,8 @@
 		
 		global $body; 
 		$body = 'Hello <b>' . $owner . '</b>. Your laptop (<b>' . $serial . '</b>) is due to be returned.</b>';
+		$time = date("H:i:s m.d.y");
+		$logfile = date("m.d.y") . ".txt";
 		
 		$message = new PHPMailer;
 
@@ -22,7 +47,6 @@
 		$message->Username = 'automatemailertest@gmail.com';
 		$message->Password = 'P@ssword13';
 		$message->SMTPSecure = 'tls';
-		#$message->SMTPDebug  = 2;
 		
 		$message->From = 'automatemailertest@gmail.com';
 		$message->FromName = 'Sender - Automate Emailer';
@@ -38,7 +62,12 @@
 			exit;
 		}
 		
-		echo 'Message sent to user: ' . $owner . ' (' . $address . ')<br />';
+		echo '<tr><td>Message sent to user: <b>' . $owner . '</b> (<b>' . $address . '</b>) @ ' . $time . '</td></tr>';
+
+		#Output for logfile
+		$output = "Message sent to user: $owner ($address) @ $time \r\n";
+			
+		writeToFile($output);
 		return $body;
 	}
 	

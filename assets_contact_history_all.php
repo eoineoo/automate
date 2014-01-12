@@ -52,6 +52,7 @@
 						"sSearch": "Search:"
 					},
 					//"bPaginate": false - leaving pagination on as I expect there to be lots and lots of entries in here eventually
+					"iDisplayLength": 50
 				} );
 				
 				$("thead input").keyup( function () {
