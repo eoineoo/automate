@@ -17,7 +17,7 @@
 	
 	$task_name = $invoice . " Lease Return - " . date('d.m.Y');
 	
-	$command = "cmd /c schtasks /create /tn \"$task_name\" /tr \"C:\\xampp\\php\\php.exe -f C:\\xampp\\htdocs\\automate\\assets_scheduled_task.php $invoice\" /sc weekly /d MON /st 08:00 /ed 31/01/2014 /ru IE\\emccrann";
+	$command = "cmd /c schtasks /create /tn \"$task_name\" /tr \"C:\\xampp\\php\\php.exe -f C:\\xampp\\htdocs\\automate\\assets_scheduled_task.php $invoice\" /sc weekly /d MON /st 08:00 /ed 31/01/2014 /ru SYSTEM";
 	#echo $command;
 	echo exec($command);
 	
