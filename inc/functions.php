@@ -3,9 +3,9 @@
 	#Write to file
 	function writeToFile($output)	{
 		
-		$logfile = "logs/". date('m.d.y') . ".txt";
-		#$output = "Add this to the file\r\n";
-
+		#Logfile name example: 12.01.2014.txt
+		$logfile = "logs/". date('d.m.Y') . ".txt";
+		
 		#Open file in append-mode
 		if (!$handle = fopen($logfile, 'a')) {
 			 echo "Cannot open file ($logfile)";
@@ -17,8 +17,6 @@
 			echo "Cannot write to file ($logfile)";
 			exit;
 		}
-
-		#echo "Success, wrote ($output) to file ($logfile)";
 
 		fclose($handle);
 	}
