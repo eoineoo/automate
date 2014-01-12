@@ -4,7 +4,7 @@
 	function writeToFile($output)	{
 		
 		#Logfile name example: 12.01.2014.txt
-		$logfile = "logs/". date('d.m.Y') . ".txt";
+		$logfile = "C:/xampp/htdocs/automate/logs/". date('d.m.Y') . ".txt";
 		
 		#Open file in append-mode
 		if (!$handle = fopen($logfile, 'a')) {

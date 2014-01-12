@@ -104,10 +104,11 @@
 				<th colspan="4">Control Panel</th>
 			</tr>
 			<tr>
-				<td width="30%">Lease Summary</td>
 				<?php 
-					echo "<td width=\"30%\"><a href='assets_contact_users.php?invoice=$invoice' target=_blank>Mail Outstanding Users</a></td>";
-					echo "<td width=\"30%\"><a href='assets_contact_history_all.php?invoice=$invoice' target=_blank>View Contact History</a></td>"; 
+					echo "<td width=\"25%\"><a href=#>Lease Summary</a></td>";
+					echo "<td width=\"25%\"><a href='assets_create_task.php?invoice=$invoice' target=_blank>Create Scheduled Task</td>";
+					echo "<td width=\"25%\"><a href='assets_contact_users.php?invoice=$invoice' target=_blank>Mail Outstanding Users</a></td>";
+					echo "<td width=\"25%\"><a href='assets_contact_history_all.php?invoice=$invoice' target=_blank>View Contact History</a></td>"; 
 				?>
 			</tr>
 		</thead>

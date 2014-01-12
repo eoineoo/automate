@@ -8,13 +8,14 @@
 	include("inc/PHPMailerAutoLoad.php");
 	
 	global $mail_counter;
+	$invoice = $argv[1];
 	
 	#Users who have not yet logged a call
 	$select = "SELECT serial_num AS 'Serial', owner AS 'Assigned To', email_address AS 'Email', status_level AS 'Status', callref as 'Call Ref', purchase_order_number AS 'Invoice' ";
 	$from 	= "FROM assets ";
 	$join 	= "LEFT OUTER JOIN opencall ON opencall.cust_name = assets.owner ";
 	#Will need to get the invoice rather than having it set here
-	$where 	= "WHERE purchase_order_number = '2011' AND callref IS NULL AND status_level = 'Assigned'";
+	$where 	= "WHERE purchase_order_number = $invoice AND callref IS NULL AND status_level = 'Assigned'";
 	$sql 	= $select . $from . $join . $where;
 	
 	$insert = "INSERT INTO contact(serial, purchase_order_number, owner, email, contents) VALUES (?, ?, ?, ?, ?)";
@@ -41,7 +42,6 @@
 		
 		#email address, owner name, serial
 		messageUser($row[2], $row[1], $row[0]);
-		#echo "Serial : " . $row[0] . ", PO: " . $row[5] . ", Owner: " . $row[1] . ", Email: " . $row[2] . ", Subject: [], Contents: [] <br />";
 		
 		$bp_insert = $stmt_insert->bind_param('sssss', $row[0], $row[5], $row[1], $row[2], $body);
 		
