@@ -33,8 +33,7 @@
 		
 		global $body; 
 		$body = 'Hello <b>' . $owner . '</b>. Your laptop (<b>' . $serial . '</b>) is due to be returned.</b>';
-		$time = date("H:i:s m.d.y");
-		$logfile = date("m.d.y") . ".txt";
+		$time = date("H:i:s d.m.y");
 		
 		$message = new PHPMailer;
 
