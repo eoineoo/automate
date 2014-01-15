@@ -9,7 +9,7 @@
 
 <!-- File upload form -->
 	<table width="600">
-		<form action="import_mdt_file_upload.php" method="post" enctype="multipart/form-data">
+		<form id="mdtForm" action="import_mdt_file_upload.php" method="post" enctype="multipart/form-data">
 		<!--<input type="hidden" name="MAX_FILE_SIZE" value="30000" />-->
 			<tr>
 				<td>Select file:</td>

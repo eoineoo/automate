@@ -9,8 +9,7 @@
 
 <!-- File upload form -->
 	<table width="600">
-		<form action="import_cmdb_file_upload.php" method="post" enctype="multipart/form-data">
-		<!--<input type="hidden" name="MAX_FILE_SIZE" value="30000" />-->
+		<form id="cmdbForm" action="import_cmdb_file_upload.php" method="post" enctype="multipart/form-data">
 			<tr>
 				<td>Select file:</td>
 				<td width="80%"><input type="file" name="file" id="file" /></td>
@@ -18,7 +17,7 @@
 
 			<tr>
 				<td>Description:</td>
-				<td width="80%"><textarea rows="3" cols="25" name="Description" /></textarea></td>
+				<td width="80%"><textarea rows="3" cols="25" id="comment "name="Description"></textarea></td>
 			</tr>
 			
 			<tr>
