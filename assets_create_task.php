@@ -17,7 +17,9 @@
 	
 	$task_name = $invoice . " Lease Return - " . date('d.m.Y');
 	
-	$command = "cmd /c schtasks /create /tn \"$task_name\" /tr \"C:\\xampp\\php\\php.exe -f C:\\xampp\\htdocs\\automate\\assets_scheduled_task.php $invoice\" /sc weekly /d MON /st 08:00 /ed 31/01/2014 /ru SYSTEM";
+	#When allowing user-supplied data to be passed to this function, use escapeshellarg() or escapeshellcmd() to ensure that users cannot trick the system into executing arbitrary commands.
+	#$command = "cmd /c schtasks /create /tn \"$task_name\" /tr \"C:\\xampp\\php\\php.exe -f C:\\xampp\\htdocs\\automate\\assets_scheduled_task.php $invoice\" /sc weekly /d MON /st 08:00 /ed 31/01/2014 /ru SYSTEM";
+	$command = "cmd /c schtasks /create /tn \"$task_name\" /tr \"C:\\xampp\\php\\php.exe -f C:\\xampp\\htdocs\\automate\\assets_scheduled_task.php $invoice\" /sc weekly /d MON /st 08:00 /ed 31/01/2014";
 	#echo $command;
 	echo exec($command);
 	

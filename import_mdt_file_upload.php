@@ -15,6 +15,7 @@
 			
 			#File Details
 			$user 			= 	"emccrann"; # Will capture currently logged-in user
+			$db_name		= 	"MDT";
 			$filename 		= 	$_FILES["file"]["name"];
 			$filetype 		= 	$_FILES["file"]["type"];
 			$allowed_types	=	array("text/comma-separated-values", "text/csv", "text/plain", "application/csv", "application/excel", "application/vnd.ms-excel", "application/vnd.msexcel", "application/txt", "text/anytext");
@@ -57,7 +58,7 @@
 				
 					#SQL Query
 					$tablename = "csv_details";
-					$sql = "INSERT INTO $tablename (orig_name, new_name, user, num_entries, description, url) VALUES (?, ?, ?, ?, ?, ?)";
+					$sql = "INSERT INTO $tablename (db_name, orig_name, new_name, user, num_entries, description, url) VALUES (?, ?, ?, ?, ?, ?, ?)";
 					
 					#Create and check prepared statement
 					$stmt = $mysqli->prepare($sql);
@@ -69,7 +70,7 @@
 					$csvData = array("","","","");
 					
 					#Bind parameters to the query and check for errors
-					$rc = $stmt->bind_param('sssiss', $filename, $new_filename, $user, $rows, $description, $path);
+					$rc = $stmt->bind_param('ssssiss', $db_name, $filename, $new_filename, $user, $rows, $description, $path);
 					if ( false === $rc )	{
 						die_and_display('Binding parameters failed: ' . htmlspecialchars($stmt->error));
 					}
