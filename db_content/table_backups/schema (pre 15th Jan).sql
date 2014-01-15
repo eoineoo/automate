@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 15, 2014 at 10:58 PM
+-- Generation Time: Dec 11, 2013 at 08:40 PM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.19
 
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `contact` (
   `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `contents` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=174 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 ;
 
 --
 -- Dumping data for table `contact`
@@ -70,7 +70,6 @@ INSERT INTO `contact` (`id`, `serial`, `purchase_order_number`, `owner`, `email`
 
 CREATE TABLE IF NOT EXISTS `csv_details` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `db_name` varchar(4) NOT NULL,
   `orig_name` varchar(255) NOT NULL,
   `new_name` varchar(255) NOT NULL,
   `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -80,7 +79,7 @@ CREATE TABLE IF NOT EXISTS `csv_details` (
   `url` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `user` (`user`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=32 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 ;
 
 --
 -- Dumping data for table `csv_details`
@@ -88,24 +87,6 @@ CREATE TABLE IF NOT EXISTS `csv_details` (
 
 INSERT INTO `csv_details` (`id`, `db_name`, `orig_name`, `new_name`, `timestamp`, `user`, `num_entries`, `description`, `url`) VALUES
 (1, 'CMDB', '_assets_hp.csv', 'cmdb_529ceb0c64297_assets_hp.csv', '2013-12-02 20:18:21', 'emccrann', 30, 'Original import of older assets', '/automate/csv/cmdb_529ceb0c64297_assets_hp.csv');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `scheduled_tasks`
---
-
-CREATE TABLE IF NOT EXISTS `scheduled_tasks` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL,
-  `invoice` varchar(255) NOT NULL,
-  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `start_date` datetime NOT NULL,
-  `end_date` datetime NOT NULL,
-  `schedule` varchar(255) NOT NULL,
-  `region` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 --
 -- Database: `swdata`
 --
@@ -199,7 +180,7 @@ CREATE TABLE IF NOT EXISTS `assets` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `serial_num_2` (`serial_num`),
   KEY `serial_num` (`serial_num`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=63 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 ;
 
 --
 -- Dumping data for table `assets`
