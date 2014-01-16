@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 15, 2014 at 10:58 PM
+-- Generation Time: Jan 16, 2014 at 08:54 PM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.19
 
@@ -21,6 +21,25 @@ SET time_zone = "+00:00";
 --
 CREATE DATABASE IF NOT EXISTS `automate` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `automate`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ajaxtest`
+--
+
+CREATE TABLE IF NOT EXISTS `ajaxtest` (
+  `id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `ajaxtest`
+--
+
+INSERT INTO `ajaxtest` (`id`) VALUES
+(123),
+(4534);
 
 -- --------------------------------------------------------
 
