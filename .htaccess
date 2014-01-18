@@ -3,6 +3,14 @@ DirectoryIndex main.php
 #http://net.tutsplus.com/tutorials/other/a-deeper-look-at-mod_rewrite-for-apache/
 RewriteEngine on 
 
-#   Input:  lease/NUMBER/  
-#   Output: lease_detail.php?invoice=NUMBER
-RewriteRule ^assets/(\w+)/?$ assets/lease_detail.php?invoice=$1 
+#   Input:  assets/2011/  
+#   Output: assets/lease_detail.php?invoice=2011
+RewriteRule ^assets/(\w+)/?$ assets/lease_detail.php?invoice=$1
+
+#   Input:  assets/2011/summary
+#   Output: lease_summary.php?invoice=2011
+RewriteRule ^assets/(\w+)/summary?$ assets/lease_summary.php?invoice=$1
+
+#   Input:  assets/view
+#   Output: view_leases.php
+#RewriteRule ^assets/view$ assets/view_leases.php [R]

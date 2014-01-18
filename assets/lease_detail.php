@@ -106,7 +106,7 @@
 			</tr>
 			<tr>
 				<?php 
-					echo "<td width=\"25%\"><a href=#>Lease Summary</a></td>";
+					echo "<td width=\"25%\"><a href='$invoice/summary'>Lease Summary</a></td>";
 					echo "<td width=\"25%\"><a href='create_task_form.php?invoice=$invoice' target=_blank>Create Scheduled Task</td>";
 					echo "<td width=\"25%\"><a href='contact_users.php?invoice=$invoice' target=_blank>Mail Outstanding Users</a></td>";
 					echo "<td width=\"25%\"><a href='contact_history_all.php?invoice=$invoice' target=_blank>View Contact History</a></td>"; 
