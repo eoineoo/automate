@@ -4,7 +4,7 @@
 	function writeToFile($output)	{
 		
 		#Logfile name example: 12.01.2014.txt
-		$logfile = "C:/xampp/htdocs/automate/logs/". date('d.m.Y') . ".txt";
+		$logfile = "C:/xampp/htdocs/automate/assets/logs/". date('d.m.Y') . ".txt";
 		
 		#Open file in append-mode
 		if (!$handle = fopen($logfile, 'a')) {
@@ -24,7 +24,7 @@
 	#Custom die() function to ensure that the page display is not broken when die() is called
 	function die_and_display($message) {
 		print $message;
-		include("layout/footer.php");
+		include("../inc/footer.php");
 		die();
 	}
 	
