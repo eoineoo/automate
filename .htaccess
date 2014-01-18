@@ -1,8 +1,8 @@
-DirectoryIndex main.html
+DirectoryIndex main.php
 
 #http://net.tutsplus.com/tutorials/other/a-deeper-look-at-mod_rewrite-for-apache/
 RewriteEngine on 
 
 #   Input:  lease/NUMBER/  
 #   Output: lease_detail.php?invoice=NUMBER
-RewriteRule ^assets/lease/(\w+)/?$ assets/lease_detail.php?invoice=$1 
+RewriteRule ^assets/(\w+)/?$ assets/lease_detail.php?invoice=$1 

@@ -40,7 +40,8 @@
 	while($row = mysqli_fetch_array($result))	{
 		
 		echo "<tr>";
-		echo "<td><a href = lease_detail.php?invoice=" . $row['Invoice'] . ">" . $row['Invoice'] . "</a></td>";
+		#echo "<td><a href = lease_detail.php?invoice=" . $row['Invoice'] . ">" . $row['Invoice'] . "</a></td>";
+		echo "<td><a href = " . $row['Invoice'] . ">" . $row['Invoice'] . "</a></td>";
 		echo "<td>" . $row['Purchased'] . "</td>";
 		echo "<td>" . $row['ReturnOn'] . "</td>";
 		echo "<td>" . $row['Units'] . "</td>";		
