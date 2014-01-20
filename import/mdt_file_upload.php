@@ -40,7 +40,7 @@
 				#Check the mimetype to see if it's a valid CSV file - additional security may be required
 				else if (!(in_array($filetype, $allowed_types)))	{
 					echo "File type <b>$filetype</b> is not allowed. Please upload a CSV file.";
-					header("refresh:8; url=form.php");
+					header("refresh:8; url=../");
 				}
 				else {
 					#Move the file to the /csv directory
@@ -87,8 +87,9 @@
 					$stmt->close();
 					
 					#Successful upload
-					echo "File uploaded successfully. Redirecting to review and import page.<br />Click <a href=mdt_display_csv.php?csv=$new_filename>here</a> if your browser does not redirect you automatically.";
-					header("refresh:3; url=mdt_display_csv.php?csv=$new_filename");
+					echo "File uploaded successfully. Redirecting to review and import page.<br />Click <a href=display-csv/$new_filename>here</a> if your browser does not redirect you automatically.";
+					#header("refresh:3; url=mdt_display_csv.php?csv=$new_filename");
+					header("refresh:3; url=display-csv/$new_filename");
 				}
 			}
 		} 

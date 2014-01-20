@@ -11,7 +11,7 @@
 	
 	#Determine what CSV file was selected
 	if(isset($_GET['csv']))	{
-			$csv = $_GET['csv'];		
+			$csv = $_GET['csv'] . ".csv";
 	}
 	else	{
 			$csv = "";
@@ -25,12 +25,21 @@
 	$parameter = $csv;
 	$runCMD = $psDir . $psApp . " " . $psScriptDir . $psScript . " " . $parameter . " 2>&1";
 	
+	#Debugging
+	/* echo $runCMD;
+	$output = shell_exec($runCMD);
+	echo( '<pre>' );
+	echo($output);
+	echo( '</pre>' );
+	exec($runCMD,$output);
+	var_dump($output); */
+	
 	#Execute command
-	exec($runCMD);
+	echo exec($runCMD);
 	
 	#Successful import, return to main page
-	echo "<div id=\"successfulImport\"><img src=\"..\images/success.png\" /> <b> Import successful.</div>";
-	header("refresh:8; url=main.php");
+	echo "<div id=\"successfulImport\"><img src=\"/automate/images/success.png\" /> <b> Import successful.</div>";
+	header("refresh:8; url=/automate/import");
 	
 	require_once("/../inc/footer.php");  
 	

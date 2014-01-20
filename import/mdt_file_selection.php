@@ -12,7 +12,7 @@
 
 <!-- File upload form -->
 	<table width="600">
-		<form id="mdtForm" action="mdt_file_upload.php" method="post" enctype="multipart/form-data">
+		<form id="mdtForm" action="mdt/file-upload" method="post" enctype="multipart/form-data">
 		<!--<input type="hidden" name="MAX_FILE_SIZE" value="30000" />-->
 			<tr>
 				<td>Select file:</td>

@@ -3,6 +3,10 @@ DirectoryIndex main.php
 #http://net.tutsplus.com/tutorials/other/a-deeper-look-at-mod_rewrite-for-apache/
 RewriteEngine on 
 
+#########################################################
+#Asset Management and Lease Returns Rules				#
+#########################################################
+
 #   Input:  assets/view
 #   Output: view_leases.php
 RewriteRule ^assets/lease/?$ assets/view_leases.php
@@ -30,3 +34,87 @@ RewriteRule ^assets/lease/(\w+)/history-all?$ assets/contact_history_all.php?inv
 #   Input:  assets/lease/0048KJ/history
 #   Output: contact_history.php?serial=0048KJ
 RewriteRule ^assets/lease/(\w+)/history?$ assets/contact_history.php?serial=$1
+
+#########################################################
+#Laptop Configuration and Application Installation Rules#
+#########################################################
+
+
+
+#########################################################
+#Data Upload and Import Rules			 				#
+#########################################################
+
+#   Input:  import/cmdb
+#   Output: cmdb_file_selection.php
+RewriteRule ^import/cmdb/?$ import/cmdb_file_selection.php
+
+#   Input:  import/cmdb/file-upload
+#   Output: cmdb_file_upload.php
+RewriteRule ^import/cmdb/file-upload/?$ import/cmdb_file_upload.php
+
+#   Input:  import/cmdb/display-csv/cmdb_52dd81b53b8bf_assets_lenovo.csv
+#   Output: cmdb_display_csv.php?csv=cmdb_52dd81b53b8bf_assets_lenovo.csv
+RewriteRule ^import/cmdb/display-csv/(\w+).csv/?$ import/cmdb_display_csv.php?csv=$1
+
+#   Input:  import/cmdb/execute/cmdb_52dd81b53b8bf_assets_lenovo.csv
+#   Output: cmdb_execute.php?csv=cmdb_52dd81b53b8bf_assets_lenovo.csv
+RewriteRule ^import/cmdb/execute/(\w+).csv/?$ import/cmdb_execute.php?csv=$1
+
+#   Input:  import/mdt
+#   Output: mdt_file_selection.php
+RewriteRule ^import/mdt/?$ import/mdt_file_selection.php
+
+#   Input:  import/mdt/file-upload
+#   Output: mdt_file_upload.php
+RewriteRule ^import/mdt/file-upload/?$ import/mdt_file_upload.php
+
+#   Input:  import/mdt/display-csv/mdt_52dd8987983b8bf_mdt_import.csv
+#   Output: mdt_display_csv.php?csv=mdt_52dd8987983b8bf_mdt_import.csv
+RewriteRule ^import/mdt/display-csv/(\w+).csv/?$ import/mdt_display_csv.php?csv=$1
+
+#   Input:  import/mdt/execute/mdt_52dd8987983b8bf_mdt_import.csv
+#   Output: mdt_execute.php?csv=mdt_52dd8987983b8bf_mdt_import.csv
+RewriteRule ^import/mdt/execute/(\w+).csv/?$ import/mdt_execute.php?csv=$1
+
+#########################################################
+#Administration Rules									#
+#########################################################
+
+#   Input:  admin/import-history
+#   Output: import_history.php
+RewriteRule ^admin/import-history/?$ admin/import_history.php
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

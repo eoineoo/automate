@@ -19,8 +19,8 @@
 <br />
 <table id="hor-minimalist-a" width="80%" border = 1>
 	<tr>
-		<td width="20%"><a href="import_history.php"><img src="../images/cmdb.png" /></a></td>
-		<td width="80%"><a href="import_history.php">Import History</a></td>		
+		<td width="20%"><a href="import-history"><img src="../images/cmdb.png" /></a></td>
+		<td width="80%"><a href="import-history">Import History</a></td>		
 	</tr>
 	
 	<tr>

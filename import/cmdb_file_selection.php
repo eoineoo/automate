@@ -3,7 +3,7 @@
 	/**
 	* Basic HTML form that sends file to uploader.php
 	*/
-	$pagetitle = "File Selection Form";
+	$pagetitle = "CMDB File Selection Form";
 	require_once("/../inc/config.php");  
 	require_once("/../inc/header.php"); 
 	require_once("/../inc/functions.php");
@@ -11,7 +11,7 @@
 
 <!-- File upload form -->
 	<table width="600">
-		<form id="cmdbForm" action="cmdb_file_upload.php" method="post" enctype="multipart/form-data">
+		<form id="cmdbForm" action="cmdb/file-upload" method="post" enctype="multipart/form-data">
 			<tr>
 				<td>Select file:</td>
 				<td width="80%"><input type="file" name="file" id="file" /></td>

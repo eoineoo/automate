@@ -12,7 +12,7 @@
 	
 	#Determine what CSV file was selected
 	if(isset($_GET['csv']))	{
-			$csv = $_GET['csv'];		
+			$csv = $_GET['csv'] . ".csv";
 	}
 	else	{
 			$csv = "test.csv";
@@ -62,7 +62,8 @@
 	}
 	
 	#Execute PHP import script
-	echo "<br /><h2><a href=\"mdt_execute.php?csv=$csv\">>> Import values <<</a></h2><br />";	
+	#echo "<br /><h2><a href=\"mdt_execute.php?csv=$csv.csv\">>> Import values <<</a></h2><br />";	
+	echo "<br /><h2><a href=\"../execute/$csv\">>> Import values <<</a></h2><br />";	
 	
 	require_once("/../inc/footer.php");  
 	

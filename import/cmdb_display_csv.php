@@ -13,7 +13,7 @@
 	
 	#Determine what CSV file was selected
 	if(isset($_GET['csv']))	{
-			$csv = $_GET['csv'];		
+			$csv = $_GET['csv'] . ".csv";
 	}
 	else	{
 			$csv = "test.csv";
@@ -45,7 +45,7 @@
 				<td>comp_name</td>
 				<td>purchase_order_number</td>
 				<td>asset_tag</td>
-				<td>cmdb_status</td>
+				<td>status</td>
 				<td>purchase_date</td>
 				<td>warranty_expires_date</td>
 				<td>model</td>
@@ -84,7 +84,8 @@
 	}
 	
 	#Execute PHP import script
-	echo "<br /><h2><a href=\"cmdb_execute.php?csv=$csv\">>> Import values <<</a></h2><br />";	
+	#echo "<br /><h2><a href=\"cmdb_execute.php?csv=$csv\">>> Import values <<</a></h2><br />";	
+	echo "<br /><h2><a href=\"../execute/$csv\">>> Import values <<</a></h2><br />";	
 	
 	require_once("/../inc/footer.php");
 	
