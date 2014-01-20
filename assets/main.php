@@ -15,8 +15,9 @@
 <br />
 <table id="hor-minimalist-a" width="80%" border = 1>
 	<tr>
-		<td width="20%"><a href="view_leases.php"><img src="../images/cmdb.png" /></a></td>
-		<td width="80%"><a href="view_leases.php">View Lease Detail</a></td>		
+		<!-- <td width="20%"><a href="view_leases.php"><img src="../images/cmdb.png" /></a></td> -->
+		<td width="20%"><a href="lease"><img src="../images/cmdb.png" /></a></td>
+		<td width="80%"><a href="lease">View Lease Detail</a></td>		
 	</tr>
 	
 	<tr>

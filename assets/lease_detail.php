@@ -107,9 +107,9 @@
 			<tr>
 				<?php 
 					echo "<td width=\"25%\"><a href='$invoice/summary'>Lease Summary</a></td>";
-					echo "<td width=\"25%\"><a href='create_task_form.php?invoice=$invoice' target=_blank>Create Scheduled Task</td>";
-					echo "<td width=\"25%\"><a href='contact_users.php?invoice=$invoice' target=_blank>Mail Outstanding Users</a></td>";
-					echo "<td width=\"25%\"><a href='contact_history_all.php?invoice=$invoice' target=_blank>View Contact History</a></td>"; 
+					echo "<td width=\"25%\"><a href='$invoice/schedule' target=_blank>Create Scheduled Task</td>";
+					echo "<td width=\"25%\"><a href='$invoice/contact' target=_blank>Mail Outstanding Users</a></td>";
+					echo "<td width=\"25%\"><a href='$invoice/history-all' target=_blank>View Contact History</a></td>"; 
 				?>
 			</tr>
 		</thead>
@@ -172,7 +172,7 @@
 			echo "<td>" . $row['Model'] . "</td>";		
 			echo "<td>" . $row['Call Ref'] . "</td>";
 			echo "<td>" . $row['Last Email'] . "</td>";
-			echo "<td><a href=javascript:window.open('contact_history.php?serial=" .$row['Serial'] . "','Contact%20History','width=1024,height=450')><img src=\"..\\images\\log.png\" /></a></td>";
+			echo "<td><a href=javascript:window.open('/automate/assets/lease/" .$row['Serial'] . "/history','Contact%20History','width=1024,height=450')><img src=\"..\\..\\images\\log.png\" /></a></td>";
 					
 		}
 ?>

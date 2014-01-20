@@ -3,14 +3,30 @@ DirectoryIndex main.php
 #http://net.tutsplus.com/tutorials/other/a-deeper-look-at-mod_rewrite-for-apache/
 RewriteEngine on 
 
-#   Input:  assets/2011/  
-#   Output: assets/lease_detail.php?invoice=2011
-RewriteRule ^assets/(\w+)/?$ assets/lease_detail.php?invoice=$1
-
-#   Input:  assets/2011/summary
-#   Output: lease_summary.php?invoice=2011
-RewriteRule ^assets/(\w+)/summary?$ assets/lease_summary.php?invoice=$1
-
 #   Input:  assets/view
 #   Output: view_leases.php
-#RewriteRule ^assets/view$ assets/view_leases.php [R]
+RewriteRule ^assets/lease/?$ assets/view_leases.php
+
+#   Input:  assets/lease/2011/  
+#   Output: assets/lease_detail.php?invoice=2011
+RewriteRule ^assets/lease/(\w+)/?$ assets/lease_detail.php?invoice=$1
+
+#   Input:  assets/lease/2011/summary
+#   Output: lease_summary.php?invoice=2011
+RewriteRule ^assets/lease/(\w+)/summary?$ assets/lease_summary.php?invoice=$1
+
+#   Input:  assets/lease/2011/schedule
+#   Output: create_task_form.php?invoice=2011
+RewriteRule ^assets/lease/(\w+)/schedule?$ assets/create_task_form.php?invoice=$1
+
+#   Input:  assets/lease/2011/contact
+#   Output: contact_users.php?invoice=2011
+RewriteRule ^assets/lease/(\w+)/contact?$ assets/contact_users.php?invoice=$1
+
+#   Input:  assets/lease/2011/history-all
+#   Output: contact_history_all.php?invoice=2011
+RewriteRule ^assets/lease/(\w+)/history-all?$ assets/contact_history_all.php?invoice=$1
+
+#   Input:  assets/lease/0048KJ/history
+#   Output: contact_history.php?serial=0048KJ
+RewriteRule ^assets/lease/(\w+)/history?$ assets/contact_history.php?serial=$1
