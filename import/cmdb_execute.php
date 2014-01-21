@@ -33,10 +33,10 @@
 	$mysqli = mysqli_connect("localhost", "root", "", "swdata");
 	
 	#SQL Query
-	$tablename_cmdb        = "assets";
-	$tablename_hdw        = "asset_details";
-	$sql_cmdb                 = "INSERT INTO $tablename_cmdb(impacted, deactivated, faulty, baseline, urgency_level, activebaseline, impact_level, manufacturer, hardware_type, serial_num, username, status_level, owner, active, comp_name, purchase_order_number, asset_tag, cmdb_status, purchase_date, warranty_expires_date) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-	$sql_hdw                = "INSERT INTO $tablename_hdw(id, serial, name, model, it_owner, it_admin, encryption_level) VALUES (?, ?, ?, ?, ?, ?, ?)";
+	$tablename_cmdb	= "assets";
+	$tablename_hdw  = "asset_details";
+	$sql_cmdb       = "INSERT INTO $tablename_cmdb(impacted, deactivated, faulty, baseline, urgency_level, activebaseline, impact_level, manufacturer, hardware_type, serial_num, username, status_level, owner, active, comp_name, purchase_order_number, asset_tag, cmdb_status, purchase_date, warranty_expires_date) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+	$sql_hdw        = "INSERT INTO $tablename_hdw(id, serial, name, model, it_owner, it_admin, encryption_level) VALUES (?, ?, ?, ?, ?, ?, ?)";
 	
 	#Create the prepared statement
 	$stmt_cmdb         = $mysqli->prepare($sql_cmdb);
