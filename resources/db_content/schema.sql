@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 16, 2014 at 08:54 PM
+-- Generation Time: Jan 21, 2014 at 09:05 PM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.19
 
@@ -117,12 +117,12 @@ INSERT INTO `csv_details` (`id`, `db_name`, `orig_name`, `new_name`, `timestamp`
 CREATE TABLE IF NOT EXISTS `scheduled_tasks` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
-  `invoice` varchar(255) NOT NULL,
+  `invoice` varchar(10) NOT NULL,
   `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `start_date` datetime NOT NULL,
-  `end_date` datetime NOT NULL,
-  `schedule` varchar(255) NOT NULL,
-  `region` varchar(255) NOT NULL,
+  `schedule` varchar(7) NOT NULL,
+  `day` varchar(3) NOT NULL,
+  `start_date` date NOT NULL,
+  `end_date` date NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 --

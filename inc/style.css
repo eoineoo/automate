@@ -32,6 +32,13 @@ div#banner {
 	margin: -100px auto 0;
 	width: 1000px;
 }
+#scheduledTaskForm	{
+	width: 500px;
+}
+h2.scheduledTaskForm	{
+	padding:0 0 10px 0;
+}
+
 /* Row highlighting */
 tr.row_call_logged	{
 	background-color:orange;

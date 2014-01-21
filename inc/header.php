@@ -2,7 +2,7 @@
 	<head>
 		<?php echo "<title>Automate - $pagetitle</title>"; ?>
 		<link rel="stylesheet" type="text/css" href="http://localhost/automate/inc/style.css">
-		<script type="text/javascript" src="http://localhost/automate/resources/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="http://localhost/automate/resources/jquery.js"></script>
 	</head>
 	
 	<body>
