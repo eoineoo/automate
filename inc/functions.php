@@ -1,6 +1,6 @@
 <?php
 
-	#Write to file
+	#Write to a log file
 	function writeToFile($output)	{
 		
 		#Logfile name example: 12.01.2014.txt
