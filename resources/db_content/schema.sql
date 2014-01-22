@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 21, 2014 at 09:05 PM
+-- Generation Time: Jan 22, 2014 at 09:47 PM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.19
 
@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `contact` (
   `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `contents` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=174 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=191 ;
 
 --
 -- Dumping data for table `contact`
@@ -79,7 +79,24 @@ INSERT INTO `contact` (`id`, `serial`, `purchase_order_number`, `owner`, `email`
 (153, '0513KI', '2011', 'Calvin Mercado', 'eoinmc@gmail.com', '2013-12-11 19:37:19', 'Hello <b>Calvin Mercado</b>. Your laptop (<b>0513KI</b>) is due to be returned.</b>'),
 (154, '0515VW', '2011', 'Kennan Randolph', 'eoinmc@gmail.com', '2013-12-11 19:37:20', 'Hello <b>Kennan Randolph</b>. Your laptop (<b>0515VW</b>) is due to be returned.</b>'),
 (155, '9384QQ', '2011', 'Macaulay Bradley', 'eoinmc@gmail.com', '2013-12-11 19:37:21', 'Hello <b>Macaulay Bradley</b>. Your laptop (<b>9384QQ</b>) is due to be returned.</b>'),
-(156, '7739AH', '2011', 'Kenneth Wolf', 'eoinmc@gmail.com', '2013-12-11 19:37:22', 'Hello <b>Kenneth Wolf</b>. Your laptop (<b>7739AH</b>) is due to be returned.</b>');
+(156, '7739AH', '2011', 'Kenneth Wolf', 'eoinmc@gmail.com', '2013-12-11 19:37:22', 'Hello <b>Kenneth Wolf</b>. Your laptop (<b>7739AH</b>) is due to be returned.</b>'),
+(174, '0048KJ', '2011', 'Xander Dixon', 'eoinmc@gmail.com', '2014-01-22 18:42:14', 'Hello <b>Xander Dixon</b>. Your laptop (<b>0048KJ</b>) is due to be returned.</b>'),
+(175, '2048HV', '2011', 'Melvin Acevedo', 'eoinmc@gmail.com', '2014-01-22 18:42:15', 'Hello <b>Melvin Acevedo</b>. Your laptop (<b>2048HV</b>) is due to be returned.</b>'),
+(176, '2992LK', '2011', 'Rafael Carson', 'eoinmc@gmail.com', '2014-01-22 18:42:16', 'Hello <b>Rafael Carson</b>. Your laptop (<b>2992LK</b>) is due to be returned.</b>'),
+(177, '8377JX', '2011', 'Kareem Whitley', 'eoinmc@gmail.com', '2014-01-22 18:42:17', 'Hello <b>Kareem Whitley</b>. Your laptop (<b>8377JX</b>) is due to be returned.</b>'),
+(178, '2011XB', '2011', 'Nash Sanders', 'eoinmc@gmail.com', '2014-01-22 18:42:18', 'Hello <b>Nash Sanders</b>. Your laptop (<b>2011XB</b>) is due to be returned.</b>'),
+(179, '7213GR', '2011', 'Leo Kennedy', 'eoin.mccrann@kpmg.ie', '2014-01-22 18:42:20', 'Hello <b>Leo Kennedy</b>. Your laptop (<b>7213GR</b>) is due to be returned.</b>'),
+(180, '2302AC', '2011', 'Harper Poole', 'eoinmc@gmail.com', '2014-01-22 18:42:21', 'Hello <b>Harper Poole</b>. Your laptop (<b>2302AC</b>) is due to be returned.</b>'),
+(181, '8606KY', '2011', 'Patrick Cole', 'eoinmc@gmail.com', '2014-01-22 18:42:22', 'Hello <b>Patrick Cole</b>. Your laptop (<b>8606KY</b>) is due to be returned.</b>'),
+(182, '2051EO', '2011', 'Damian Alvarado', 'eoinmc@gmail.com', '2014-01-22 18:42:23', 'Hello <b>Damian Alvarado</b>. Your laptop (<b>2051EO</b>) is due to be returned.</b>'),
+(183, '3761YV', '2011', 'Eric Beach', 'eoinmc@gmail.com', '2014-01-22 18:42:24', 'Hello <b>Eric Beach</b>. Your laptop (<b>3761YV</b>) is due to be returned.</b>'),
+(184, '6755SM', '2011', 'Gregory Ayers', 'eoinmc@gmail.com', '2014-01-22 18:42:26', 'Hello <b>Gregory Ayers</b>. Your laptop (<b>6755SM</b>) is due to be returned.</b>'),
+(185, '3001YJ', '2011', 'Wyatt Acevedo', 'eoinmc@gmail.com', '2014-01-22 18:42:27', 'Hello <b>Wyatt Acevedo</b>. Your laptop (<b>3001YJ</b>) is due to be returned.</b>'),
+(186, '4278IL', '2011', 'Vernon Eaton', 'eoinmc@gmail.com', '2014-01-22 18:42:28', 'Hello <b>Vernon Eaton</b>. Your laptop (<b>4278IL</b>) is due to be returned.</b>'),
+(187, '0513KI', '2011', 'Calvin Mercado', 'eoinmc@gmail.com', '2014-01-22 18:42:29', 'Hello <b>Calvin Mercado</b>. Your laptop (<b>0513KI</b>) is due to be returned.</b>'),
+(188, '0515VW', '2011', 'Kennan Randolph', 'eoinmc@gmail.com', '2014-01-22 18:42:31', 'Hello <b>Kennan Randolph</b>. Your laptop (<b>0515VW</b>) is due to be returned.</b>'),
+(189, '9384QQ', '2011', 'Macaulay Bradley', 'eoinmc@gmail.com', '2014-01-22 18:42:32', 'Hello <b>Macaulay Bradley</b>. Your laptop (<b>9384QQ</b>) is due to be returned.</b>'),
+(190, '7739AH', '2011', 'Kenneth Wolf', 'eoinmc@gmail.com', '2014-01-22 18:42:33', 'Hello <b>Kenneth Wolf</b>. Your laptop (<b>7739AH</b>) is due to be returned.</b>');
 
 -- --------------------------------------------------------
 
@@ -116,15 +133,24 @@ INSERT INTO `csv_details` (`id`, `db_name`, `orig_name`, `new_name`, `timestamp`
 
 CREATE TABLE IF NOT EXISTS `scheduled_tasks` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `invoice` varchar(10) NOT NULL,
   `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `schedule` varchar(7) NOT NULL,
   `day` varchar(3) NOT NULL,
-  `start_date` date NOT NULL,
-  `end_date` date NOT NULL,
+  `run_time` varchar(255) NOT NULL,
+  `start_date` varchar(255) NOT NULL,
+  `end_date` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=113 ;
+
+--
+-- Dumping data for table `scheduled_tasks`
+--
+
+INSERT INTO `scheduled_tasks` (`id`, `user`, `name`, `invoice`, `timestamp`, `schedule`, `day`, `run_time`, `start_date`, `end_date`) VALUES
+(112, 'emccrann', '2011 Lease Return - 22.01.2014', '2011', '2014-01-22 21:44:59', 'weekly', 'MON', '', '', '');
 --
 -- Database: `swdata`
 --
