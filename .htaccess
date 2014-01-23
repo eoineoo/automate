@@ -35,6 +35,10 @@ RewriteRule ^assets/lease/(\w+)/history-all?$ assets/contact_history_all.php?inv
 #   Output: contact_history.php?serial=0048KJ
 RewriteRule ^assets/lease/(\w+)/history?$ assets/contact_history.php?serial=$1
 
+#   Input:  assets/search
+#   Output: search_assets.php
+RewriteRule ^assets/search/?$ assets/search_assets.php
+
 #########################################################
 #Laptop Configuration and Application Installation Rules#
 #########################################################

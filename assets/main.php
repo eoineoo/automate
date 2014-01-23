@@ -26,8 +26,8 @@
 	</tr>
 	
 	<tr>
-		<td width="90"><a href="#"><img src="../images/search.png" /></a></td>
-		<td><a href="#">Search</a></td>
+		<td width="90"><a href="search"><img src="../images/search.png" /></a></td>
+		<td><a href="search">Search</a></td>
 	</tr>
 	
 	<tr>

@@ -110,6 +110,33 @@ table.hor-minimalist-a a
 {
 	display:block;
 	text-decoration:none;
+}table.hor-minimalist-b a
+{
+	display:block;
+	text-decoration:none;
+}
+table.hor-minimalist-b
+{
+	font-size: 12px;
+	background: #fff;
+	margin: 5px;
+	width: 75%;
+	border-collapse: collapse;
+	text-align: center;
+}
+table.hor-minimalist-b td
+{
+	padding: 5px 5px 0px 5px; /*top, right, bottom, left */
+}
+table.hor-minimalist-b a
+{
+	display:block;
+	text-decoration:none;
+}
+/* Extra space between rows: <tr class=spaceUnder>*/
+tr.spaceUnder > td
+{
+  padding: 10px 10px 5em 10px;
 }
 
 /* DataTables */
