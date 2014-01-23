@@ -24,14 +24,6 @@
 		die_and_display('<div id="alert"><a class="alert">Connection failed: ' . htmlspecialchars(mysqli_connect_error()) . "</a></div>");			
 	}
 	
-	#Summary screen query - Needs to be done
-	$sselect = "SELECT purchase_order_number AS 'Invoice', FROM_UNIXTIME(purchase_date, \"%d %M %Y\") AS 'Purchased', FROM_UNIXTIME(warranty_expires_date, \"%d %M %Y\") AS 'ReturnOn', COUNT(model) AS 'Units', model ";
-	$sfrom = "FROM assets ";
-	$sjoin = "JOIN asset_details ON asset_details.id = assets.id AND purchase_order_number = '$invoice' ";
-	$sgroup = "GROUP BY model ";
-	$sorder = "ORDER BY purchase_order_number DESC";
-	$ssql = $sselect . $sfrom . $sjoin . $sgroup . $sorder;
-	
 	#Main Query - multiple databases
 	$select		=  	"SELECT DISTINCT(serial_num) AS 'Serial', last_logon AS 'Last Logon', username AS 'Last User', a.owner AS 'Assigned To', status_level AS 'Status', model as 'Model', callref as 'Call Ref', MAX(timestamp) AS 'Last Email' ";
 	$from		= 	"FROM swdata.assets a ";
@@ -107,7 +99,7 @@
 			<tr>
 				<?php 
 					echo "<td width=\"25%\"><a href='$invoice/summary'>Lease Summary</a></td>";
-					echo "<td width=\"25%\"><a href='$invoice/schedule' target=_blank>Create Scheduled Task</td>";
+					echo "<td width=\"25%\"><a href='$invoice/schedule'>Create Scheduled Task</td>";
 					echo "<td width=\"25%\"><a href='$invoice/contact' target=_blank>Mail Outstanding Users</a></td>";
 					echo "<td width=\"25%\"><a href='$invoice/history-all' target=_blank>View Contact History</a></td>"; 
 				?>

@@ -1,5 +1,10 @@
 <?php
 
+	/**
+	 * HTML form that posts information to create_task.php which creates a Scheduled Task on the server to email outstanding users
+	 * This page uses JQuery to post information and get the result back without the page having to reload
+	 */
+
 	$pagetitle = "Create Scheduled Task";
 	require_once("/../inc/config.php");  
 	require_once("/../inc/header.php");  
@@ -22,15 +27,17 @@
 	//http://blog.theonlytutorials.com/insert-show-records-jquery-ajax-php/
     $(function(){
         $('#insert').click(function(){
-            var jSchedule = $('#schedule').val();
-			var jDayToRun = $('#dayToRun').val();
+            
+			var jInvoice = $('#invoice').val();
+			var jSchedule = $('#schedule').val();
 			var jTimeToRun = $('#timeToRun').val();
 			var jStartDate = $('#startDate').val();
 			var jEndDate = $('#endDate').val();
 			
-            $.post('/automate/assets/create_task.php',{action: "insert", schedule:jSchedule, dayToRun:jDayToRun, timeToRun:jTimeToRun, startDate:jStartDate, endDate:jEndDate},function(res){
+			$.post('/automate/assets/create_task.php',{action: "insert", invoice:jInvoice, schedule:jSchedule, timeToRun:jTimeToRun, startDate:jStartDate, endDate:jEndDate},function(res){
                 $('#result').html(res);				
-            }); 
+            }); 			
+			
         });
     });
 
@@ -41,44 +48,40 @@
 		$('#endDate').datepicker({ dateFormat: "dd/mm/yy", minDate: 1 });
 	});
 	
-	//Disable the submit button after being clicked once
-	/* function disableFunction() {
+	//Disable all inputs after selecting the insert button
+	function disableFunction() {
+		document.getElementById("schedule").disabled = 'true';
+		document.getElementById("timeToRun").disabled = 'true';
+		document.getElementById("startDate").disabled = 'true';
+		document.getElementById("endDate").disabled = 'true';
 		document.getElementById("insert").disabled = 'true';
-	} */
+	}
 </script>
 </head>
 <body>
 	
 	<div style="width: 60%;">
 		<h2 class="scheduledTaskForm">Create Scheduled Task</h2>
-		<div class="alert-box warning"><span>warning: </span>This form creates a Scheduled Task that executes a PHP script that emails ALL USERS who have a laptop in the selected lease and have not yet logged a call to upgrade their laptop.</div>
-		<p style="color:red; font-weight:bold;">All fields are required. Use with caution.</p>
+		<div class="alert-box warning"><span>warning: </span>This form creates a Scheduled Task that executes a PHP script that emails ALL USERS who have a laptop in the selected lease and have not yet logged a call to be upgraded.<br />All fields are required. Use with caution! Reload the page if your task is not created.</div>
 	</div>
 	
 	<div id="scheduledTaskForm">
 	
-		<table id="hor-minimalist-a" style="border: 1px solid black;">
+		<table id="hor-minimalist-a" style="border: 1px solid black; width: 58%">
 		
 			<tr>
-				<td>Schedule:</td>
+				<td>Invoice:</td>
 				<td>	
-					<select name = "schedule" id = "schedule">
-						<option selected="selected" value = "weekly">Weekly</option>
-						<option value = "monthly">Monthly</option>
-						<option value = "once">Once</option>
-					</select>
+					<input type="text" id="invoice" name="invoice" disabled="disabled" value="<?php echo $invoice ?>"></td>
 				</td>
 			</tr>
 			
 			<tr>
-				<td>Day To Run:</td>
-				<td>
-					<select name = "dayToRun" id = "dayToRun">
-						<option value = "MON">Monday</option>
-						<option value = "TUE">Tuesday</option>
-						<option value = "WED">Wednesday</option>
-						<option value = "THU">Thursday</option>
-						<option value = "FRI">Friday</option>						
+				<td>Schedule:</td>
+				<td>	
+					<select name="schedule" id="schedule" style="width:150;">
+						<option selected="selected" value = "weekly">Weekly</option>
+						<option value = "monthly">Monthly</option>						
 					</select>
 				</td>
 			</tr>
@@ -106,8 +109,8 @@
 	
 	</div>
 
-<!-- Div to display the result of our operation --> 
-<div id="result" style="width: 60%;"></div>
+	<!-- Div to display the result of our operation --> 
+	<div id="result" style="width: 60%;"></div>
 
 </body>
 

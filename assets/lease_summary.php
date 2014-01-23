@@ -34,7 +34,7 @@
 	$sql 	= $select . $from . $join . $group . $order;
 	
 	$result = mysqli_query($connection, $sql);
-	
+
 ?>
 
 <html>

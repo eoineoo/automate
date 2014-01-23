@@ -33,7 +33,7 @@ div#banner {
 	width: 1000px;
 }
 #scheduledTaskForm	{
-	width: 500px;
+
 }
 h2.scheduledTaskForm	{
 	padding:0 0 10px 0;
@@ -200,6 +200,6 @@ td.last {
 	border:1px solid #f5aca6;
 }
 .success {
-	background:#e9ffd9 url('../images/success.png') no-repeat 10px 50%;
+	background:#e9ffd9 url('../images/success_small.png') no-repeat 10px 50%;
 	border:1px solid #a6ca8a;
 }

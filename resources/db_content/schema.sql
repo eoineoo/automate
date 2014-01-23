@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 22, 2014 at 09:47 PM
+-- Generation Time: Jan 23, 2014 at 09:06 PM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.19
 
@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `contact` (
   `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `contents` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=191 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=208 ;
 
 --
 -- Dumping data for table `contact`
@@ -96,7 +96,24 @@ INSERT INTO `contact` (`id`, `serial`, `purchase_order_number`, `owner`, `email`
 (187, '0513KI', '2011', 'Calvin Mercado', 'eoinmc@gmail.com', '2014-01-22 18:42:29', 'Hello <b>Calvin Mercado</b>. Your laptop (<b>0513KI</b>) is due to be returned.</b>'),
 (188, '0515VW', '2011', 'Kennan Randolph', 'eoinmc@gmail.com', '2014-01-22 18:42:31', 'Hello <b>Kennan Randolph</b>. Your laptop (<b>0515VW</b>) is due to be returned.</b>'),
 (189, '9384QQ', '2011', 'Macaulay Bradley', 'eoinmc@gmail.com', '2014-01-22 18:42:32', 'Hello <b>Macaulay Bradley</b>. Your laptop (<b>9384QQ</b>) is due to be returned.</b>'),
-(190, '7739AH', '2011', 'Kenneth Wolf', 'eoinmc@gmail.com', '2014-01-22 18:42:33', 'Hello <b>Kenneth Wolf</b>. Your laptop (<b>7739AH</b>) is due to be returned.</b>');
+(190, '7739AH', '2011', 'Kenneth Wolf', 'eoinmc@gmail.com', '2014-01-22 18:42:33', 'Hello <b>Kenneth Wolf</b>. Your laptop (<b>7739AH</b>) is due to be returned.</b>'),
+(191, '0048KJ', '2011', 'Xander Dixon', 'eoinmc@gmail.com', '2014-01-23 20:25:31', 'Hello <b>Xander Dixon</b>. Your laptop (<b>0048KJ</b>) is due to be returned.</b>'),
+(192, '2048HV', '2011', 'Melvin Acevedo', 'eoinmc@gmail.com', '2014-01-23 20:25:33', 'Hello <b>Melvin Acevedo</b>. Your laptop (<b>2048HV</b>) is due to be returned.</b>'),
+(193, '2992LK', '2011', 'Rafael Carson', 'eoinmc@gmail.com', '2014-01-23 20:25:34', 'Hello <b>Rafael Carson</b>. Your laptop (<b>2992LK</b>) is due to be returned.</b>'),
+(194, '8377JX', '2011', 'Kareem Whitley', 'eoinmc@gmail.com', '2014-01-23 20:25:36', 'Hello <b>Kareem Whitley</b>. Your laptop (<b>8377JX</b>) is due to be returned.</b>'),
+(195, '2011XB', '2011', 'Nash Sanders', 'eoinmc@gmail.com', '2014-01-23 20:25:37', 'Hello <b>Nash Sanders</b>. Your laptop (<b>2011XB</b>) is due to be returned.</b>'),
+(196, '7213GR', '2011', 'Leo Kennedy', 'eoin.mccrann@kpmg.ie', '2014-01-23 20:25:39', 'Hello <b>Leo Kennedy</b>. Your laptop (<b>7213GR</b>) is due to be returned.</b>'),
+(197, '2302AC', '2011', 'Harper Poole', 'eoinmc@gmail.com', '2014-01-23 20:25:40', 'Hello <b>Harper Poole</b>. Your laptop (<b>2302AC</b>) is due to be returned.</b>'),
+(198, '8606KY', '2011', 'Patrick Cole', 'eoinmc@gmail.com', '2014-01-23 20:25:41', 'Hello <b>Patrick Cole</b>. Your laptop (<b>8606KY</b>) is due to be returned.</b>'),
+(199, '2051EO', '2011', 'Damian Alvarado', 'eoinmc@gmail.com', '2014-01-23 20:25:42', 'Hello <b>Damian Alvarado</b>. Your laptop (<b>2051EO</b>) is due to be returned.</b>'),
+(200, '3761YV', '2011', 'Eric Beach', 'eoinmc@gmail.com', '2014-01-23 20:25:43', 'Hello <b>Eric Beach</b>. Your laptop (<b>3761YV</b>) is due to be returned.</b>'),
+(201, '6755SM', '2011', 'Gregory Ayers', 'eoinmc@gmail.com', '2014-01-23 20:25:44', 'Hello <b>Gregory Ayers</b>. Your laptop (<b>6755SM</b>) is due to be returned.</b>'),
+(202, '3001YJ', '2011', 'Wyatt Acevedo', 'eoinmc@gmail.com', '2014-01-23 20:25:45', 'Hello <b>Wyatt Acevedo</b>. Your laptop (<b>3001YJ</b>) is due to be returned.</b>'),
+(203, '4278IL', '2011', 'Vernon Eaton', 'eoinmc@gmail.com', '2014-01-23 20:25:46', 'Hello <b>Vernon Eaton</b>. Your laptop (<b>4278IL</b>) is due to be returned.</b>'),
+(204, '0513KI', '2011', 'Calvin Mercado', 'eoinmc@gmail.com', '2014-01-23 20:25:47', 'Hello <b>Calvin Mercado</b>. Your laptop (<b>0513KI</b>) is due to be returned.</b>'),
+(205, '0515VW', '2011', 'Kennan Randolph', 'eoinmc@gmail.com', '2014-01-23 20:25:49', 'Hello <b>Kennan Randolph</b>. Your laptop (<b>0515VW</b>) is due to be returned.</b>'),
+(206, '9384QQ', '2011', 'Macaulay Bradley', 'eoinmc@gmail.com', '2014-01-23 20:25:50', 'Hello <b>Macaulay Bradley</b>. Your laptop (<b>9384QQ</b>) is due to be returned.</b>'),
+(207, '7739AH', '2011', 'Kenneth Wolf', 'eoinmc@gmail.com', '2014-01-23 20:25:52', 'Hello <b>Kenneth Wolf</b>. Your laptop (<b>7739AH</b>) is due to be returned.</b>');
 
 -- --------------------------------------------------------
 
@@ -116,14 +133,15 @@ CREATE TABLE IF NOT EXISTS `csv_details` (
   `url` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `user` (`user`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=32 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=33 ;
 
 --
 -- Dumping data for table `csv_details`
 --
 
 INSERT INTO `csv_details` (`id`, `db_name`, `orig_name`, `new_name`, `timestamp`, `user`, `num_entries`, `description`, `url`) VALUES
-(1, 'CMDB', '_assets_hp.csv', 'cmdb_529ceb0c64297_assets_hp.csv', '2013-12-02 20:18:21', 'emccrann', 30, 'Original import of older assets', '/automate/csv/cmdb_529ceb0c64297_assets_hp.csv');
+(1, 'CMDB', '_assets_hp.csv', 'cmdb_529ceb0c64297_assets_hp.csv', '2013-12-02 20:18:21', 'emccrann', 30, 'Original import of older assets', '/automate/csv/cmdb_529ceb0c64297_assets_hp.csv'),
+(32, 'CMDB', '_assets_dell.csv', 'cmdb_52e17480684f1_assets_dell.csv', '2014-01-23 19:58:57', 'emccrann', 30, 'Dell import - 2013', '/automate/import/cmdb/csv/cmdb_52e17480684f1_assets_dell.csv');
 
 -- --------------------------------------------------------
 
@@ -138,19 +156,18 @@ CREATE TABLE IF NOT EXISTS `scheduled_tasks` (
   `invoice` varchar(10) NOT NULL,
   `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `schedule` varchar(7) NOT NULL,
-  `day` varchar(3) NOT NULL,
   `run_time` varchar(255) NOT NULL,
   `start_date` varchar(255) NOT NULL,
   `end_date` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=113 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=126 ;
 
 --
 -- Dumping data for table `scheduled_tasks`
 --
 
-INSERT INTO `scheduled_tasks` (`id`, `user`, `name`, `invoice`, `timestamp`, `schedule`, `day`, `run_time`, `start_date`, `end_date`) VALUES
-(112, 'emccrann', '2011 Lease Return - 22.01.2014', '2011', '2014-01-22 21:44:59', 'weekly', 'MON', '', '', '');
+INSERT INTO `scheduled_tasks` (`id`, `user`, `name`, `invoice`, `timestamp`, `schedule`, `run_time`, `start_date`, `end_date`) VALUES
+(125, 'emccrann', '2011 Lease Return', '2011', '2014-01-23 21:01:46', 'weekly', '21:01', '27/01/2014', '31/03/2014');
 --
 -- Database: `swdata`
 --
@@ -209,7 +226,37 @@ INSERT INTO `asset_details` (`id`, `serial`, `name`, `model`, `it_owner`, `it_ad
 (27, '9348HM', 'IE9348HM', 'ProBook 6550b', 'Padraig McNamara', 'Max Power', 'Yes'),
 (28, '1722DF', 'IE1722DF', 'ProBook 6550b', 'Padraig McNamara', 'Max Power', 'Yes'),
 (29, '3406OK', 'IE3406OK', 'ProBook 6550b', 'Padraig McNamara', 'Max Power', 'Yes'),
-(30, '7739AH', 'IE7739AH', 'ProBook 6550b', 'Padraig McNamara', 'Max Power', 'Yes');
+(30, '7739AH', 'IE7739AH', 'ProBook 6550b', 'Padraig McNamara', 'Max Power', 'Yes'),
+(63, 'JF27', 'IEJF27', 'Latitude E6430', 'Padraig McNamara', 'Max Power', 'Yes'),
+(64, 'G517', 'IEG517', 'Latitude E6430', 'Padraig McNamara', 'Max Power', 'Yes'),
+(65, '7D17', 'IE7D17', 'Latitude E6430', 'Padraig McNamara', 'Max Power', 'Yes'),
+(66, 'DF17', 'IEDF17', 'Latitude E6430', 'Padraig McNamara', 'Max Power', 'Yes'),
+(67, 'B627', 'IEB627', 'Latitude E6430', 'Padraig McNamara', 'Max Power', 'Yes'),
+(68, '5S07', 'IE5S07', 'Latitude E6430', 'Padraig McNamara', 'Max Power', 'Yes'),
+(69, '7627', 'IE7627', 'Latitude E6430', 'Padraig McNamara', 'Max Power', 'Yes'),
+(70, 'J727', 'IEJ727', 'Latitude E6430', 'Padraig McNamara', 'Max Power', 'Yes'),
+(71, '1717', 'IE1717', 'Latitude E6430', 'Padraig McNamara', 'Max Power', 'Yes'),
+(72, '3F17', 'IE3F17', 'Latitude E6430', 'Padraig McNamara', 'Max Power', 'Yes'),
+(73, 'BV17', 'IEBV17', 'Latitude E6430', 'Padraig McNamara', 'Max Power', 'Yes'),
+(74, '6N27', 'IE6N27', 'Latitude E6430', 'Padraig McNamara', 'Max Power', 'Yes'),
+(75, 'D637', 'IED637', 'Latitude E6430', 'Padraig McNamara', 'Max Power', 'Yes'),
+(76, '9127', 'IE9127', 'Latitude E6430', 'Padraig McNamara', 'Max Power', 'Yes'),
+(77, '9727', 'IE9727', 'Latitude E6430', 'Padraig McNamara', 'Max Power', 'Yes'),
+(78, 'HR17', 'IEHR17', 'Latitude E6430', 'Padraig McNamara', 'Max Power', 'Yes'),
+(79, '1S17', 'IE1S17', 'Latitude E6430', 'Padraig McNamara', 'Max Power', 'Yes'),
+(80, '2C17', 'IE2C17', 'Latitude E6430', 'Padraig McNamara', 'Max Power', 'Yes'),
+(81, '3527', 'IE3527', 'Latitude E6430', 'Padraig McNamara', 'Max Power', 'Yes'),
+(82, 'C717', 'IEC717', 'Latitude E6430', 'Padraig McNamara', 'Max Power', 'Yes'),
+(83, 'BR17', 'IEBR17', 'Latitude E6430', 'Padraig McNamara', 'Max Power', 'Yes'),
+(84, '8S07', 'IE8S07', 'Latitude E6430', 'Padraig McNamara', 'Max Power', 'Yes'),
+(85, '2D17', 'IE2D17', 'Latitude E6430', 'Padraig McNamara', 'Max Power', 'Yes'),
+(86, 'CK27', 'IECK27', 'Latitude E6430', 'Padraig McNamara', 'Max Power', 'Yes'),
+(87, '9N27', 'IE9N27', 'Latitude E6430', 'Padraig McNamara', 'Max Power', 'Yes'),
+(88, '5037', 'IE5037', 'Latitude E6430', 'Padraig McNamara', 'Max Power', 'Yes'),
+(89, 'B209', 'IEB209', 'Latitude E6430', 'Padraig McNamara', 'Max Power', 'Yes'),
+(90, '7P09', 'IE7P09', 'Latitude E6430', 'Padraig McNamara', 'Max Power', 'Yes'),
+(91, '7P49', 'IE7P49', 'Latitude E6430', 'Padraig McNamara', 'Max Power', 'Yes'),
+(92, '7P50', 'IE7P50', 'Latitude E6430', 'Padraig McNamara', 'Max Power', 'Yes');
 
 -- --------------------------------------------------------
 
@@ -244,7 +291,7 @@ CREATE TABLE IF NOT EXISTS `assets` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `serial_num_2` (`serial_num`),
   KEY `serial_num` (`serial_num`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=63 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=93 ;
 
 --
 -- Dumping data for table `assets`
@@ -280,7 +327,37 @@ INSERT INTO `assets` (`id`, `impacted`, `deactivated`, `faulty`, `baseline`, `ur
 (27, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Hewlett-Packard', 'Laptop', '9348HM', 'mrose', 'Assigned', 'Mark Rose', 'eoinmc@gmail.com', 'Yes', 'IE9348HM', '2011', '15026', 'Active', 1288569600, 1385856000, '03/12/2013'),
 (28, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Hewlett-Packard', 'Laptop', '1722DF', 'zreilly', 'Assigned', 'Zeph Reilly', 'eoinmc@gmail.com', 'Yes', 'IE1722DF', '2011', '15027', 'Active', 1288569600, 1385856000, '03/12/2013'),
 (29, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Hewlett-Packard', 'Laptop', '3406OK', 'lcruz', 'Assigned', 'Luke Cruz', 'eoinmc@gmail.com', 'Yes', 'IE3406OK', '2011', '15028', 'Active', 1288569600, 1385856000, '03/12/2013'),
-(30, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Hewlett-Packard', 'Laptop', '7739AH', 'kwolf', 'Assigned', 'Kenneth Wolf', 'eoinmc@gmail.com', 'Yes', 'IE7739AH', '2011', '15029', 'Active', 1288569600, 1385856000, '03/12/2013');
+(30, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Hewlett-Packard', 'Laptop', '7739AH', 'kwolf', 'Assigned', 'Kenneth Wolf', 'eoinmc@gmail.com', 'Yes', 'IE7739AH', '2011', '15029', 'Active', 1288569600, 1385856000, '03/12/2013'),
+(63, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Dell Products', 'Laptop', 'JF27', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IEJF27', '2013', '18140', 'Active', 1376006400, 1470700800, ''),
+(64, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Dell Products', 'Laptop', 'G517', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IEG517', '2013', '18141', 'Active', 1376006400, 1470700800, ''),
+(65, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Dell Products', 'Laptop', '7D17', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IE7D17', '2013', '18142', 'Active', 1376006400, 1470700800, ''),
+(66, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Dell Products', 'Laptop', 'DF17', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IEDF17', '2013', '18143', 'Active', 1376006400, 1470700800, ''),
+(67, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Dell Products', 'Laptop', 'B627', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IEB627', '2013', '18144', 'Active', 1376006400, 1470700800, ''),
+(68, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Dell Products', 'Laptop', '5S07', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IE5S07', '2013', '18145', 'Active', 1376006400, 1470700800, ''),
+(69, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Dell Products', 'Laptop', '7627', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IE7627', '2013', '18146', 'Active', 1376006400, 1470700800, ''),
+(70, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Dell Products', 'Laptop', 'J727', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IEJ727', '2013', '18147', 'Active', 1376006400, 1470700800, ''),
+(71, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Dell Products', 'Laptop', '1717', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IE1717', '2013', '18148', 'Active', 1376006400, 1470700800, ''),
+(72, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Dell Products', 'Laptop', '3F17', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IE3F17', '2013', '18149', 'Active', 1376006400, 1470700800, ''),
+(73, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Dell Products', 'Laptop', 'BV17', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IEBV17', '2013', '18150', 'Active', 1376006400, 1470700800, ''),
+(74, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Dell Products', 'Laptop', '6N27', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IE6N27', '2013', '18151', 'Active', 1376006400, 1470700800, ''),
+(75, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Dell Products', 'Laptop', 'D637', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IED637', '2013', '18152', 'Active', 1376006400, 1470700800, ''),
+(76, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Dell Products', 'Laptop', '9127', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IE9127', '2013', '18153', 'Active', 1376006400, 1470700800, ''),
+(77, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Dell Products', 'Laptop', '9727', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IE9727', '2013', '18154', 'Active', 1376006400, 1470700800, ''),
+(78, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Dell Products', 'Laptop', 'HR17', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IEHR17', '2013', '18155', 'Active', 1376006400, 1470700800, ''),
+(79, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Dell Products', 'Laptop', '1S17', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IE1S17', '2013', '18156', 'Active', 1376006400, 1470700800, ''),
+(80, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Dell Products', 'Laptop', '2C17', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IE2C17', '2013', '18157', 'Active', 1376006400, 1470700800, ''),
+(81, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Dell Products', 'Laptop', '3527', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IE3527', '2013', '18158', 'Active', 1376006400, 1470700800, ''),
+(82, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Dell Products', 'Laptop', 'C717', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IEC717', '2013', '18159', 'Active', 1376006400, 1470700800, ''),
+(83, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Dell Products', 'Laptop', 'BR17', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IEBR17', '2013', '18160', 'Active', 1376006400, 1470700800, ''),
+(84, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Dell Products', 'Laptop', '8S07', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IE8S07', '2013', '18161', 'Active', 1376006400, 1470700800, ''),
+(85, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Dell Products', 'Laptop', '2D17', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IE2D17', '2013', '18162', 'Active', 1376006400, 1470700800, ''),
+(86, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Dell Products', 'Laptop', 'CK27', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IECK27', '2013', '18163', 'Active', 1376006400, 1470700800, ''),
+(87, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Dell Products', 'Laptop', '9N27', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IE9N27', '2013', '18164', 'Active', 1376006400, 1470700800, ''),
+(88, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Dell Products', 'Laptop', '5037', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IE5037', '2013', '18165', 'Active', 1376006400, 1470700800, ''),
+(89, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Dell Products', 'Laptop', 'B209', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IEB209', '2013', '18166', 'Active', 1376006400, 1470700800, ''),
+(90, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Dell Products', 'Laptop', '7P09', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IE7P09', '2013', '18167', 'Active', 1376006400, 1470700800, ''),
+(91, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Dell Products', 'Laptop', '7P49', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IE7P49', '2013', '18168', 'Active', 1376006400, 1470700800, ''),
+(92, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Dell Products', 'Laptop', '7P50', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IE7P50', '2013', '18168', 'Active', 1376006400, 1470700800, '');
 
 -- --------------------------------------------------------
 
