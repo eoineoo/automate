@@ -38,6 +38,12 @@
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<script type="text/javascript" charset="utf-8">
+		$(document).ready(function() {
+			//Alterate the color of the rows
+			$("tr:even").css("background-color", "#d3d3d3");
+		} );
+	</script>
   </head>
   <body>
 	

@@ -38,8 +38,8 @@
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<script type="text/javascript" language="javascript" src="../resources/jquery.js"></script>
-    <script class="jsbin" src="../resources/jquery.dataTables.nightly.js"></script>
+	<script type="text/javascript" language="javascript" src="http://localhost/automate/resources/jquery.js"></script>
+    <script class="jsbin" src="http://localhost/automate/resources/jquery.dataTables.nightly.js"></script>
 	<script type="text/javascript" charset="utf-8">
 		/* 
 		 * Filter data using text boxes 
@@ -76,6 +76,9 @@
 						this.value = asInitVals[$("thead input").index(this)];
 					}
 				} );
+				
+				//Alterate the color of the rows
+				$("tr:even").css("background-color", "#d3d3d3");
 			} );
 	</script>
   </head>

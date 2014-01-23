@@ -44,12 +44,9 @@
 	
 ?>
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <script type="text/javascript" language="javascript" src="../resources/jquery.js"></script>
-    <script class="jsbin" src="../resources/jquery.dataTables.nightly.js"></script>
+
+    <script type="text/javascript" language="javascript" src="http://localhost/automate/resources/jquery.js"></script>
+    <script class="jsbin" src="http://localhost/automate/resources/jquery.dataTables.nightly.js"></script>
 	<script type="text/javascript" charset="utf-8">
 		/* 
 		 * Filter data using text boxes 
@@ -70,11 +67,6 @@
 					oTable.fnFilter( this.value, $("thead input").index(this) );
 				} );
 				
-				
-				/*
-				 * Support functions to provide a little bit of 'user friendlyness' to the textboxes in 
-				 * the footer
-				 */
 				$("thead input").each( function (i) {
 					asInitVals[i] = this.value;
 				} );
@@ -87,8 +79,7 @@
 				} );
 			} );
 	</script>
-  </head>
-  <body>
+
 	
 	<!-- Control panel -->
 	<table id='hor-minimalist-a' border='1'>
