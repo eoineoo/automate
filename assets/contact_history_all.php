@@ -78,7 +78,7 @@
 				} );
 				
 				//Alterate the color of the rows
-				$("tr:even").css("background-color", "#d3d3d3");
+				$("tr:even").css("background-color", "#CEE8F0");
 			} );
 	</script>
   </head>

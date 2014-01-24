@@ -8,6 +8,11 @@ html, body{
 	font-family:Verdana, Arial, Helvetica, sans-serif;
 	line-height: 1.6em;
 }
+img {
+    display: block;
+    margin: 0 auto;
+	border: 0px;
+}
 #wrapper{
 	background: white;
 	margin: 0 auto;
@@ -67,10 +72,6 @@ p.footer	{
 p.navigation	{
 	padding:15; /* top, right, bottom, left */
 }
-img {
-    display: block;
-    margin: 0 auto;
-}
 /* Table for user accounts: http://coding.smashingmagazine.com/2008/08/13/top-10-css-table-designs/
 	- Might need to be tweaked for gap between footer and main content on some pages*/
 #hor-minimalist-a
@@ -115,20 +116,31 @@ table.hor-minimalist-a a
 	display:block;
 	text-decoration:none;
 }
-table.hor-minimalist-b
+table.search_form
 {
 	font-size: 12px;
 	background: #fff;
 	margin: 5px;
-	width: 75%;
+	width:70%;
 	border-collapse: collapse;
 	text-align: center;
+	border: 1px solid black; 
 }
-table.hor-minimalist-b td
+table.search_form td
 {
-	padding: 5px 5px 0px 5px; /*top, right, bottom, left */
+	padding: 20px 5px 0px 5px; /*top, right, bottom, left */	
 }
-table.hor-minimalist-b a
+table.search_form input
+{
+	padding-left: 10px; 
+	height:30px; 	
+	color: #708090;
+}
+table.search_form img
+{
+	padding-top:20px;
+}
+table.search_form a
 {
 	display:block;
 	text-decoration:none;
@@ -136,9 +148,8 @@ table.hor-minimalist-b a
 /* Extra space between rows: <tr class=spaceUnder>*/
 tr.spaceUnder > td
 {
-  padding: 10px 10px 5em 10px;
+  padding: 10px 10px 20px 10px;
 }
-
 /* DataTables */
 .dataTables_filter {
 	padding: 0 0 10 0;

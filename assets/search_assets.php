@@ -9,33 +9,65 @@
 	require_once("/../inc/functions.php");
 	
 ?>
+
+<script>
+	$(function() {
+    
+		//autocomplete asset tag field
+		$(".tag").autocomplete({
+			source: "search_assets_source.php",
+			minLength: 1
+		});
+		//autocomplete owner tag field
+		$(".owner").autocomplete({
+			source: "search_assets_source.php",
+			minLength: 1
+		});
+		//autocomplete serial number field
+		$(".serial").autocomplete({
+			source: "search_assets_source.php",
+			minLength: 1
+		});
+ 
+	});
+</script>
+
+<link rel="stylesheet" href="http://localhost/automate/resources/jquery-ui.css">
+<script src="http://localhost/automate/resources/jquery-ui.js"></script>
 	
 	<h2 style="padding:0 0 10px 0;">Search for Assets</h2>
 	
-	<table id="hor-minimalist-b" style="border: 1px solid black; width:60%;">
+	<form action="" method="post">
 	
-		<tr class="spaceUnder">
-			<td>Asset Tag: </td>
-			<td>
-				<input type="text" id="asset_tag" name="asset_tag" value=""></td>
-			</td>
-		</tr>
+		<table class="search_form">
 		
-		<tr class="spaceUnder">
-			<td>Owner: </td>
-			<td>
-				<input type="text" id="owner" name="owner" value=""></td>
-			</td>
-		</tr>
-		
-		<tr class="spaceUnder">
-			<td>Serial Number: </td>
-			<td>
-				<input type="text" id="serial" name="serial" value=""></td>
-			</td>
-		</tr>
-		
-	</table>
+			<tr class="spaceUnder">
+				<td>
+					<img src="../images/asset_tag.png"/>
+				</td>
+				<td>
+					<img src="../images/owner.png"/>
+				</td>
+				<td>
+					<img src="../images/serial_number.png"/>
+				</td>
+			</tr>
+			
+			<tr class="spaceUnder">
+				<td>
+					<input type="text" class="tag" id="asset_tag" name="asset_tag" value="Asset tag" onfocus="if(this.value == 'Asset tag') { this.value = ''; } this.style.color='black';" onblur="if(this.value == '') { this.value = 'Asset tag'; } this.style.color='#708090';"></td>
+				</td>
+				<td>
+					<input type="text" class="owner" id="owner" name="owner" value="Owner" onfocus="if(this.value == 'Owner') { this.value = ''; } this.style.color='black';" onblur="if(this.value == '') { this.value = 'Owner'; } this.style.color='#708090';"></td>
+				</td>	
+				<td>
+					<input type="text" class="serial" id="serial_number" name="serial_number" value="Serial number" onfocus="if(this.value == 'Serial number') { this.value = ''; } this.style.color='black';" onblur="if(this.value == '') { this.value = 'Serial number'; } this.style.color='#708090';"></td>
+				</td>			
+			</tr>
+			
+		</table>
+	
+	</form>
 	
 	
 <?php 
