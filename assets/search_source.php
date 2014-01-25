@@ -15,27 +15,11 @@
 	}
 	
 	#Variables
-	if(isset($_POST['assetTag']))	{
-		$assetTag  = $_POST['assetTag'];
-		$serialNumber = "";
-		$owner = "";
-	}
-	else if(isset($_POST['serialNumber']))	{
-		$assetTag = "";
-		$serialNumber	= $_POST['serialNumber'];
-		$owner = "";
-	}
-	else if(isset($_POST['owner']))	{
-		$assetTag  = "";
-		$serialNumber = "";
-		$owner = $_POST['owner'];
-	}
-	else	{
-		$asset_tag  = "";
-		$serial = "";
-		$owner = "";
-	}
-		
+	$assetTag  = $_POST['assetTag'];
+	$serialNumber	= $_POST['serialNumber'];	
+	$owner = $_POST['owner'];
+	
+	#Query
 	$select		=  	"SELECT DISTINCT(serial_num) AS 'Serial', asset_tag  AS 'Asset Tag', last_logon AS 'Last Logon', username AS 'Last User', owner AS 'Assigned To', status_level AS 'Status' ";
 	$from		= 	"FROM assets a ";
 	$join		= 	"LEFT OUTER JOIN asset_details a_d ON a_d.id = a.id ";
@@ -48,25 +32,23 @@
 	$result = mysqli_query($connection, $sql);
 	
 	if($_POST['action'] == 'insert'){
-		echo $sql;
+
 ?>
 	
-	<table cellpadding="0" cellspacing="0" border="1" class="hor-minimalist-a"> 
-		<thead>
-			 <tr>
-			<th>Serial</th>
-				<th>Asset Tag</th>
-				<th>Last Logon</th>
-				<th>Last User</th>
-				<th>Assigned To</th>
-				<th>Status</th>
-			</tr>
-		</thead>
-		<tbody> 
+		<table cellpadding="0" cellspacing="0" border="1" class="hor-minimalist-a" style="padding: 50px 0 0 0;"> 
+			<thead>
+				 <tr>
+				<th>Serial</th>
+					<th>Asset Tag</th>
+					<th>Last Logon</th>
+					<th>Last User</th>
+					<th>Assigned To</th>
+					<th>Status</th>
+				</tr>
+			</thead>
+			<tbody> 
 
 <?php
-
-		#echo "<table>";
 		#Loop and print contents of SQL query
 		while($row = mysqli_fetch_array($result))	{
 		
@@ -79,38 +61,11 @@
 			echo "<td>" . $row['Status'] . "</td>";
 			echo "</tr>";
 		}
-		
+		echo "<tr class=\"spaceUnder\"></tr>";
 		echo "</table>";
 
-	mysqli_free_result($result);
+		mysqli_free_result($result);
 		
 	}	
 
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

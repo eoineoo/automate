@@ -17,9 +17,26 @@
 	$(function(){
         $('#insert').click(function(){
             
-			var jAssetTag = $('#assetTag').val();
-			var jSerialNum = $('#serialNumber').val();
-			var jOwner = $('#owner').val();
+			if ($('#assetTag').val() == 'Asset tag')	{
+				var jAssetTag = '';
+			}
+			else	{
+				var jAssetTag = $('#assetTag').val();
+			}
+			
+			if ($('#serialNumber').val() == 'Serial number')	{
+				var jSerialNum = '';
+			}
+			else	{
+				var jSerialNum = $('#serialNumber').val();
+			}
+			
+			if ($('#owner').val() == 'Owner')	{
+				var jOwner = '';
+			}
+			else	{
+				var jOwner = $('#owner').val();
+			}
 			
 			$.post('/automate/assets/search_source.php',{action: "insert", assetTag:jAssetTag, serialNumber:jSerialNum, owner:jOwner},function(res){
                 $('#results').html(res);				
@@ -59,10 +76,10 @@
 			
 			<tr class="spaceUnder">
 				<td>
-					<input type="text" id="assetTag" name="asset_tag" value="Asset tag" onfocus="if(this.value == 'Asset tag') { this.value = ''; } this.style.color='black';" onblur="if(this.value == '') { this.value = 'Asset tag'; } this.style.color='#708090';"></td>
+					<input type="text" id="assetTag" name="assetTag" value="Asset tag" onfocus="if(this.value == 'Asset tag') { this.value = ''; } this.style.color='black';" onblur="if(this.value == '') { this.value = 'Asset tag'; } this.style.color='#708090';"></td>
 				</td>
 				<td>
-					<input type="text" id="serialNumber" name="serial_number" value="Serial number" onfocus="if(this.value == 'Serial number') { this.value = ''; } this.style.color='black';" onblur="if(this.value == '') { this.value = 'Serial number'; } this.style.color='#708090';"></td>
+					<input type="text" id="serialNumber" name="serialNumber" value="Serial number" onfocus="if(this.value == 'Serial number') { this.value = ''; } this.style.color='black';" onblur="if(this.value == '') { this.value = 'Serial number'; } this.style.color='#708090';"></td>
 				</td>			
 				<td>
 					<input type="text" id="owner" name="owner" value="Owner" onfocus="if(this.value == 'Owner') { this.value = ''; } this.style.color='black';" onblur="if(this.value == '') { this.value = 'Owner'; } this.style.color='#708090';"></td>
@@ -75,10 +92,12 @@
 			
 		</table>
 	
+	<div class="spacer"></div>
 	
 	<!--Div to display the result of our operation --> 
-	<div id="results"></div>
+	<div id="results" style="padding:0 0 25px 0";></div>
 	
+	<div class="spacer"></div>
 	
 <?php 
 	

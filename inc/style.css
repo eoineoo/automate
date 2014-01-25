@@ -116,6 +116,12 @@ table.hor-minimalist-a a
 	display:block;
 	text-decoration:none;
 }
+div.spacer
+{
+    font-size: 0; 
+    height: 10px;
+    line-height: 0;
+}
 table.search_form
 {
 	font-size: 12px;

@@ -13,36 +13,15 @@
 <br />
 <p class="stats">What do you want to do?</p>
 <br />
-<table id="hor-minimalist-a" width="80%" border = 1>
-	<tr>
-		<!-- <td width="20%"><a href="view_leases.php"><img src="../images/cmdb.png" /></a></td> -->
+<table id="hor-minimalist-a" width="80%">
+	<tr style="border: 1px solid black;">
 		<td width="20%"><a href="lease"><img src="../images/cmdb.png" /></a></td>
 		<td width="80%"><a href="lease">View Lease Detail</a></td>		
 	</tr>
 	
-	<tr>
-		<td>&nbsp;</td>
-		<td>&nbsp;</td>
-	</tr>
-	
-	<tr>
+	<tr style="border: 1px solid black;">
 		<td width="90"><a href="search"><img src="../images/search.png" /></a></td>
 		<td><a href="search">Search</a></td>
-	</tr>
-	
-	<tr>
-		<td>&nbsp;</td>
-		<td>&nbsp;</td>
-	</tr>
-	
-	<tr>
-		<td width="90"><a href="#"><img src="../images/mdt.jpg" /></a></td>
-		<td><a href="#">View All Assets</a></td>
-	</tr>
-	
-	<tr>
-		<td>&nbsp;</td>
-		<td>&nbsp;</td>
 	</tr>
 	
 </table>
