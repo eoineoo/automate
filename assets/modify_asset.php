@@ -34,6 +34,7 @@
 	}
 	
 	$result = mysqli_query($connection, $sql);
+	$current_url = $_SERVER['REQUEST_URI'];
 	
 ?>
 <link rel="stylesheet" href="http://localhost/automate/resources/jquery-ui.css">
@@ -41,7 +42,6 @@
 <script>
 $(function() {
    $('#moveToSpares').click(function() {
-		//Confirmation box
 		$( "#spares-confirm" ).dialog	({
 			resizable:false,
 			height: 'auto',
@@ -55,7 +55,7 @@ $(function() {
 				
 					//Use JQuery to post values to modify_source.php, return results to the 'results' div
 					$.post('/automate/assets/modify_source.php',{action: "spares", serial:jSerial},function(res){
-						$('#results').html(res);				
+						$('#results').html(res);
 					});
 					
 					$( this ).dialog( "close" );
@@ -65,6 +65,7 @@ $(function() {
 				}
 			}
 		});
+		
 	});
 	$('#markAsRetired').click(function() {
 		//Confirmation box

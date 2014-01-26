@@ -14,11 +14,6 @@
 		die_and_display_nf('<div id="alert"><a class="alert">Connection failed: ' . htmlspecialchars(mysqli_connect_error()) . "</a></div>");			
 	}
 	
-	#Variables
-	#$serial  = $_POST['serial'];
-	#$assignedTo	= "Spares";	
-	#$status = "Unassigned";
-	
 	#SQL
 	$tablename = "assets";
 	$sql = "UPDATE $tablename SET owner = ?, status_level = ? WHERE serial_num = ?";
@@ -26,6 +21,7 @@
 	#Assign to Spares, mark as Unassigned
 	if(($_POST['action'] == 'spares') || ($_POST['action'] == 'retired') || ($_POST['action'] == 'lost') || ($_POST['action'] == 'stolen')) {
 		
+		#Set up variables
 		$serial = $_POST['serial'];
 		
 		if($_POST['action'] == 'spares')	{
@@ -45,6 +41,7 @@
 			$status = "Unavailable";
 		}
 		
+		#Update table with prepared statement
 		$ps = $mysqli->prepare($sql);
 		if ( false === $ps )        {
 			die_and_display_nf('<p class=die>Preparing the statement failed: ' . htmlspecialchars($mysqli->error) . "</p>");                
@@ -52,7 +49,6 @@
 			
 		#Bind parameters
 		$rc = $ps->bind_param('sss', $assignedTo, $status, $serial);
-				
 		if ( false === $rc )	{
 			die_and_display_nf('Binding parameters failed: ' . htmlspecialchars($ps->error));
 		}
