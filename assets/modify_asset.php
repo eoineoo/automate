@@ -42,7 +42,7 @@
 $(function() {
    $('#moveToSpares').click(function() {
 		//Confirmation box
-		$( "#dialog-confirm" ).dialog	({
+		$( "#spares-confirm" ).dialog	({
 			resizable:false,
 			height: 'auto',
 			width: 400,
@@ -54,7 +54,85 @@ $(function() {
 					var jSerial = ($('#result_table td:nth(0)').html());
 				
 					//Use JQuery to post values to modify_source.php, return results to the 'results' div
-					$.post('/automate/assets/modify_source.php',{action: "insert", serial:jSerial},function(res){
+					$.post('/automate/assets/modify_source.php',{action: "spares", serial:jSerial},function(res){
+						$('#results').html(res);				
+					});
+					
+					$( this ).dialog( "close" );
+				},
+				Cancel: function()	{
+					$( this ).dialog( "close" );
+				}
+			}
+		});
+	});
+	$('#markAsRetired').click(function() {
+		//Confirmation box
+		$( "#retire-confirm" ).dialog	({
+			resizable:false,
+			height: 'auto',
+			width: 400,
+			modal: true,
+			draggable: false,
+			buttons:	{
+				"Retire": function()	{
+					//Get serial number from table, assign to JavaScript variable that can be used in $.post
+					var jSerial = ($('#result_table td:nth(0)').html());
+				
+					//Use JQuery to post values to modify_source.php, return results to the 'results' div
+					$.post('/automate/assets/modify_source.php',{action: "retired", serial:jSerial},function(res){
+						$('#results').html(res);				
+					});
+					
+					$( this ).dialog( "close" );
+				},
+				Cancel: function()	{
+					$( this ).dialog( "close" );
+				}
+			}
+		});
+	});
+	$('#markAsLost').click(function() {
+		//Confirmation box
+		$( "#lost-confirm" ).dialog	({
+			resizable:false,
+			height: 'auto',
+			width: 400,
+			modal: true,
+			draggable: false,
+			buttons:	{
+				"Mark As Lost": function()	{
+					//Get serial number from table, assign to JavaScript variable that can be used in $.post
+					var jSerial = ($('#result_table td:nth(0)').html());
+				
+					//Use JQuery to post values to modify_source.php, return results to the 'results' div
+					$.post('/automate/assets/modify_source.php',{action: "lost", serial:jSerial},function(res){
+						$('#results').html(res);				
+					});
+					
+					$( this ).dialog( "close" );
+				},
+				Cancel: function()	{
+					$( this ).dialog( "close" );
+				}
+			}
+		});
+	});
+	$('#markAsStolen').click(function() {
+		//Confirmation box
+		$( "#stolen-confirm" ).dialog	({
+			resizable:false,
+			height: 'auto',
+			width: 400,
+			modal: true,
+			draggable: false,
+			buttons:	{
+				"Mark as stolen": function()	{
+					//Get serial number from table, assign to JavaScript variable that can be used in $.post
+					var jSerial = ($('#result_table td:nth(0)').html());
+				
+					//Use JQuery to post values to modify_source.php, return results to the 'results' div
+					$.post('/automate/assets/modify_source.php',{action: "stolen", serial:jSerial},function(res){
 						$('#results').html(res);				
 					});
 					
@@ -67,32 +145,29 @@ $(function() {
 		});
 	});
 });
- /* $(function(){
-        $('#moveToSpares').click(function(){
-            
-			//Get serial number from table, assign to JavaScript variable that can be used in $.post
-			var jSerial = ($('#result_table td:nth(0)').html());
-			
-			//Use JQuery to post values to modify_source.php, return results to the 'results' div
-			$.post('/automate/assets/modify_source.php',{action: "insert", serial:jSerial},function(res){
-                $('#results').html(res);				
-            }); 			
-			
-        });		
-    }); */
 </script>
-<!-- Confirmation dialog -->
-<div id="dialog-confirm" title="Confirmation" style="display:none;">
+
+<!-- Confirmation dialogs -->
+<div id="spares-confirm" title="Confirmation" style="display:none;">
 	<p>You are about to unassign <?php echo $serial ?> and mark it as returned to IT. Are you sure you want to do this?</p>
+</div>
+<div id="retire-confirm" title="Confirmation" style="display:none;">
+	<p>You are about to mark <?php echo $serial ?> as retired. Are you sure you want to do this?</p>
+</div>
+<div id="lost-confirm" title="Confirmation" style="display:none;">
+	<p>You are about to mark <?php echo $serial ?> as lost. Are you sure you want to do this?</p>
+</div>
+<div id="stolen-confirm" title="Confirmation" style="display:none;">
+	<p>You are about to mark <?php echo $serial ?> as stolen. Are you sure you want to do this?</p>
 </div>
 
 <!-- Control Panel -->
 <table cellpadding="0" cellspacing="0" border="1" class="hor-minimalist-a" style="padding: 50px 0 0 0;"> 
 	<tr>
 		<td width="25%"><button id="moveToSpares" class="modify_asset_btn">Move to Spares</button></td>
-		<td width="25%"><button id="markAsRetired" class="modify_asset_btn" disabled="disabled">Retired</button></td>
-		<td width="25%"><button id="markAsLost" class="modify_asset_btn" disabled="disabled">Lost</button></td>
-		<td width="25%"><button id="markAsStolen" class="modify_asset_btn" disabled="disabled">Stolen</button></td>
+		<td width="25%"><button id="markAsRetired" class="modify_asset_btn">Retired</button></td>
+		<td width="25%"><button id="markAsLost" class="modify_asset_btn">Lost</button></td>
+		<td width="25%"><button id="markAsStolen" class="modify_asset_btn">Stolen</button></td>
 	</tr>
 </table>
 

@@ -15,17 +15,36 @@
 	}
 	
 	#Variables
-	$serial  = $_POST['serial'];
-	$assignedTo	= "Spares";	
-	$status = "Unassigned";
+	#$serial  = $_POST['serial'];
+	#$assignedTo	= "Spares";	
+	#$status = "Unassigned";
 	
 	#SQL
 	$tablename = "assets";
 	$sql = "UPDATE $tablename SET owner = ?, status_level = ? WHERE serial_num = ?";
 	
-	#Should always be true if search_assets.php button is selected
-	if($_POST['action'] == 'insert'){
-	
+	#Assign to Spares, mark as Unassigned
+	if(($_POST['action'] == 'spares') || ($_POST['action'] == 'retired') || ($_POST['action'] == 'lost') || ($_POST['action'] == 'stolen')) {
+		
+		$serial = $_POST['serial'];
+		
+		if($_POST['action'] == 'spares')	{
+			$assignedTo = "Spares";
+			$status = "Unassigned";
+		}
+		if($_POST['action'] == 'retired')	{
+			$assignedTo = "Retired";
+			$status = "Retired";
+		}
+		if($_POST['action'] == 'lost')	{
+			$assignedTo = "Unknown Location (Lost)";
+			$status = "Unavailable";
+		}
+		if($_POST['action'] == 'stolen')	{
+			$assignedTo = "Unknown Location (Stolen)";
+			$status = "Unavailable";
+		}
+		
 		$ps = $mysqli->prepare($sql);
 		if ( false === $ps )        {
 			die_and_display_nf('<p class=die>Preparing the statement failed: ' . htmlspecialchars($mysqli->error) . "</p>");                
