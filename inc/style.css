@@ -7,7 +7,7 @@ html, body{
 	height: 95%;
 	font-family:Verdana, Arial, Helvetica, sans-serif;
 	line-height: 1.6em;
-}
+	}
 img {
     display: block;
     margin: 0 auto;
@@ -246,4 +246,8 @@ td.last {
 .success {
 	background:#e9ffd9 url('../images/success_small.png') no-repeat 10px 50%;
 	border:1px solid #a6ca8a;
+}
+.modify_asset_btn	{
+	height:30px; 
+	width:100px;
 }

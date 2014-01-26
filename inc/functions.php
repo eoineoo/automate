@@ -28,6 +28,12 @@
 		die();
 	}
 	
+	#Custom die() function to ensure that the page display is not broken when die() is called, removed footer for JQuery pages
+	function die_and_display_nf($message) {
+		print $message;
+		die();
+	}
+	
 	#Function to send email using PHPMailer and log it using writeToFile()
 	function messageUser($address, $owner, $serial)	{
 		

@@ -1,7 +1,7 @@
 <?php
 
 	/**
-	* Search for assets
+	* Recieve value(s) from search_assets.php, pass into SQL query and return table of results
 	*/
 	require_once("/../inc/config.php");  
 	require_once("/../inc/functions.php");
@@ -20,7 +20,7 @@
 	$owner = $_POST['owner'];
 	
 	#Query
-	$select		=  	"SELECT DISTINCT(serial_num) AS 'Serial', asset_tag  AS 'Asset Tag', last_logon AS 'Last Logon', username AS 'Last User', owner AS 'Assigned To', status_level AS 'Status' ";
+	$select		=  	"SELECT DISTINCT(serial_num) AS 'Serial', asset_tag  AS 'Asset Tag', last_logon AS 'Last Logon', username AS 'Last User', owner AS 'Assigned To', model AS 'Model', status_level AS 'Status' ";
 	$from		= 	"FROM assets a ";
 	$join		= 	"LEFT OUTER JOIN asset_details a_d ON a_d.id = a.id ";
 	$w_asset 	= 	"WHERE asset_tag LIKE '%$assetTag%' ";	
@@ -31,6 +31,7 @@
 	
 	$result = mysqli_query($connection, $sql);
 	
+	#Should always be true if search_assets.php button is selected
 	if($_POST['action'] == 'insert'){
 
 ?>
@@ -43,7 +44,9 @@
 					<th>Last Logon</th>
 					<th>Last User</th>
 					<th>Assigned To</th>
+					<th>Model</th>
 					<th>Status</th>
+					<th>Edit</th>
 				</tr>
 			</thead>
 			<tbody> 
@@ -58,7 +61,9 @@
 			echo "<td>" . $row['Last Logon'] . "</td>";
 			echo "<td>" . $row['Last User'] . "</td>";
 			echo "<td>" . $row['Assigned To'] . "</td>";
+			echo "<td>" . $row['Model'] . "</td>";
 			echo "<td>" . $row['Status'] . "</td>";
+			echo "<td><a href=\"modify_asset.php?serial=" . $row['Serial'] . "\"><img src=\"../images/edit.png\" /></a></td>";
 			echo "</tr>";
 		}
 		echo "<tr class=\"spaceUnder\"></tr>";
