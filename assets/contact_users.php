@@ -28,7 +28,6 @@
 	$join_u	= "LEFT OUTER JOIN userdb ON userdb.fullname = assets.owner ";
 	$where 	= "WHERE purchase_order_number = $invoice AND callref IS NULL AND status_level = 'Assigned'";
 	$sql 	= $select . $from . $join . $join_u . $where;
-	echo $sql;
 	
 	$insert = "INSERT INTO contact(serial, purchase_order_number, owner, jobdesc, email, contents) VALUES (?, ?, ?, ?, ?, ?)";
 	
