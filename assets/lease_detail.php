@@ -25,14 +25,15 @@
 	}
 	
 	#Main Query - multiple databases
-	$select		=  	"SELECT DISTINCT(serial_num) AS 'Serial', last_logon AS 'Last Logon', username AS 'Last User', a.owner AS 'Assigned To', status_level AS 'Status', model as 'Model', callref as 'Call Ref', MAX(timestamp) AS 'Last Email' ";
+	$select		=  	"SELECT DISTINCT(serial_num) AS 'Serial', last_logon AS 'Last Logon', username AS 'Last User', a.owner AS 'Assigned To', department AS 'Dept', jobdesc AS 'Grade', status_level AS 'Status', model as 'Model', callref as 'Call Ref', MAX(timestamp) AS 'Last Email' ";
 	$from		= 	"FROM swdata.assets a ";
 	$join_a		= 	"LEFT OUTER JOIN asset_details a_d ON a_d.id = a.id ";
+	$join_u		= 	"LEFT OUTER JOIN swdata.userdb u ON u.fullname = a.owner ";
 	$join_o		= 	"LEFT OUTER JOIN swdata.opencall o ON o.cust_name = a.owner ";
 	$join_c		= 	"LEFT OUTER JOIN automate.contact c ON c.serial = a.serial_num ";
 	$where		= 	"WHERE a.purchase_order_number = $invoice ";
 	$group		= 	"GROUP BY serial_num";
-	$sql		= 	$select . $from . $join_a . $join_o . $join_c . $where . $group;
+	$sql		= 	$select . $from . $join_a . $join_u . $join_o . $join_c . $where . $group;
 	
 	$result = mysqli_query($connection, $sql);
 	$row_count = mysqli_num_rows($result);
@@ -106,6 +107,9 @@
 				<th><input type="text" name="search_logon" size="10"/></th>
 				<th><input type="text" name="search_user" size="10"/></th>
 				<th><input type="text" name="search_owner" size="10"/></th>
+				<!--Added two extra fields-->
+				<th><input type="text" name="search_dept" size="10"/></th>
+				<th><input type="text" name="search_grade" size="10"/></th>
 				<th><input type="text" name="search_status" size="10"/></th>
 				<th><input type="text" name="search_model" size="10"/></th>
 				<th><input type="text" name="search_call_ref" size="10"/></th>
@@ -117,6 +121,8 @@
 				<th>Last Logon</th>
 				<th>Last User</th>
 				<th>Assigned To</th>
+				<th>Dept</th>
+				<th>Grade</th>
 				<th>Status</th>
 				<th>Model</th>
 				<th>Call Ref</th>
@@ -150,6 +156,8 @@
 			echo "<td>" . $row['Last Logon'] . "</td>";
 			echo "<td>" . $row['Last User'] . "</td>";
 			echo "<td>" . $row['Assigned To'] . "</td>";
+			echo "<td>" . $row['Dept'] . "</td>";		
+			echo "<td>" . $row['Grade'] . "</td>";		
 			echo "<td>" . $row['Status'] . "</td>";		
 			echo "<td>" . $row['Model'] . "</td>";		
 			echo "<td>" . $row['Call Ref'] . "</td>";

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 26, 2014 at 08:36 PM
+-- Generation Time: Jan 27, 2014 at 07:13 PM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.19
 
@@ -286,6 +286,57 @@ INSERT INTO `opencall` (`callref`, `status`, `cust_id`, `cust_name`, `cust_usern
 (238187, 1, '5500032', 'Mark Rose', 'mrose', '06/05/2013 09:24', 'Theodore', '08/05/2013 10:04', 'at arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec tincidunt. Donec vitae erat', 'sociis natoque penatibus et magnis dis parturient montes'),
 (255250, 1, '5500077', 'Zeph Reilly', 'zreilly', '07/05/2013 11:16', 'Logan', '09/05/2013 12:40', 'In faucibus. Morbi vehicula. Pellentesque tincidunt tempus risus. Donec egestas. Duis ac arcu. Nunc mauris. Morbi non sapien molestie orci', 'ut quam vel sapien imperdiet ornare. In faucibus. Morbi vehicula.'),
 (260056, 1, '5500015', 'Luke Cruz', 'lcruz', '08/05/2013 09:57', 'Elijah', '10/05/2013 11:57', 'ipsum. Phasellus vitae mauris sit amet lorem semper auctor. Mauris vel turpis. Aliquam adipiscing lobortis risus. In mi pede', ' nonummy');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `userdb`
+--
+
+CREATE TABLE IF NOT EXISTS `userdb` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `fullname` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `jobdesc` varchar(255) NOT NULL,
+  `department` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=31 ;
+
+--
+-- Dumping data for table `userdb`
+--
+
+INSERT INTO `userdb` (`id`, `fullname`, `email`, `jobdesc`, `department`) VALUES
+(1, 'Xander Dixon', 'xander.dixon@company.ie', 'Partner', 'Audit'),
+(2, 'Melvin Acevedo', 'melvin.acevedo@company.ie', 'Manager', 'Audit'),
+(3, 'Rafael Carson', 'rafael.carson@company.ie', 'Associate', 'Audit'),
+(4, 'Kareem Whitley', 'kareem.whitley@company.ie', 'Intern', 'Audit'),
+(5, 'Nash Sanders', 'nash.sanders@company.ie', 'Associate', 'Tax'),
+(6, 'Leo Kennedy', 'leo.kennedy@company.ie', 'Associate', 'Tax'),
+(7, 'Harper Poole', 'harper.poole@company.ie', 'Partner', 'Tax'),
+(8, 'Patrick Cole', 'patrick.cole@company.ie', 'Associate', 'Tax'),
+(9, 'Damian Alvarado', 'damian.alvarado@company.ie', 'Associate', 'Tax'),
+(10, 'Brendan Carey', 'brendan.carey@company.ie', 'Associate', 'HR'),
+(11, 'Rajah Allen', 'rajah.allen@company.ie', 'Manager', 'HR'),
+(12, 'Lawrence Henson', 'lawrence.henson@company.ie', 'CIO', 'IT'),
+(13, 'Eric Beach', 'eric.beach@company.ie', 'Associate', 'HR'),
+(14, 'Alex Quigley', 'alex.quigley@company.ie', 'Intern', 'Tax'),
+(15, 'Connor Zimmerman', 'connor.zimmerman@company.ie', 'Associate', 'Tax'),
+(16, 'Gregory Ayers', 'gregory.ayers@company.ie', 'CEO', 'Tax'),
+(17, 'Wyatt Acevedo', 'wyatt.acevedo@company.ie', 'Associate', 'Tax'),
+(18, 'Baxter Mcmahon', 'baxter.mcmahon@company.ie', 'Manager', 'Audit'),
+(19, 'Vernon Eaton', 'vernon.eaton@company.ie', 'Associate', 'Audit'),
+(20, 'Austin Calhoun', 'austin.calhoun@company.ie', 'Director', 'Audit'),
+(21, 'Joshua Rodriquez', 'joshua.rodriquez@company.ie', 'Associate', 'Audit'),
+(22, 'Calvin Mercado', 'calvin.mercado@company.ie', 'Manager', 'Tax'),
+(23, 'Graiden Buckley', 'graiden.buckley@company.ie', 'Director', 'Tax'),
+(24, 'Ross Stuart', 'ross.stuart@company.ie', 'Associate', 'Tax'),
+(25, 'Kennan Randolph', 'kennan.randolph@company.ie', 'Associate', 'Finance'),
+(26, 'Macaulay Bradley', 'macaulay.bradley@company.ie', 'Associate', 'Tax'),
+(27, 'Mark Rose', 'mark.rose@company.ie', 'Director', 'Audit'),
+(28, 'Zeph Reilly', 'zeph.reilly@company.ie', 'Associate', 'Audit'),
+(29, 'Luke Cruz', 'luke.cruz@company.ie', 'Associate', 'Audit'),
+(30, 'Kenneth Wolf', 'kenneth.wolf@company.ie', 'Intern', 'Audit');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

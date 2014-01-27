@@ -17,7 +17,7 @@ img {
 	background: white;
 	margin: 0 auto;
 	min-height: 100%;
-	width: 1000px;
+	width: 1050px;
 }
 * html #wrapper{
 	height: 100%;
@@ -28,14 +28,14 @@ div#banner {
     margin-top:0px;
     margin-bottom:0px;
     padding:0px;
-	width: 1000px;
+	width: 1050px;
 }
 #footer{
 	background: #09c;
 	color: #000;
 	height: 100px;
 	margin: -100px auto 0;
-	width: 1000px;
+	width: 1050px;
 }
 #scheduledTaskForm	{
 
