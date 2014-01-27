@@ -29,12 +29,13 @@
         $('#insert').click(function(){
             
 			var jInvoice = $('#invoice').val();
+			var jJobdesc = $('#jobdesc').val();
 			var jSchedule = $('#schedule').val();
 			var jTimeToRun = $('#timeToRun').val();
 			var jStartDate = $('#startDate').val();
 			var jEndDate = $('#endDate').val();
 			
-			$.post('/automate/assets/create_task.php',{action: "insert", invoice:jInvoice, schedule:jSchedule, timeToRun:jTimeToRun, startDate:jStartDate, endDate:jEndDate},function(res){
+			$.post('/automate/assets/create_task.php',{action: "insert", invoice:jInvoice, jobdesc:jJobdesc, schedule:jSchedule, timeToRun:jTimeToRun, startDate:jStartDate, endDate:jEndDate},function(res){
                 $('#result').html(res);				
             }); 			
 			
@@ -51,6 +52,7 @@
 	//Disable all inputs after selecting the insert button
 	function disableFunction() {
 		document.getElementById("schedule").disabled = 'true';
+		document.getElementById("jobdesc").disabled = 'true';
 		document.getElementById("timeToRun").disabled = 'true';
 		document.getElementById("startDate").disabled = 'true';
 		document.getElementById("endDate").disabled = 'true';
@@ -62,7 +64,7 @@
 	
 	<div style="width: 60%;">
 		<h2 class="scheduledTaskForm">Create Scheduled Task</h2>
-		<div class="alert-box warning"><span>warning: </span>This form creates a Scheduled Task that executes a PHP script that emails ALL USERS who have a laptop in the selected lease and have not yet logged a call to be upgraded.<br />All fields are required. Use with caution! Reload the page if your task is not created.</div>
+		<div class="alert-box warning"><span>warning: </span>This form creates a Scheduled Task that executes a PHP script that emails specified users (of a certain jobdesc) who have a laptop in the selected lease and have not yet logged a call to be upjobdescd.<br />All fields are required. Use with caution! Reload the page if your task is not created.</div>
 	</div>
 	
 	<div id="scheduledTaskForm">
@@ -73,6 +75,22 @@
 				<td>Invoice:</td>
 				<td>	
 					<input type="text" id="invoice" name="invoice" disabled="disabled" value="<?php echo $invoice ?>"></td>
+				</td>
+			</tr>
+			
+			<tr>
+				<td>jobdesc:</td>
+				<td>	
+					<select name="jobdesc" id="jobdesc" style="width:150;">
+						<option value = "associate">Associate</option>
+						<option value = "ceo">CEO</option>
+						<option value = "cio">CIO</option>
+						<option value = "Intern">Intern</option>
+						<option value = "manager">Manager</option>
+						<option value = "manager">Manager</option>
+						<option value = "partner">Partner</option>
+						
+					</select>
 				</td>
 			</tr>
 			

@@ -12,15 +12,18 @@
 	
 	#The invoice is passed in to script as argv[1]
 	$invoice = $argv[1];
+	$jobdesc = $argv[2];
 	
 	#Users who have not yet logged a call
-	$select = "SELECT serial_num AS 'Serial', owner AS 'Assigned To', email_address AS 'Email', status_level AS 'Status', callref as 'Call Ref', purchase_order_number AS 'Invoice' ";
+	$select = "SELECT serial_num AS 'Serial', owner AS 'Assigned To', jobdesc AS 'Grade', email_address AS 'Email', status_level AS 'Status', callref as 'Call Ref', purchase_order_number AS 'Invoice' ";
 	$from 	= "FROM assets ";
 	$join 	= "LEFT OUTER JOIN opencall ON opencall.cust_name = assets.owner ";
-	$where 	= "WHERE purchase_order_number = $invoice AND callref IS NULL AND status_level = 'Assigned'";
-	$sql 	= $select . $from . $join . $where;
+	$join_u	= "LEFT OUTER JOIN userdb ON userdb.fullname = assets.owner ";
+	$where 	= "WHERE purchase_order_number = $invoice AND callref IS NULL AND status_level = 'Assigned' AND jobdesc = '$jobdesc'";
+	$sql 	= $select . $from . $join . $join_u . $where;
+	echo $sql;
 	
-	$insert = "INSERT INTO contact(serial, purchase_order_number, owner, email, contents) VALUES (?, ?, ?, ?, ?)";
+	$insert = "INSERT INTO contact(serial, purchase_order_number, owner, jobdesc, email, contents) VALUES (?, ?, ?, ?, ?, ?)";
 	
 	$connection = mysqli_connect("localhost", "root", "", "swdata");
 	$connection_automate = mysqli_connect("localhost", "root", "", "automate");
@@ -37,15 +40,16 @@
 		die_and_display('<p class=die>Preparing the INSERT statement failed: ' . htmlspecialchars($connection_automate->error) . "</p>");		
 	}
 	
-	$insertArray = array("","","","","","","");
+	$insertArray = array("","","","","","","","");
 	
 	#Get the email addresses for each result
 	while($row = mysqli_fetch_array($result))	{
 		
-		#email address, owner name, serial
-		messageUser($row[2], $row[1], $row[0]);
+		#email address, owner name, serial, jobdesc
+		messageUser($row[3], $row[1], $row[0], $row[2]);
+		#[0] = serial, [1] = owner, [2] = jobdesc, [3] = email, [4] = status, [5] = callref, [6] = invoice
 		
-		$bp_insert = $stmt_insert->bind_param('sssss', $row[0], $row[5], $row[1], $row[2], $body);
+		$bp_insert = $stmt_insert->bind_param('ssssss', $row[0], $row[6], $row[1], $row[2], $row[3], $body);
 		
 		if ( false === $bp_insert )	{
 			die_and_display('Binding parameters for INSERT failed: ' . htmlspecialchars($stmt_cmdb->error));

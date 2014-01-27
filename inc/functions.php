@@ -35,10 +35,10 @@
 	}
 	
 	#Function to send email using PHPMailer and log it using writeToFile()
-	function messageUser($address, $owner, $serial)	{
+	function messageUser($address, $owner, $serial, $grade)	{
 		
 		global $body; 
-		$body = 'Hello <b>' . $owner . '</b>. Your laptop (<b>' . $serial . '</b>) is due to be returned.</b>';
+		$body = 'Hello <b>' . $owner . ' (' . $grade . ')</b>. Your laptop (<b>' . $serial . '</b>) is due to be returned.</b>';
 		$time = date("H:i:s d.m.y");
 		
 		$message = new PHPMailer;
@@ -65,7 +65,7 @@
 			exit;
 		}
 		
-		echo '<tr><td>Message sent to user: <b>' . $owner . '</b> (<b>' . $address . '</b>) @ ' . $time . '</td></tr>';
+		echo '<tr><td>Message sent to user: <b>' . $owner . '(' . $grade . ')</b> (<b>' . $address . '</b>) @ ' . $time . '</td></tr>';
 
 		#Output for logfile
 		$output = "Message sent to user: $owner ($address) @ $time \r\n";

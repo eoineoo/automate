@@ -13,11 +13,12 @@
 	
 	#SQL
 	$tablename = "scheduled_tasks";
-	$sql = "INSERT INTO $tablename (name, user, invoice, schedule, run_time, start_date, end_date) VALUES (?, ?, ?, ?, ?, ?, ?)";
+	$sql = "INSERT INTO $tablename (name, user, jobdesc, invoice, schedule, run_time, start_date, end_date) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 	
 	#Variables
 	$invoice  = $_POST['invoice'];
-	$name = $invoice . " Lease Return";
+	$jobdesc = $_POST['jobdesc'];
+	$name = $invoice . " " . ucfirst($jobdesc) . " Lease Return"; #e.g. 2011 Associate Lease Return
 	$user = "emccrann"; #Will capture currently logged in user when Sessions are sorted out
 	$schedule  = $_POST['schedule'];
 	$timeToRun  = $_POST['timeToRun'];
@@ -28,7 +29,7 @@
 	if($_POST['action'] == 'insert'){
 		
 		#Windows CLI command to create a scheduled task which executes a PHP file - may need to implement escapeshellarg()
-		$command = "cmd /c schtasks /create /tn \"$name\" /tr \"C:\\xampp\\php\\php.exe -f C:\\xampp\\htdocs\\automate\\assets\\scheduled_task.php $invoice\" /sc $schedule /st $timeToRun /sd $startDate /ed $endDate /ru $runAs 2>&1";
+		$command = "cmd /c schtasks /create /tn \"$name\" /tr \"C:\\xampp\\php\\php.exe -f C:\\xampp\\htdocs\\automate\\assets\\scheduled_task.php $invoice $jobdesc\" /sc $schedule /st $timeToRun /sd $startDate /ed $endDate /ru $runAs 2>&1";
 		$issued_command = shell_exec($command);
 		
 		#If the task was created succesfully, write a record to the database
@@ -41,7 +42,7 @@
 			}
 		
 			#Bind parameters
-			$rc = $ps->bind_param('sssssss', $name, $user, $invoice, $schedule, $timeToRun, $startDate, $endDate);
+			$rc = $ps->bind_param('ssssssss', $name, $user, $jobdesc, $invoice, $schedule, $timeToRun, $startDate, $endDate);
 			
 			if ( false === $rc )	{
 				die_and_display('Binding parameters failed: ' . htmlspecialchars($ps->error));

@@ -25,7 +25,7 @@
 	}
 	
 	#Main Query - multiple databases
-	$select		=  	"SELECT DISTINCT(serial_num) AS 'Serial', last_logon AS 'Last Logon', username AS 'Last User', a.owner AS 'Assigned To', department AS 'Dept', jobdesc AS 'Grade', status_level AS 'Status', model as 'Model', callref as 'Call Ref', MAX(timestamp) AS 'Last Email' ";
+	$select		=  	"SELECT DISTINCT(serial_num) AS 'Serial', last_logon AS 'Last Logon', username AS 'Last User', a.owner AS 'Assigned To', department AS 'Dept', u.jobdesc AS 'Grade', status_level AS 'Status', model as 'Model', callref as 'Call Ref', MAX(timestamp) AS 'Last Email' ";
 	$from		= 	"FROM swdata.assets a ";
 	$join_a		= 	"LEFT OUTER JOIN asset_details a_d ON a_d.id = a.id ";
 	$join_u		= 	"LEFT OUTER JOIN swdata.userdb u ON u.fullname = a.owner ";
