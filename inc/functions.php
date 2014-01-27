@@ -65,7 +65,7 @@
 			exit;
 		}
 		
-		echo '<tr><td>Message sent to user: <b>' . $owner . '(' . $grade . ')</b> (<b>' . $address . '</b>) @ ' . $time . '</td></tr>';
+		echo '<tr><td>Message sent to user: <b>' . $owner . ' (' . $grade . ')</b> (<b>' . $address . '</b>) @ ' . $time . '</td></tr>';
 
 		#Output for logfile
 		$output = "Message sent to user: $owner ($address) @ $time \r\n";
