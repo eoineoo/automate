@@ -8,7 +8,7 @@
 	require_once("/../inc/config.php");  
 	require_once("/../inc/header.php");  
 	require_once("/../inc/functions.php");
-	require_once("/../resources/PHPMailerAutoLoad.php");
+	require_once("/../resources/mailer/PHPMailerAutoLoad.php");
 	
 	global $mail_counter;
 	

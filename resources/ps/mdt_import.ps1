@@ -1,7 +1,7 @@
 #Source: http://www.windowsnetworking.com/articles-tutorials/windows-7/Deploying-Windows-7-Part22.html
 #This file takes in a CSV filename as a parameter, loops through it and adds each computer to the MDT database, it also assigns a role to each
 param([string]$csv)
-Import-Module -name C:\xampp\htdocs\automate\resources\MDTDB.psm1
+Import-Module -name "C:\xampp\htdocs\automate\resources\ps\MDTDB.psm1"
 #Connect-MDTDatabase -sqlServer EOINWIN8 -instance SQLEXPRESS -database MDT
 Connect-MDTDatabase -sqlServer IEPBN91G7 -instance SQLEXPRESS -database MDT
 

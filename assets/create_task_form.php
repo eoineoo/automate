@@ -19,10 +19,10 @@
 	}
 	
 ?>
-<link rel="stylesheet" href="http://localhost/automate/resources/jquery-ui.css">
-<link rel="stylesheet" href="http://localhost/automate/resources/jquery-ui-timepicker-addon.css">
-<script src="http://localhost/automate/resources/jquery-ui.js"></script>
-<script src="http://localhost/automate/resources/jquery-ui-timepicker-addon.js"></script>
+<link rel="stylesheet" href="http://localhost/automate/resources/css/jquery-ui.css">
+<link rel="stylesheet" href="http://localhost/automate/resources/css/jquery-ui-timepicker-addon.css">
+<script src="http://localhost/automate/resources/js/jquery-ui.js"></script>
+<script src="http://localhost/automate/resources/js/jquery-ui-timepicker-addon.js"></script>
 <script>
 	//http://blog.theonlytutorials.com/insert-show-records-jquery-ajax-php/
     $(function(){

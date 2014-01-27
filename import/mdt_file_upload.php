@@ -88,7 +88,6 @@
 					
 					#Successful upload
 					echo "File uploaded successfully. Redirecting to review and import page.<br />Click <a href=display-csv/$new_filename>here</a> if your browser does not redirect you automatically.";
-					#header("refresh:3; url=mdt_display_csv.php?csv=$new_filename");
 					header("refresh:3; url=display-csv/$new_filename");
 				}
 			}

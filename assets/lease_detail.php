@@ -44,9 +44,8 @@
 	
 ?>
 
-
-    <script type="text/javascript" language="javascript" src="http://localhost/automate/resources/jquery.js"></script>
-    <script class="jsbin" src="http://localhost/automate/resources/jquery.dataTables.nightly.js"></script>
+    <script type="text/javascript" language="javascript" src="http://localhost/automate/resources/js/jquery.js"></script>
+    <script class="jsbin" src="http://localhost/automate/resources/js/jquery.dataTables.nightly.js"></script>
 	<script type="text/javascript" charset="utf-8">
 		/* 
 		 * Filter data using text boxes 

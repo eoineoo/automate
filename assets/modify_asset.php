@@ -37,8 +37,8 @@
 	$current_url = $_SERVER['REQUEST_URI'];
 	
 ?>
-<link rel="stylesheet" href="http://localhost/automate/resources/jquery-ui.css">
-<script src="http://localhost/automate/resources/jquery-ui.js"></script>
+<link rel="stylesheet" href="http://localhost/automate/resources/css/jquery-ui.css">
+<script src="http://localhost/automate/resources/js/jquery-ui.js"></script>
 <script>
 $(function() {
    $('#moveToSpares').click(function() {

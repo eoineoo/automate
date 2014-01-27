@@ -20,7 +20,7 @@
 	#Execute PowerShell import script
 	$psDir = "C:\\xampp\\ps\\";
 	$psApp = "powershell.exe";
-	$psScriptDir = realpath(getcwd() . '/../resources');
+	$psScriptDir = realpath(getcwd() . '/../resources/ps');
 	$psScript = "/mdt_import.ps1";
 	$parameter = $csv;
 	$runCMD = $psDir . $psApp . " " . $psScriptDir . $psScript . " " . $parameter . " 2>&1";

@@ -40,7 +40,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<script type="text/javascript" charset="utf-8">
 		$(document).ready(function() {
-			//Alterate the color of the rows
+			//Alternate the color of the rows
 			$("tr:even").css("background-color", "#CEE8F0");
 		} );
 	</script>

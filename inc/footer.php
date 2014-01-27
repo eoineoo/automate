@@ -6,7 +6,7 @@
 		</div>
 	
 		<div id="footer" align="center">
-			<p class="footer">Copyright (c) Automate - 2013</p>
+			<p class="footer">Copyright (c) Automate - 2014</p>
 			
 			
 			<?php
