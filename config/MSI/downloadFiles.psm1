@@ -31,7 +31,6 @@ function DownloadFile($url, $targetFile)	{
 
 	$downloadedBytes = $count
 
-	#While count's greater than 0
 	while ($count -gt 0)	{
 
 		$targetStream.Write($buffer, 0, $count)
@@ -40,6 +39,7 @@ function DownloadFile($url, $targetFile)	{
 
 		$downloadedBytes = $downloadedBytes + $count
 
+		#Display progress bar
 		Write-Progress -activity "Downloading file '$($url.split('/') | Select -Last 1)'" -status "Downloaded ($([System.Math]::Floor($downloadedBytes/1024))K of $($totalLength)K): " -PercentComplete ((([System.Math]::Floor($downloadedBytes/1024)) / $totalLength)  * 100)
 		
 	}

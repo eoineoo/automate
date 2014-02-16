@@ -1,9 +1,0 @@
-C:\xampp\htdocs\automate\config\vs\InstallApplicationMSI\InstallApplicationMSI\bin\Debug\InstallApplicationMSI.exe
-C:\xampp\htdocs\automate\config\vs\InstallApplicationMSI\InstallApplicationMSI\bin\Debug\InstallApplicationMSI.pdb
-C:\xampp\htdocs\automate\config\vs\InstallApplicationMSI\InstallApplicationMSI\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\xampp\htdocs\automate\config\vs\InstallApplicationMSI\InstallApplicationMSI\obj\x86\Debug\InstallApplicationMSI.Form1.resources
-C:\xampp\htdocs\automate\config\vs\InstallApplicationMSI\InstallApplicationMSI\obj\x86\Debug\InstallApplicationMSI.Properties.Resources.resources
-C:\xampp\htdocs\automate\config\vs\InstallApplicationMSI\InstallApplicationMSI\obj\x86\Debug\GenerateResource.read.1.tlog
-C:\xampp\htdocs\automate\config\vs\InstallApplicationMSI\InstallApplicationMSI\obj\x86\Debug\GenerateResource.write.1.tlog
-C:\xampp\htdocs\automate\config\vs\InstallApplicationMSI\InstallApplicationMSI\obj\x86\Debug\InstallApplicationMSI.exe
-C:\xampp\htdocs\automate\config\vs\InstallApplicationMSI\InstallApplicationMSI\obj\x86\Debug\InstallApplicationMSI.pdb
