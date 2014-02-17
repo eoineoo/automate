@@ -13,38 +13,75 @@
 <br />
 <p class="stats">Make your selections below</p>
 <br />
-<table id="hor-minimalist-a" width="80%" border = 1>
+
+<table>
 	<tr>
-		<td width="20%"><a href="view_leases.php"><img src="../images/cmdb.png" /></a></td>
-		<td width="80%"><a href="view_leases.php">View Lease Detail</a></td>		
-	</tr>
+	<td>
+		<fieldset class="group"> 
+			<legend>Preconfigured</legend> 
+				<ul class="checkbox"> 
+					<li><input type="checkbox" id="cb1" value="pepperoni" /><label for="cb1">Pepperoni</label></li> 
+					<li><input type="checkbox" id="cb2" value="sausage" /><label for="cb2">Sausage</label></li> 
+					<li><input type="checkbox" id="cb3" value="mushrooms" /><label for="cb3">Mushrooms</label></li> 
+					<li><input type="checkbox" id="cb4" value="onions" /><label for="cb4">Onions</label></li> 
+					<li><input type="checkbox" id="cb5" value="gpeppers" /><label for="cb5">Green Peppers</label></li> 
+					<li><input type="checkbox" id="cb6" value="xcheese" /><label for="cb6>">Extra Cheese</label></li> 
+				</ul> 
+		</fieldset> 
+	</td>
 	
-	<tr>
-		<td>&nbsp;</td>
-		<td>&nbsp;</td>
-	</tr>
+	<td>&nbsp;&nbsp;</td>
 	
-	<tr>
-		<td width="90"><a href="#"><img src="../images/search.png" /></a></td>
-		<td><a href="#">Search</a></td>
-	</tr>
+	<td>
+		<fieldset class="group"> 
+			<legend>Audit</legend> 
+				<ul class="checkbox"> 
+					<li><input type="checkbox" id="cb1" value="pepperoni" /><label for="cb1">Pepperoni</label></li> 
+					<li><input type="checkbox" id="cb2" value="sausage" /><label for="cb2">Sausage</label></li> 
+					<li><input type="checkbox" id="cb3" value="mushrooms" /><label for="cb3">Mushrooms</label></li> 
+					<li><input type="checkbox" id="cb4" value="onions" /><label for="cb4">Onions</label></li> 
+					<li><input type="checkbox" id="cb5" value="gpeppers" /><label for="cb5">Green Peppers</label></li> 
+					<li><input type="checkbox" id="cb6" value="xcheese" /><label for="cb6>">Extra Cheese</label></li> 
+				</ul> 
+		</fieldset> 
+	</td>
 	
-	<tr>
-		<td>&nbsp;</td>
-		<td>&nbsp;</td>
-	</tr>
+	<td>&nbsp;&nbsp;</td>
 	
-	<tr>
-		<td width="90"><a href="#"><img src="../images/mdt.jpg" /></a></td>
-		<td><a href="#">View All Assets</a></td>
-	</tr>
+	<td>
+		<fieldset class="group"> 
+			<legend>Tax</legend> 
+				<ul class="checkbox"> 
+					<li><input type="checkbox" id="cb1" value="pepperoni" /><label for="cb1">Pepperoni</label></li> 
+					<li><input type="checkbox" id="cb2" value="sausage" /><label for="cb2">Sausage</label></li> 
+					<li><input type="checkbox" id="cb3" value="mushrooms" /><label for="cb3">Mushrooms</label></li> 
+					<li><input type="checkbox" id="cb4" value="onions" /><label for="cb4">Onions</label></li> 
+					<li><input type="checkbox" id="cb5" value="gpeppers" /><label for="cb5">Green Peppers</label></li> 
+					<li><input type="checkbox" id="cb6" value="xcheese" /><label for="cb6>">Extra Cheese</label></li> 
+				</ul> 
+		</fieldset> 
+	</td>
 	
-	<tr>
-		<td>&nbsp;</td>
-		<td>&nbsp;</td>
-	</tr>
+	<td>&nbsp;&nbsp;</td>
 	
+	<td>
+		<fieldset class="group"> 
+			<legend>Other</legend> 
+				<ul class="checkbox"> 
+					<li><input type="checkbox" id="cb1" value="pepperoni" /><label for="cb1">Pepperoni</label></li> 
+					<li><input type="checkbox" id="cb2" value="sausage" /><label for="cb2">Sausage</label></li> 
+					<li><input type="checkbox" id="cb3" value="mushrooms" /><label for="cb3">Mushrooms</label></li> 
+					<li><input type="checkbox" id="cb4" value="onions" /><label for="cb4">Onions</label></li> 
+					<li><input type="checkbox" id="cb5" value="gpeppers" /><label for="cb5">Green Peppers</label></li> 
+					<li><input type="checkbox" id="cb6" value="xcheese" /><label for="cb6>">Extra Cheese</label></li> 
+				</ul> 
+		</fieldset> 
+	</td>
+	
+	</tr>
 </table>
+
+<a href="#" class="downloadAndInstallButton">Submit</a>
 
 <?php	
 	require_once("/../inc/footer.php");

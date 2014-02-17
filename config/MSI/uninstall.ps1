@@ -11,3 +11,5 @@ foreach ($msifile in $apps)	{
 
 }
 [System.Diagnostics.Process]::Start("C:\Program Files (x86)\Adobe\Adobe Digital Editions 3.0\uninstall.exe", "/s")
+
+Remove-Item -Recurse -Force C:\temp\automate
