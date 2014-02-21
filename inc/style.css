@@ -252,11 +252,20 @@ td.last {
 	width:100px;
 }
 /** Config page **/
-fieldset.group  { 
+p.smaller	{
+	font-size:0.65em;
+}
+fieldset.preconfig {
+  border: 2px solid silver;
+  padding:10;
+}
+fieldset.group { 
+  border:none;
   margin: 0; 
   padding: 0; 
   margin-bottom: 1.25em; 
   padding: .125em;
+  height:250px;
 } 
 fieldset.group legend { 
   margin: 0; 
@@ -279,6 +288,7 @@ ul.checkbox li input {
 
 ul.checkbox li { 
   border: 1px transparent solid; 
+  padding: 2 0 2 0;
 } 
 
 ul.checkbox li label { 
@@ -289,6 +299,10 @@ ul.checkbox li.focus  {
   background-color: lightyellow; 
   border: 1px gray solid; 
 } 
+table.group	{
+	border-bottom: 2px solid silver;
+	margin-bottom:10px;
+}
 /** Download button - generated using CSSButtonGenerator.com **/
 .downloadAndInstallButton {
 	-moz-box-shadow:inset 0px 1px 0px 0px #c1ed9c;
@@ -333,4 +347,10 @@ ul.checkbox li.focus  {
 }.downloadAndInstallButton:active {
 	position:relative;
 	top:1px;
+}
+#centerTableAndPad td {
+    text-align:center; 
+    vertical-align:middle;
+	padding:10 0 10 0;
+	margin: ;
 }
