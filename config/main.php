@@ -14,11 +14,16 @@
 <p class="stats">Make your selections below</p>
 <p class="smaller">Batch script included in each download</p>
 
+
 <script type="text/javascript">
 
 $(function() {
 	$('#audit').click(function(){      
 		//deselect everything first
+		$('input[type=checkbox]').each(function() { 
+			this.checked = false; 
+		});
+		//select audit applications
 		$('#afile').attr('checked', true);
 		$('#sage').attr('checked', true);
 		$('#paperchase').attr('checked', true);
@@ -26,7 +31,11 @@ $(function() {
 	});
 
 	$('#tax').click(function(){  
-		//deselect everything first    
+		//deselect everything first
+		$('input[type=checkbox]').each(function() { 
+			this.checked = false; 
+		});
+		//select tax applications
 		$('#afile').attr('checked', true);
 		$('#ade').attr('checked', true);
 		$('#ptm').attr('checked', true);
@@ -36,20 +45,35 @@ $(function() {
 	}); 
 
 	$('#advisory').click(function(){
+		//deselect everything first
+		$('input[type=checkbox]').each(function() { 
+			this.checked = false; 
+		});
+		//select advisory applications
 		$('#afile').attr('checked', true);
 		$('#visio').attr('checked', true);
 		$('#project').attr('checked', true);
 		$('#onenote').attr('checked', true);
 	});
 
-	$('#support').click(function(){      
+	$('#support').click(function(){
+		//deselect everything first
+		$('input[type=checkbox]').each(function() { 
+			this.checked = false; 
+		});
+		//select support applications	
 		$('#afile').attr('checked', true);
 		$('#paperchase').attr('checked', true);
 		$('#g2dic').attr('checked', true);
 		$('#goldmine').attr('checked', true);
 	}); 
 
-	$('#it').click(function(){      
+	$('#it').click(function(){
+		//deselect everything first
+		$('input[type=checkbox]').each(function() { 
+			this.checked = false; 
+		});
+		//select IT applications
 		$('#adug').attr('checked', true);
 		$('#chrome').attr('checked', true);
 		$('#configmgrtools').attr('checked', true);
@@ -59,6 +83,14 @@ $(function() {
 		$('#firefox').attr('checked', true);
 		$('#supportworks').attr('checked', true);
 	}); 
+	
+	$('#none').click(function(){
+		//deselect everything first
+		$('input[type=checkbox]').each(function() { 
+			this.checked = false; 
+		});
+	}); 
+	
 });
 
 </script>
@@ -72,6 +104,7 @@ $(function() {
 			<input type="radio" name="config" id="advisory" value="advisory" /><label for="advisory">Advisory</label>&nbsp;&nbsp;
 			<input type="radio" name="config" id="support" value="support" /><label for="support">Support</label>&nbsp;&nbsp;
 			<input type="radio" name="config" id="it" value="it" /><label for="it">IT Dept</label>
+			<input type="radio" name="config" id="none" value="none" /><label for="none">None</label>
 			</fieldset>
 		</td>
 	</tr>
@@ -81,7 +114,7 @@ $(function() {
 			<fieldset class="group">
 				<legend>General</legend> 
 				<ul class="checkbox"> 
-					<li><input type="checkbox" id="afile_a" value="afile" disabled="disabled"/><label for="afile">@file</label></li> 
+					<li><input type="checkbox" id="afile" value="afile" disabled="disabled"/><label for="afile">@file</label></li> 
 					<li><input type="checkbox" id="ade" value="ade" disabled="disabled" /><label for="ade">Adobe Digital Editions</label></li>
 					<li><input type="checkbox" id="goldmine" value="goldmine" disabled="goldmine" /><label for="sage">Goldmine</label></li>
 					<li><input type="checkbox" id="g2dic" value="g2dic" disabled="g2dic" /><label for="g2dic">G2Dictation</label></li>
