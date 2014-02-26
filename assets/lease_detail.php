@@ -47,7 +47,7 @@
 
     <script type="text/javascript" language="javascript" src="http://localhost/automate/resources/js/jquery.js"></script>
     <script class="jsbin" src="http://localhost/automate/resources/js/jquery.dataTables.nightly.js"></script>
-	<script type="text/javascript" charset="utf-8">
+	<script type="text/javascript" charset="utf-8">		
 		/* 
 		 * Filter data using text boxes 
 		 * http://datatables.net/examples/api/multi_filter.html
@@ -80,7 +80,6 @@
 			} );
 	</script>
 
-	
 	<!-- Control panel -->
 	<table id='hor-minimalist-a' border='1'>
 		<thead>
@@ -91,7 +90,7 @@
 				<?php 
 					echo "<td width=\"25%\"><a href='$invoice/summary'>Lease Summary</a></td>";
 					echo "<td width=\"25%\"><a href='$invoice/schedule'>Create Scheduled Task</td>";
-					echo "<td width=\"25%\"><a href='$invoice/contact' target=_blank>Mail Outstanding Users</a></td>";
+					echo "<td width=\"25%\"><a href='$invoice/contact' onclick=\"return confirm('You are about to contact ALL outstanding users. Are you sure you want to do this?')\" target=_blank>Mail Outstanding Users</a></td>";
 					echo "<td width=\"25%\"><a href='$invoice/history-all' target=_blank>View Contact History</a></td>"; 
 				?>
 			</tr>
