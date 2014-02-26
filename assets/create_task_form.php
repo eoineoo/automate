@@ -64,7 +64,7 @@
 	
 	<div style="width: 60%;">
 		<h2 class="scheduledTaskForm">Create Scheduled Task</h2>
-		<div class="alert-box warning"><span>warning: </span>This form creates a Scheduled Task that executes a PHP script that emails specified users (of a certain jobdesc) who have a laptop in the selected lease and have not yet logged a call to be upjobdescd.<br />All fields are required. Use with caution! Reload the page if your task is not created.</div>
+		<div class="alert-box warning"><span>warning: </span>This form creates a Scheduled Task that executes a PHP script that emails specified users (of a certain grade) who have a laptop in the selected lease and have not yet logged a call to be up graded.<br />All fields are required. Use with caution! Reload the page if your task is not created.</div>
 	</div>
 	
 	<div id="scheduledTaskForm">
@@ -79,7 +79,7 @@
 			</tr>
 			
 			<tr>
-				<td>jobdesc:</td>
+				<td>Grade:</td>
 				<td>	
 					<select name="jobdesc" id="jobdesc" style="width:150;">
 						<option value = "associate">Associate</option>
