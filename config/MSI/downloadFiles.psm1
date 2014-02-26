@@ -15,7 +15,7 @@ function DownloadFile($url, $targetFile)	{
 	$response = $request.GetResponse()
 
 	#Variable holding the size of the file, represented in kilobytes
-	$totalLength = [System.Math]::Floor($response.get_ContentLength()/1024)
+	$fileSize = [System.Math]::Floor($response.get_ContentLength()/1024)
 	
 	#Returns the data stream from the requested Internet resource
 	$responseStream = $response.GetResponseStream()
@@ -23,7 +23,7 @@ function DownloadFile($url, $targetFile)	{
 	#Create a file where the data will be written to
 	$targetStream = New-Object -TypeName System.IO.FileStream -ArgumentList $targetFile, Create
 	
-	#Graphical representation of download progress
+	#Used in graphical representation of download progress
 	$buffer = new-object byte[] 10KB
 
 	#Read 10kb at a time
@@ -40,7 +40,7 @@ function DownloadFile($url, $targetFile)	{
 		$downloadedBytes = $downloadedBytes + $count
 
 		#Display progress bar
-		Write-Progress -activity "Downloading file '$($url.split('/') | Select -Last 1)'" -status "Downloaded ($([System.Math]::Floor($downloadedBytes/1024))K of $($totalLength)K): " -PercentComplete ((([System.Math]::Floor($downloadedBytes/1024)) / $totalLength)  * 100)
+		Write-Progress -activity "Downloading file '$($url.split('/') | Select -Last 1)'" -status "Downloaded ($([System.Math]::Floor($downloadedBytes/1024))K of $($fileSize)K): " -PercentComplete ((([System.Math]::Floor($downloadedBytes/1024)) / $fileSize)  * 100)
 		
 	}
 
