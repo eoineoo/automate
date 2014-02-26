@@ -72,6 +72,11 @@ p.footer	{
 p.navigation	{
 	padding:15; /* top, right, bottom, left */
 }
+/* Import CSV table is wide and needs a scroll bar */
+#importTableWrapper	{
+	width: 1050px;
+	overflow: scroll;
+}
 /* Table for user accounts: http://coding.smashingmagazine.com/2008/08/13/top-10-css-table-designs/
 	- Might need to be tweaked for gap between footer and main content on some pages*/
 #hor-minimalist-a
