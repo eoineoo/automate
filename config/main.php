@@ -8,7 +8,7 @@
 	require_once("/../inc/header.php");  
 	require_once("/../inc/functions.php");
 	
-	#Variables
+	#Variable - array that will contain the values of what is selected
 	$_POST['config'] = array("");
 ?>
 
@@ -110,7 +110,7 @@ $(function() {
 				<input type="radio" name="config" id="tax" value="tax" /><label for="tax">Tax</label>&nbsp;&nbsp;
 				<input type="radio" name="config" id="advisory" value="advisory" /><label for="advisory">Advisory</label>&nbsp;&nbsp;
 				<input type="radio" name="config" id="support" value="support" /><label for="support">Support</label>&nbsp;&nbsp;
-				<input type="radio" name="config" id="it" value="it" /><label for="it">IT Dept</label>
+				<input type="radio" name="config" id="it" value="it" /><label for="it">IT Dept</label>&nbsp;&nbsp;
 				<input type="radio" name="config" id="none" value="none" /><label for="none">None</label>
 				</fieldset>
 			</td>
@@ -120,15 +120,31 @@ $(function() {
 			<td>
 				<fieldset class="group">
 					<legend>General</legend> 
-					<ul class="checkbox"> 
-						<li><input type="checkbox" name="config[]" id="afile" value="afile" disabled="disabled"/><label for="afile">@file</label></li> 
-						<li><input type="checkbox" name="config[]" id="ade" value="ade" disabled="disabled" /><label for="ade">Adobe Digital Editions</label></li>
-						<li><input type="checkbox" name="config[]" id="goldmine" value="goldmine" disabled="goldmine" /><label for="sage">Goldmine</label></li>
-						<li><input type="checkbox" name="config[]" id="g2dic" value="g2dic" disabled="g2dic" /><label for="g2dic">G2Dictation</label></li>
-						<li><input type="checkbox" name="config[]" id="paperchase" value="paperchase" disabled="disabled" /><label for="paperchase">PaperChase</label></li>
-						<li><input type="checkbox" name="config[]" id="ptm" value="ptm" disabled="disabled" /><label for="ptm">PTM</label></li> 
-						<li><input type="checkbox" name="config[]" id="ros" value="ros" disabled="disabled" /><label for="ros">ROS Offline</label></li>	
-						<li><input type="checkbox" name="config[]" id="sage" value="sage" disabled="disabled" /><label for="sage">Sage Accounts Production</label></li>
+					<ul class="configCheckboxesDisabled"> 
+						<li>
+							<input type="checkbox" name="config[]" id="afile" value="afile" disabled="disabled"/><label for="afile">@file</label>
+						</li> 
+						<li>
+							<input type="checkbox" name="config[]" id="ade" value="ade" disabled="disabled" /><label for="ade">Adobe Digital Editions</label>
+						</li>
+						<li>
+							<input type="checkbox" name="config[]" id="goldmine" value="goldmine" disabled="goldmine" /><label for="sage">Goldmine</label>
+						</li>
+						<li>
+							<input type="checkbox" name="config[]" id="g2dic" value="g2dic" disabled="g2dic" /><label for="g2dic">G2Dictation</label>
+						</li>
+						<li>
+							<input type="checkbox" name="config[]" id="paperchase" value="paperchase" disabled="disabled" /><label for="paperchase">PaperChase</label>
+						</li>
+						<li>
+							<input type="checkbox" name="config[]" id="ptm" value="ptm" disabled="disabled" /><label for="ptm">PTM</label>
+						</li> 
+						<li>
+							<input type="checkbox" name="config[]" id="ros" value="ros" disabled="disabled" /><label for="ros">ROS Offline</label>
+						</li>	
+						<li>
+							<input type="checkbox" name="config[]" id="sage" value="sage" disabled="disabled" /><label for="sage">Sage Accounts Production</label>
+						</li>
 					</ul>
 				</fieldset>
 			</td>
@@ -136,10 +152,16 @@ $(function() {
 			<td>
 				<fieldset class="group">
 				<legend>Licensed</legend> 
-					<ul class="checkbox"> 
-						<li><input type="checkbox" name="config[]" id="project" value="project" disabled="disabled" /><label for="project">MS Project</label></li>
-						<li><input type="checkbox" name="config[]" id="visio" value="visio" disabled="disabled" /><label for="visio">MS Visio</label></li> 
-						<li><input type="checkbox" name="config[]" id="onenote" value="onenote" disabled="disabled" /><label for="onenote">MS OneNote</label></li> 
+					<ul class="configCheckboxesDisabled"> 
+						<li>
+							<input type="checkbox" name="config[]" id="project" value="project" disabled="disabled" /><label for="project">MS Project</label>
+						</li>
+						<li>
+							<input type="checkbox" name="config[]" id="visio" value="visio" disabled="disabled" /><label for="visio">MS Visio</label>
+						</li> 
+						<li>
+							<input type="checkbox" name="config[]" id="onenote" value="onenote" disabled="disabled" /><label for="onenote">MS OneNote</label>
+						</li> 
 					</ul> 
 				</fieldset> 
 			</td>
@@ -149,17 +171,36 @@ $(function() {
 			<td>
 				<fieldset class="group"> 
 					<legend>Other</legend> 
-						<ul class="checkbox"> 
-							<li><input type="checkbox" name="config[]" id="adug" value="ade_3.0_installer.msi" disabled="disabled" /><label for="adug>">Active Directory</label></li> 
-							<li><input type="checkbox" name="config[]" id="chrome" value="GoogleChromeStandaloneEnterprise.msi" /><label for="chrome>">Chrome</label></li> 
-							<li><input type="checkbox" name="config[]" id="configmgrtools" value="ConfigMgrTools.msi" /><label for="configmgrtools">Config Manager Tools</label></li> 
-							<li><input type="checkbox" name="config[]" id="dtools" value="dtlite4481-0347.msi" /><label for="dtools">DAEMON Tools Lite</label></li> 
-							<li><input type="checkbox" name="config[]" id="firefox" value="FirefoxESR-24.2.0-en-GB.msi" /><label for="firefox">FireFox</label></li> 
-							<li><input type="checkbox" name="config[]" id="gimp" value="gimp-2.2.8+gtk-2.6.8-1-en_US.msi" /><label for="gimp">GIMP</label></li> 
-							<li><input type="checkbox" name="config[]" id="rcdman" value="RDCMan.msi" /><label for="rcdman>">RCD Manager</label></li>
-							<li><input type="checkbox" name="config[]" id="supportworks" value="supportworks" disabled="disabled" /><label for="supportworks">SupportWorks</label></li> 
-							<li><input type="checkbox" name="config[]" id="vlc" value="vlc-2.0.6-intel.msi" /><label for="vlc">VLC Player</label></li>
-							<li><input type="checkbox" name="config[]" id="vmware" value="vmware" disabled="disabled" /><label for="vmware">VMWare View Client</label></li>					
+						<ul class="configCheckboxes"> 
+							<li>
+								<input type="checkbox" name="config[]" id="adug" value="ade_3.0_installer.msi" disabled="disabled" /><label for="adug">Active Directory</label>
+							</li>
+							<li>
+								<input type="checkbox" name="config[]" id="chrome" value="GoogleChromeStandaloneEnterprise.msi" /><label for="chrome">Google Chrome</label>
+							</li> 
+							<li>
+								<input type="checkbox" name="config[]" id="configmgrtools" value="ConfigMgrTools.msi" /><label for="configmgrtools">Config Manager Tools</label>
+							</li> 
+							<li>
+								<input type="checkbox" name="config[]" id="dtools" value="dtlite4481-0347.msi" /><label for="dtools">DAEMON Tools Lite</label>
+							</li> 
+							<li>
+								<input type="checkbox" name="config[]" id="firefox" value="FirefoxESR-24.2.0-en-GB.msi" /><label for="firefox">FireFox</label>
+							</li> 
+							<li>
+								<input type="checkbox" name="config[]" id="gimp" value="gimp-2.2.8+gtk-2.6.8-1-en_US.msi" /><label for="gimp">GIMP</label>
+							</li> 
+							<li>
+								<input type="checkbox" name="config[]" id="rcdman" value="RDCMan.msi" /><label for="rcdman">RCD Manager</label>
+							</li>
+							<li>
+								<input type="checkbox" name="config[]" id="supportworks" value="supportworks" disabled="disabled" /><label for="supportworks">SupportWorks</label></li> 
+							<li>
+								<input type="checkbox" name="config[]" id="vlc" value="vlc-2.0.6-intel.msi" /><label for="vlc">VLC Player</label>
+								</li>
+							<li>
+								<input type="checkbox" name="config[]" id="vmware" value="vmware" disabled="disabled" /><label for="vmware">VMWare View Client</label>
+							</li>					
 						</ul> 
 				</fieldset> 		
 			</td>

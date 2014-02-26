@@ -279,35 +279,60 @@ fieldset.group legend {
   margin-left: 20px; 
   font-size: 100%; 
   color: black; 
-} 
-ul.checkbox  { 
+}
+/** Enabled checkboxes **/ 
+ul.configCheckboxes  { 
   margin: 0; 
   padding: 0; 
   margin-left: 20px; 
   list-style: none; 
 } 
 
-ul.checkbox li input { 
+ul.configCheckboxes li input { 
   margin-right: .25em; 
 } 
 
-ul.checkbox li { 
+ul.configCheckboxes li { 
   border: 1px transparent solid; 
   padding: 2 0 2 0;
 } 
 
-ul.checkbox li label { 
+ul.configCheckboxes li label { 
   margin-left: ; 
 } 
-ul.checkbox li:hover, 
-ul.checkbox li.focus  { 
-  background-color: lightyellow; 
-  border: 1px gray solid; 
+ul.configCheckboxes li:hover, 
+ul.configCheckboxes li.focus  { 
+  background-color: gray; 
+  border: 1px gray solid;
+  color: white;
 } 
 table.group	{
 	border-bottom: 2px solid silver;
 	margin-bottom:10px;
 }
+/** Disabled checkboxes **/
+ul.configCheckboxesDisabled  { 
+  margin: 0; 
+  padding: 0; 
+  margin-left: 20px; 
+  list-style: none; 
+} 
+
+ul.configCheckboxesDisabled li input { 
+  margin-right: .25em; 
+} 
+
+ul.configCheckboxesDisabled li { 
+  border: 1px transparent solid; 
+  padding: 2 0 2 0;
+} 
+
+ul.configCheckboxesDisabled li label { 
+  margin-left: ; 
+} 
+ul.configCheckboxesDisabled li:hover, ul.configCheckboxesDisabled li.focus  { 
+ 
+} 
 /** Download button - generated using CSSButtonGenerator.com **/
 .downloadAndInstallButton {
 	-moz-box-shadow:inset 0px 1px 0px 0px #c1ed9c;
