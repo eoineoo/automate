@@ -10,6 +10,7 @@
 	require_once("/../inc/config.php");  
 	require_once("/../inc/header.php"); ; 
 	require_once("/../inc/functions.php");
+	checkLogin();
 	
 	#Determine what CSV file was selected
 	if(isset($_GET['csv']))	{

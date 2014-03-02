@@ -1,6 +1,9 @@
 <?php
 	$pagetitle = "Home";
-	include("inc/header.php");
+	require_once("inc/functions.php");
+	require_once("inc/header.php");
+	error_reporting(0);
+	checkLogin();
 ?>
 	
 	<table id="hor-minimalist-a" border=1 width=600>

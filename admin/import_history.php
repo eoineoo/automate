@@ -9,7 +9,7 @@
 	require_once("/../inc/header.php");  
 	require_once("/../inc/functions.php");
 	
-	#checkLogin();
+	checkAdminLogin();
 	
 	#Connect
 	$connection = mysqli_connect("localhost", "root", "", "automate");

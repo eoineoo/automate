@@ -2,25 +2,26 @@
 
 	/**
 	* Sources:
-	*         1) http://stackoverflow.com/questions/16340086/looping-through-a-csv-file-to-insert-data-to-mysql-using-php-mysqli-prepared-sta
-	*         2) http://stackoverflow.com/questions/19106963/php-prepared-statements-and-transactions-in-a-loop
-	*         3) http://php.net/manual/en/function.fgetcsv.php
-	*        4) http://php.net/manual/en/mysqli-stmt.bind-param.php
-	*        5) http://us2.php.net/mysqli_fetch_array
-	*        6) http://stackoverflow.com/questions/2552545/mysqli-prepared-statements-error-reporting
-	*        7) http://www.iconfinder.com
-	*         8) http://www.mind-it.info/2009/10/02/transactions-prepared-statements-and-php-mysqli/
+	*         	1) http://stackoverflow.com/questions/16340086/looping-through-a-csv-file-to-insert-data-to-mysql-using-php-mysqli-prepared-sta
+	*         	2) http://stackoverflow.com/questions/19106963/php-prepared-statements-and-transactions-in-a-loop
+	*         	3) http://php.net/manual/en/function.fgetcsv.php
+	*        	4) http://php.net/manual/en/mysqli-stmt.bind-param.php
+	*        	5) http://us2.php.net/mysqli_fetch_array
+	*        	6) http://stackoverflow.com/questions/2552545/mysqli-prepared-statements-error-reporting
+	*        	7) http://www.iconfinder.com
+	*         	8) http://www.mind-it.info/2009/10/02/transactions-prepared-statements-and-php-mysqli/
 	*         
-	*         1. An INSERT statement to insert the first row of the main import to config_itemi.
-	*         2. SELECT LAST_INSERT_ID()
-	*         3. Last_insert_ID stored and used to insert into citype_genhdw.
-	*         4. Go back to step 1 and begin on row 2.
+	*         	1. An INSERT statement to insert the first row of the main import to config_itemi.
+	*         	2. SELECT LAST_INSERT_ID()
+	*         	3. Last_insert_ID stored and used to insert into citype_genhdw.
+	*         	4. Go back to step 1 and begin on row 2.
 	*/
 	$pagetitle = "Executing import..";
 	require_once("/../inc/config.php");  
 	require_once("/../inc/header.php");  
 	require_once("/../inc/functions.php");
-			
+	checkLogin();
+	
 	#Determine what CSV file was selected
 	if(isset($_GET['csv']))        {
 					$csv = $_GET['csv'] . ".csv";

@@ -13,6 +13,7 @@
 	require_once("/../inc/config.php");  
 	require_once("/../inc/header.php");  
 	require_once("/../inc/functions.php");
+	checkLogin();
 	
 	if ( isset($_POST["submit"]) ) {
 		if ( isset($_FILES["file"]) ) {

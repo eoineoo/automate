@@ -24,7 +24,7 @@
 	#Custom die() function to ensure that the page display is not broken when die() is called
 	function die_and_display($message) {
 		print $message;
-		include("../inc/footer.php");
+		include("/inc/footer.php");
 		die();
 	}
 	
@@ -104,17 +104,25 @@
 
 	#Take in password parameter, salt it and encrypt it, $password plain-text value for a users password
 	function saltAndEncryptPassword($password)	{
-		$salt = "-sEHD[lPi9EHI1%M=UjAkbzBzo/Gxc06mK(o_~s7mFJ?I)_q|TJ8~:+]ZWk";
+		$salt = "7HnJHGDQs20O3unxFJkC0bemhTek34UfqzFOqVGPkilo2FGgwHYPHICLDrfFxZR";
 		$salt .= $password;
 		$password = $salt;
 		$password = sha1($password);		
 		return $password;
 	}
 
-	#Perform database connection and query,	$var string containing the MySQL query
-	function dbSetup($var)	{
-		$db = new db_connect();	
-		$result = mysql_query($var);		
+	#Perform database connection and query,	$sql string containing the MySQL query, $dbName with the name of the database to connect to 
+	function dbSetup($sql, $dbName)	{
+		if ($dbName == 'swdata')	{
+			$db = new db_connect_swdata();	
+		}
+		else if ($dbName == 'automate')	{
+			$db = new db_connect_automate();	
+		}
+		else	{
+			die_and_display();
+		}
+		$result = mysql_query($sql);		
 		return $result;		
 	}
 	

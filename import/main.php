@@ -7,7 +7,8 @@
 	require_once("/../inc/config.php");  
 	require_once("/../inc/header.php"); 
 	require_once("/../inc/functions.php");
-	  
+	checkLogin();
+	
 ?>
 
 <h2>Data Upload and Import</h2>

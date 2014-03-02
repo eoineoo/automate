@@ -10,7 +10,8 @@
 	$pagetitle = "";
 	require_once("/../inc/config.php");  
 	require_once("/../inc/functions.php");
-
+	checkLogin();
+	
 	$array = $_POST['config'];
 	
 	echo '$apps = @(';

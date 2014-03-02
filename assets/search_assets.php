@@ -7,6 +7,7 @@
 	require_once("/../inc/config.php");  
 	require_once("/../inc/header.php");  
 	require_once("/../inc/functions.php");
+	checkLogin();
 	
 ?>
 <link rel="stylesheet" href="http://localhost/automate/resources/css/jquery-ui.css">

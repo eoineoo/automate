@@ -9,6 +9,7 @@
 	require_once("/../inc/header.php");  
 	require_once("/../inc/functions.php");
 	require_once("/../resources/mailer/PHPMailerAutoLoad.php");
+	checkLogin();
 	
 	global $mail_counter;
 	

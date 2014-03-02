@@ -7,6 +7,7 @@
 	require_once("/../inc/config.php");  
 	require_once("/../inc/header.php");  
 	require_once("/../inc/functions.php");
+	checkLogin();
 	
 	#Connect
 	$connection = mysqli_connect("localhost", "root", "", "swdata");

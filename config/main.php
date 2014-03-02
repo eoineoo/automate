@@ -7,6 +7,7 @@
 	require_once("/../inc/config.php");  
 	require_once("/../inc/header.php");  
 	require_once("/../inc/functions.php");
+	checkLogin();
 	
 	#Variable - array that will contain the values of what is selected
 	$_POST['config'] = array("");

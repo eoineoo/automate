@@ -7,7 +7,8 @@
 	$pagetitle = "Search For Asset";
 	require_once("/../inc/config.php");  
 	require_once("/../inc/functions.php");
-
+	checkLogin();
+	
 	$connection = mysqli_connect("localhost", "root", "", "swdata");
 	
 	if (isset($_GET['term'])){
