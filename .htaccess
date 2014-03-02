@@ -89,6 +89,9 @@ RewriteRule ^import/mdt/execute/(\w+).csv/?$ import/mdt_execute.php?csv=$1
 #   Output: import_history.php
 RewriteRule ^admin/import-history/?$ admin/import_history.php
 
+#   Input:  admin/tasks
+#   Output: scheduled_task_history.php
+RewriteRule ^admin/tasks/?$ admin/scheduled_task_history.php
 
 
 

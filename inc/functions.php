@@ -24,7 +24,8 @@
 	#Custom die() function to ensure that the page display is not broken when die() is called
 	function die_and_display($message) {
 		print $message;
-		include("/inc/footer.php");
+		#include("/inc/footer.php");
+		include("http://localhost/automate/inc/footer.php");
 		die();
 	}
 	
@@ -80,7 +81,7 @@
 		session_start();
 		$loggedin = $_SESSION['loggedin'];
 		if ($loggedin != "1")	{
-			die_and_display("<p>User is not logged in. Please click <a href=\"login.php\">here</a> and enter your credentials.</p>");
+			die_and_display("<p>User is not logged in. Please click <a href=\"http://localhost/automate\">here</a> and enter your credentials.</p>");
 		}
 	}
 
@@ -99,7 +100,7 @@
 		$_SESSION = array();
 		session_destroy();
 		echo "Session cleared, user logged out. Redirecting to login page.";
-		header("refresh:2; url=login.php");
+		header("refresh:2; url=http://localhost/automate/");
 	}
 
 	#Take in password parameter, salt it and encrypt it, $password plain-text value for a users password

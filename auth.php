@@ -8,7 +8,6 @@
 	 * Session variables created and assigned
 	 */
 
-	error_reporting(0);
 	$pagetitle = 'Auth';
 	require_once("inc/config.php");  
 	require_once("inc/functions.php");
@@ -68,21 +67,21 @@
 		$_SESSION['username'] = "$result_username";
 		$_SESSION['isadmin'] = "0";
 		echo "Logged in! Redirecting to Orders page..<br/>";
-		header("refresh:2; url=main.php");
+		header("refresh:2; url=home.php");
 	}	
 	#If they are an admin
 	else if(($result_password == $password) && ($result_username == $username) && ($result_isadmin == 'Yes')) {
 		$_SESSION['loggedin'] = "1";
 		$_SESSION['username'] = "$result_username";
 		$_SESSION['isadmin'] = "1";
-		echo "Logged in! Redirecting to Admin page..<br/>";
-		header("refresh:2; url=http://localhost/automate/admin/main.php");
+		echo "<div style=\"width:50%\" class=\"alert-box success\">Logged in! Redirecting to Admin page..</div>";
+		header("refresh:2; url=http://localhost/automate/admin/");
 	}
 	#User entered invalid credentials
 	else	{
 		$_SESSION['loggedin'] = "0";
-		echo "Invalid username or password combination.";
-		header("refresh:2; url=login.php");
+		echo "<div style=\"width:50%\" class=\"alert-box error\"><span>failed: </span>Invalid username or password combination</div>";
+		header("refresh:2; url=http://localhost/automate/");
 	}
 	include("inc/footer.php");
 

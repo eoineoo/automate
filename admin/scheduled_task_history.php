@@ -20,8 +20,8 @@
 	}
 	
 	#Query to return csv_details
-	$select = "SELECT id, db_name AS 'Database', orig_name AS 'File Name', new_name AS 'System Name', timestamp AS 'Time', user AS 'Uploader', num_entries AS 'Total',  description AS 'Comments' ";
-	$from 	= "FROM  csv_details ";
+	$select = "SELECT name AS 'Name', jobdesc AS 'Grade', invoice AS 'Invoice', user AS 'User', timestamp AS 'Created', run_time AS 'Run At', schedule AS 'Schedule', start_date AS 'Start', end_date AS 'End' ";
+	$from 	= "FROM  scheduled_tasks ";
 	$order 	= "ORDER BY id DESC";
 	$sql	= $select . $from . $order;
 	
@@ -36,18 +36,23 @@
   <body>
 	
 	<div id="container">
-      <table cellpadding="0" cellspacing="0" border="1" class="hor-minimalist-a" id="contact">
-        <thead>
-			<tr>
-				<th>Time</th>
-				<th>Database</th>
-				<th>Comments</th>
-				<th>Uploader</th>
-				<th>File Name</th>
-				<th>Total</th>
-			</tr>
-        </thead>
-        <tbody>
+		<h3>Scheduled Tasks History</h3>
+		<br />
+		<table cellpadding="0" cellspacing="0" border="1" class="hor-minimalist-a" id="contact">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Grade</th>
+					<th>Invoice</th>
+					<th>User</th>
+					<th>Created</th>
+					<th>Run At</th>
+					<th>Schedule</th>
+					<th>Start</th>
+					<th>End</th>
+				</tr>
+			</thead>
+			<tbody>
           
 <?php
 	
@@ -55,12 +60,15 @@
 		while($row = mysqli_fetch_array($result))	{
 		
 			echo "<tr>";
-			echo "<td>" . $row['Time'] . "</td>";
-			echo "<td>" . $row['Database'] . "</td>";
-			echo "<td>" . $row['Comments'] . "</td>";
-			echo "<td>" . $row['Uploader'] . "</td>";
-			echo "<td>" . $row['File Name'] . "</td>";						
-			echo "<td>" . $row['Total'] . "</td>";
+			echo "<td>" . $row['Name'] . "</td>";
+			echo "<td>" . $row['Grade'] . "</td>";
+			echo "<td>" . $row['Invoice'] . "</td>";
+			echo "<td>" . $row['User'] . "</td>";
+			echo "<td>" . $row['Created'] . "</td>";						
+			echo "<td>" . $row['Run At'] . "</td>";
+			echo "<td>" . $row['Schedule'] . "</td>";
+			echo "<td>" . $row['Start'] . "</td>";
+			echo "<td>" . $row['End'] . "</td>";
 			echo "</tr>";
 		}
 ?>

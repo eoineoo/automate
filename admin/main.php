@@ -29,8 +29,8 @@
 	</tr>
 	
 	<tr>
-		<td width="90"><a href="#"><img src="../images/search.png" /></a></td>
-		<td><a href="#">Scheduled Tasks</a></td>
+		<td width="90"><a href="tasks"><img src="../images/search.png" /></a></td>
+		<td><a href="tasks">Scheduled Tasks</a></td>
 	</tr>
 	
 	<tr>
