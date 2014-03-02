@@ -74,4 +74,55 @@
 		return $body;
 	}
 	
+	
+	#Check to see if a user logged in
+	function checkLogin()	{
+		session_start();
+		$loggedin = $_SESSION['loggedin'];
+		if ($loggedin != "1")	{
+			die_and_display("<p>User is not logged in. Please click <a href=\"login.php\">here</a> and enter your credentials.</p>");
+		}
+	}
+
+	#Check to see if the user logged in is an admin
+	function checkAdminLogin()	{
+		checkLogin();
+		$isadmin = $_SESSION['isadmin'];
+		if ($isadmin != "1")	{
+			die_and_display("<p>Currently logged in user is not an administrator.</p>");
+		}
+	}
+
+	#Log user out by clearing session details, return them to the login page
+	function logout()	{
+		session_start();
+		$_SESSION = array();
+		session_destroy();
+		echo "Session cleared, user logged out. Redirecting to login page.";
+		header("refresh:2; url=login.php");
+	}
+
+	#Take in password parameter, salt it and encrypt it, $password plain-text value for a users password
+	function saltAndEncryptPassword($password)	{
+		$salt = "-sEHD[lPi9EHI1%M=UjAkbzBzo/Gxc06mK(o_~s7mFJ?I)_q|TJ8~:+]ZWk";
+		$salt .= $password;
+		$password = $salt;
+		$password = sha1($password);		
+		return $password;
+	}
+
+	#Perform database connection and query,	$var string containing the MySQL query
+	function dbSetup($var)	{
+		$db = new db_connect();	
+		$result = mysql_query($var);		
+		return $result;		
+	}
+	
+	#Check query to ensure it's valid, return error if it's not, $var result of mysql_query
+	function checkQuery($var)	{
+		if (!$var)	{
+			$message =  "<p>$var</p><p>Failed to show any queries!</p>";
+			die_and_display($message);
+		}		
+	}	
 ?>

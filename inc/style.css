@@ -92,7 +92,15 @@ p.navigation	{
 {
 	padding: 5px 5px 5px 5px; /*top, right, bottom, left */
 }
-
+/* Login form */
+div#loginForm {
+	width:40%;
+	padding:30 0 30 0;
+	border: 1px solid grey;
+}
+table.loginTable td	{
+	padding:10px;	
+}
 /* Apply CLASS to table on Assets page with DataTables (ID is taken)*/
 table.hor-minimalist-a a
 {
