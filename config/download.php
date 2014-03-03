@@ -20,10 +20,44 @@
 	}
 	echo '"config.msi")';
 	
+	#Insert record to db
+	$user 			= 	$_SESSION['username'];
+	$machine_name	= 	gethostname();
+	$end_user 		= 	trim(substr(shell_exec('wmic COMPUTERSYSTEM Get UserName'), 13)); #Clean output from shell_exec, remove first 13 characters and white space
+	$applications	= 	implode(", ", $array);
+	
+	#Connect
+	$mysqli = mysqli_connect("localhost", "root", "", "automate");
+
+	#SQL Query
+	$tablename = "config";
+	$sql = "INSERT INTO $tablename (user, end_user, machine_name, applications) VALUES (?, ?, ?, ?)";
+	
+	#Create and check prepared statement
+	$stmt = $mysqli->prepare($sql);
+	if ( false === $stmt )	{
+		die_and_display('<p class=die>Preparing the statement failed: ' . htmlspecialchars($mysqli->error) . "</p>");		
+	}
+	
+	#Bind parameters to the query and check for errors
+	$rc = $stmt->bind_param('ssss', $user, $end_user, $machine_name, $applications);
+	if ( false === $rc )	{
+		die_and_display('Binding parameters failed: ' . htmlspecialchars($stmt->error));
+	}
+	
+	#Run and check the prepared statement
+	$rc = $stmt->execute();	
+	if ( false === $rc )	{
+		die_and_display('<div id="alert"><a class="alert">Executing import failed: ' . htmlspecialchars($stmt->error) . '</a></div>');
+	}
+	
 	$file_url = 'http://localhost/automate/config/msi/config.ps1';
 	header('Content-Type: text/plain');
 	header("Content-Transfer-Encoding: Binary"); 
 	header("Content-disposition: attachment; filename=\"" . basename($file_url) . "\""); 
 	readfile($file_url);
+	
+	#Close connection
+	$stmt->close();
 	
 ?>	
