@@ -19,6 +19,16 @@
 <br />
 <table id="hor-minimalist-a" width="80%" border = 1>
 	<tr>
+		<td width="90"><a href="configuration_history.php"><img src="../images/mdt.jpg" /></a></td>
+		<td><a href="configuration_history.php">Config History</a></td>
+	</tr>
+	
+	<tr>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+	</tr>
+	
+	<tr>
 		<td width="20%"><a href="import-history"><img src="../images/cmdb.png" /></a></td>
 		<td width="80%"><a href="import-history">Import History</a></td>		
 	</tr>

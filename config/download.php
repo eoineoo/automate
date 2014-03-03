@@ -24,7 +24,7 @@
 	$user 			= 	$_SESSION['username'];
 	$machine_name	= 	gethostname();
 	$end_user 		= 	trim(substr(shell_exec('wmic COMPUTERSYSTEM Get UserName'), 13)); #Clean output from shell_exec, remove first 13 characters and white space
-	$applications	= 	implode(", ", $array);
+	$applications	= 	implode("<br />", $array);
 	
 	#Connect
 	$mysqli = mysqli_connect("localhost", "root", "", "automate");
