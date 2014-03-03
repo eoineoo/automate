@@ -10,7 +10,7 @@ foreach ($msifile in $apps)	{
 	
 	$count++
 	
-	Write-Progress -activity "Installing Applications" -status "Current: $msifile" -percentComplete ($count / $total*100) 
+	Write-Progress -activity "Installing Applications" -status "Current: $msifile" -PercentComplete ($count / $total * 100) 
 	
 	#Using the /i switch for install, with logging enabled
 	Start-Process -FilePath "$env:systemroot\system32\msiexec.exe" -ArgumentList "/i `"$msifile`" /passive /L*v C:\temp\automate\logs\$msifile.log" -Wait -WorkingDirectory $CurrentLocation

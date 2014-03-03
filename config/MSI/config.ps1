@@ -2,9 +2,9 @@
 #Download list of files, install each one at the end
 cls
 
-New-Item -ItemType Directory -Force -Path C:\temp\automate\filerepo 1>$null
-New-Item -ItemType Directory -Force -Path C:\temp\automate\logs 1>$null
-New-Item -ItemType Directory -Force -Path C:\temp\automate\scripts 1>$null
+New-Item -ItemType Directory -Force -Path C:\temp\automate\filerepo > $null
+New-Item -ItemType Directory -Force -Path C:\temp\automate\logs > $null
+New-Item -ItemType Directory -Force -Path C:\temp\automate\scripts > $null
 
 #File repository
 $storageDir = "C:\temp\automate\filerepo"

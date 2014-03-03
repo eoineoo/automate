@@ -44,8 +44,8 @@ function DownloadFile($url, $targetFile)	{
 		
 	}
 
-	Write-Progress -activity "Finished downloading file '$($url.split('/') | Select -Last 1)'"
-
+	Write-Progress -activity "Finished downloading file '$($url.split('/') | Select -Last 1)'" -status "Completed download"
+	
 	#Clears buffers for the stream and writes buffered data to the specified file
 	$targetStream.Flush()
 	
