@@ -12,10 +12,7 @@
 	checkAdminLogin();
 	
 ?>
-
 <h2>Automate Administration</h2>
-<br />
-<p class="stats">What do you want to do?</p>
 <br />
 <table id="hor-minimalist-a" width="80%" border = 1>
 	<tr>

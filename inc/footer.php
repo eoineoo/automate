@@ -1,7 +1,11 @@
 		
 		</div>
+		<div id="spacer">&nbsp;</div>
+		<div id="spacer">&nbsp;</div>
 		</div>
 
+		
+		
 		<div id="clearfooter">
 		</div>
 	
