@@ -1,7 +1,22 @@
-DirectoryIndex main.php
-
 #http://net.tutsplus.com/tutorials/other/a-deeper-look-at-mod_rewrite-for-apache/
 RewriteEngine on 
+
+#########################################################
+#Main Rules												#
+#########################################################
+DirectoryIndex main.php
+
+#   Input:  /auth.php
+#   Output: /login
+RewriteRule ^login/?$ auth.php
+
+#   Input:  /home.php
+#   Output: /home
+RewriteRule ^home/?$ home.php
+
+#   Input:  /logout.php
+#   Output: /logout
+RewriteRule ^logout/?$ logout.php
 
 #########################################################
 #Asset Management and Lease Returns Rules				#

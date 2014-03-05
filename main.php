@@ -1,10 +1,10 @@
 <?php
 
 	/** 
-	 * Login.php
+	 * Main.php
 	 * Tutorial: http://www.hauntednipple.co.uk/?p=94
 	 *
-	 * HTML form that posts username and password to auth.php
+	 * Main landing page with HTML form that posts username and password to auth.php
 	 */
 
 	$pagetitle = 'Login';
@@ -35,7 +35,7 @@
 				
 				<div id="loginForm">
 					
-					<form id="loginForm" name="loginForm" method="POST" action="auth.php">
+					<form id="loginForm" name="loginForm" method="POST" action="login">
 					
 						<table class="loginTable" align="center" width="50%" border="0" >
 							

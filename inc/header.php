@@ -15,4 +15,4 @@
 			<!-- end banner div --> 
 		
 			<div id="content" align="center">
-				<p class="navigation">| <a href="http://localhost/automate">Home</a> | <a href="http://localhost/automate/assets">Leases</a> | <a href="http://localhost/automate/config">Config</a> | <a href="http://localhost/automate/import">Import</a> | <a href="http://localhost/automate/admin">Admin</a> | <a href="http://localhost/automate/logout.php">Logout</a> |</p>
+				<p class="navigation">| <a href="http://localhost/automate/home">Home</a> | <a href="http://localhost/automate/assets">Assets</a> | <a href="http://localhost/automate/config">Config</a> | <a href="http://localhost/automate/import">Import</a> | <a href="http://localhost/automate/admin">Admin</a> | <a href="http://localhost/automate/logout">Logout</a> |</p>
