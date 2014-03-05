@@ -19,7 +19,7 @@
 <br />
 <table id="hor-minimalist-a" width="80%" border = 1>
 	<tr>
-		<td width="90"><a href="configuration_history.php"><img src="../images/mdt.jpg" /></a></td>
+		<td width="90"><a href="configuration_history.php"><img src="../images/config.png" /></a></td>
 		<td><a href="configuration_history.php">Config History</a></td>
 	</tr>
 	
@@ -29,7 +29,7 @@
 	</tr>
 	
 	<tr>
-		<td width="20%"><a href="import-history"><img src="../images/cmdb.png" /></a></td>
+		<td width="20%"><a href="import-history"><img src="../images/data_import_s.png" /></a></td>
 		<td width="80%"><a href="import-history">Import History</a></td>		
 	</tr>
 	
@@ -39,7 +39,7 @@
 	</tr>
 	
 	<tr>
-		<td width="90"><a href="tasks"><img src="../images/search.png" /></a></td>
+		<td width="90"><a href="tasks"><img src="../images/tasks.jpg" /></a></td>
 		<td><a href="tasks">Scheduled Tasks</a></td>
 	</tr>
 	
@@ -49,7 +49,7 @@
 	</tr>
 	
 	<tr>
-		<td width="90"><a href="#"><img src="../images/mdt.jpg" /></a></td>
+		<td width="90"><a href="#"><img src="../images/accounts.png" /></a></td>
 		<td><a href="#">User Accounts</a></td>
 	</tr>
 	
