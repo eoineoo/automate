@@ -19,7 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `automate`
 --
-
+CREATE DATABASE IF NOT EXISTS `automate` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `automate`;
 -- --------------------------------------------------------
 
 --
@@ -306,7 +307,8 @@ INSERT INTO `users` (`staff_id`, `username`, `password`, `isadmin`) VALUES
 --
 -- Database: `swdata`
 --
-
+CREATE DATABASE IF NOT EXISTS `swdata` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `swdata`;
 -- --------------------------------------------------------
 
 --
