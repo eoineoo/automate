@@ -61,6 +61,8 @@
 						this.value = asInitVals[$("thead input").index(this)];
 					}
 				} );
+				//Alterate the color of the rows
+				$("tr:even").css("background-color", "#CEE8F0");
 			} );
 	</script>
 

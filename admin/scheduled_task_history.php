@@ -32,13 +32,56 @@
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<script type="text/javascript" language="javascript" src="http://localhost/automate/resources/js/jquery.js"></script>
+    <script class="jsbin" src="http://localhost/automate/resources/js/jquery.dataTables.nightly.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		/* 
+		 * Filter data using text boxes 
+		 * http://datatables.net/examples/api/multi_filter.html
+		 */
+		var asInitVals = new Array();
+			
+			$(document).ready(function() {
+				var oTable = $('#task-history').dataTable( {
+					"oLanguage": {
+						"sSearch": "Search:"
+					},
+					//"bPaginate": false - leaving pagination on as I expect there to be lots and lots of entries in here eventually
+					"iDisplayLength": 50
+				} );
+				
+				$("thead input").keyup( function () {
+					/* Filter on the column (the index) of this element */
+					oTable.fnFilter( this.value, $("thead input").index(this) );
+				} );
+				
+				
+				/*
+				 * Support functions to provide a little bit of 'user friendlyness' to the textboxes in 
+				 * the footer
+				 */
+				$("thead input").each( function (i) {
+					asInitVals[i] = this.value;
+				} );
+				
+				$("thead input").blur( function (i) {
+					if ( this.value == "" )
+					{
+						this.value = asInitVals[$("thead input").index(this)];
+					}
+				} );
+				
+				//Alterate the color of the rows
+				$("tr:even").css("background-color", "#CEE8F0");
+			} );
+	</script>
   </head>
   <body>
 	
 	<div id="container">
 		<h3>Scheduled Tasks History</h3>
 		<br />
-		<table cellpadding="0" cellspacing="0" border="1" class="hor-minimalist-a" id="contact">
+		<table cellpadding="0" cellspacing="0" border="1" class="hor-minimalist-a" id="task-history">
 			<thead>
 				<tr>
 					<th>Name</th>
