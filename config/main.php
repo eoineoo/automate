@@ -13,10 +13,10 @@
 	$_POST['config'] = array("");
 ?>
 
-<h2>Laptop Configuration and Application Installation</h2>
-<br />
-<p class="stats">Make your selections below</p>
-<p class="smaller">Batch script included in each download</p>
+<div style="width: 60%;">
+	<h2 class="scheduledTaskForm">Laptop Config and Application Installation</h2>
+	<div class="alert-box warning"><span>note: </span>Select individual applications from the form below or choose a preconfigured list. This will prompt you to download a PowerShell script that must be executed from a command line shell. Batch file included in all scripts.<br />Example usage: <b>powershell -noexit "&" "<em>&#60;path_to file&#62;</em>\config.ps1"</b></div>
+</div>
 
 
 <script type="text/javascript">
