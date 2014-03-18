@@ -119,9 +119,7 @@ $(function() {
 	?>
 	
 	<!-- Confirmation dialogs -->
-	<div id="create-confirm" title="Confirmation" style="display:none;">
-		<p>You are about to create a new user account. Are you sure you want to do this?</p>
-	</div>
+	
 	<div id="modify-confirm" title="Confirmation" style="display:none;">
 		<p>You are about to change account '<b><?php echo $username ?></b>'. Are you sure you want to do this?</p>
 	</div>
