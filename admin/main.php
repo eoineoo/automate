@@ -46,8 +46,8 @@
 	</tr>
 	
 	<tr>
-		<td width="90"><a href="#"><img src="../images/accounts.png" /></a></td>
-		<td><a href="#">User Accounts</a></td>
+		<td width="90"><a href="user_accounts.php"><img src="../images/accounts.png" /></a></td>
+		<td><a href="user_accounts.php">User Accounts</a></td>
 	</tr>
 	
 	<tr>

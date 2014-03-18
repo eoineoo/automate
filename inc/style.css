@@ -61,6 +61,13 @@ tr.valid	{
 tr.invalid	{
 	background-color:orange;
 }
+tr.is_admin	{
+	background-color:#90EE90;
+}
+tr.not_admin	{
+	background-color:white;
+}
+
 p.footer	{
 	padding: 35 0 0 0;
 }

@@ -4,7 +4,7 @@
 	 * Modify asset
 	 * Quickly and easily assign assets back into Spares, mark as retired, stolen etc.
 	 */
-	$pagetitle = "Create Scheduled Task";
+	$pagetitle = "Modify Asset";
 	require_once("/../inc/config.php");  
 	require_once("/../inc/header.php");  
 	require_once("/../inc/functions.php");  
