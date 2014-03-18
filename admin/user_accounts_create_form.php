@@ -28,8 +28,8 @@
                 $('#result').html(res);				
             });
 		
-			var delay = 3000;
-			setTimeout(function(){ window.location = 'http://localhost/automate/admin/users';}, delay); 			
+			//var delay = 3000;
+			//setTimeout(function(){ window.location = 'http://localhost/automate/admin/users';}, delay); 			
 			
         });    
     });
