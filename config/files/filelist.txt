@@ -1,0 +1,11 @@
+16/02/2014  20:58         6,094,848 ade_3.0_installer.msi
+16/02/2014  21:53            86,016 config.msi
+12/02/2014  23:33         3,603,456 ConfigMgrTools.msi
+16/02/2014  20:59        13,524,992 dtlite4481-0347.msi
+16/02/2014  21:00        25,543,680 FirefoxESR-24.2.0-en-GB.msi
+16/02/2014  15:29        19,295,744 gimp-2.2.8+gtk-2.6.8-1-en_US.msi
+16/02/2014  21:01        38,187,184 GoogleChromeStandaloneEnterprise.msi
+18/12/2013  13:02           807,424 RDCMan.msi
+21/02/2014  00:22        30,872,576 vlc-2.0.6-intel.msi
+              10 File(s)    138,015,920 bytes
+               3 Dir(s)  136,814,682,112 bytes free
