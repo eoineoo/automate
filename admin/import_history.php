@@ -33,11 +33,12 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<script type="text/javascript" language="javascript" src="http://localhost/automate/resources/js/jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="http://localhost/automate/inc/dataTables.css">
     <script class="jsbin" src="http://localhost/automate/resources/js/jquery.dataTables.nightly.js"></script>
 	<script type="text/javascript" charset="utf-8">
 		/* 
 		 * Filter data using text boxes 
-		 * http://datatables.net/examples/api/multi_filter.html
+		 * http://datatables.net/examples/api/multi_filter.	
 		 */
 		var asInitVals = new Array();
 			
