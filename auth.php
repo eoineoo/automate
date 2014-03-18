@@ -83,6 +83,28 @@
 		echo "<div style=\"width:50%\" class=\"alert-box error\"><span>failed: </span>Invalid username or password combination</div>";
 		header("refresh:2; url=http://localhost/automate/");
 	}
-	include("inc/footer.php");
+	
+?>	
 
-?>
+		</div>
+		<div id="spacer">&nbsp;</div>
+		<div id="spacer">&nbsp;</div>
+		</div>
+
+		
+		
+		<div id="clearfooter">
+		</div>
+	
+		<div id="footer" align="center">
+			<p class="footer">Copyright (c) Automate - 2014</p>
+			
+			
+			<?php
+				echo "<p class=\"loginDetails\">Not currently logged in.";
+			?>
+			
+		</div>     
+	
+	</body>
+</html>
