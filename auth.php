@@ -66,21 +66,21 @@
 		$_SESSION['loggedin'] = "1";
 		$_SESSION['username'] = "$result_username";
 		$_SESSION['isadmin'] = "0";
-		echo "Logged in! Redirecting to Orders page..<br/>";
-		header("refresh:2; url=home.php");
+		echo "<div style=\"width:50%\" class=\"alert-box success\">Logged in! Redirecting...</div>";
+		header("refresh:2; url=http://localhost/automate/");
 	}	
 	#If they are an admin
 	else if(($result_password == $password) && ($result_username == $username) && ($result_isadmin == 'Yes')) {
 		$_SESSION['loggedin'] = "1";
 		$_SESSION['username'] = "$result_username";
 		$_SESSION['isadmin'] = "1";
-		echo "<div style=\"width:50%\" class=\"alert-box success\">Logged in! Redirecting to Admin page..</div>";
+		echo "<div style=\"width:50%\" class=\"alert-box success\">Logged in! Redirecting to Admin page...</div>";
 		header("refresh:2; url=http://localhost/automate/admin/");
 	}
 	#User entered invalid credentials
 	else	{
 		$_SESSION['loggedin'] = "0";
-		echo "<div style=\"width:50%\" class=\"alert-box error\"><span>failed: </span>Invalid username or password combination</div>";
+		echo "<div style=\"width:50%\" class=\"alert-box error\"><span>failed: </span>Invalid username or password combination.</div>";
 		header("refresh:2; url=http://localhost/automate/");
 	}
 	
@@ -89,22 +89,15 @@
 		</div>
 		<div id="spacer">&nbsp;</div>
 		<div id="spacer">&nbsp;</div>
-		</div>
-
+	</div>
 		
-		
-		<div id="clearfooter">
-		</div>
+	<div id="clearfooter">
+	</div>
 	
-		<div id="footer" align="center">
-			<p class="footer">Copyright (c) Automate - 2014</p>
-			
-			
-			<?php
-				echo "<p class=\"loginDetails\">Not currently logged in.";
-			?>
-			
-		</div>     
+	<div id="footer" align="center">
+		<p class="footer">Copyright (c) Automate - 2014</p>
+		<p class="loginDetails">Not currently logged in.</p>
+	</div>     
 	
-	</body>
+</body>
 </html>
