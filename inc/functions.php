@@ -80,7 +80,7 @@
 		session_start();
 		$loggedin = $_SESSION['loggedin'];
 		if ($loggedin != "1")	{
-			die_and_display("<p>User is not logged in. Please click <a href=\"http://localhost/automate\">here</a> and enter your credentials.</p>");
+			die_and_display("<div style=\"width:50%\" class=\"alert-box error\"><span>failed: </span>User is not logged in. Please click <a href=\"http://localhost/automate\">here</a> and enter your credentials.</div>");
 		}
 	}
 
@@ -89,7 +89,7 @@
 		checkLogin();
 		$isadmin = $_SESSION['isadmin'];
 		if ($isadmin != "1")	{
-			die_and_display("<p>Currently logged in user is not an administrator.</p>");
+			die_and_display("<div style=\"width:50%\" class=\"alert-box error\"><span>failed: </span>Currently logged in user is not an administrator.</div>");
 		}
 	}
 
