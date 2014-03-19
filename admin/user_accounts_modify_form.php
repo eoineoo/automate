@@ -63,8 +63,8 @@
                 $('#result').html(res);				
             });
 		
-			//var delay = 4000;
-			//setTimeout(function(){ window.location = 'http://localhost/automate/admin/users';}, delay); 			
+			var delay = 4000;
+			setTimeout(function(){ window.location = 'http://localhost/automate/admin/users';}, delay); 			
 			
         });    
     });

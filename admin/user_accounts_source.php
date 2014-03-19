@@ -24,7 +24,8 @@
 		$id 	  	= $_POST['id'];
 		$username 	= $_POST['username'];
 		$fullname 	= $_POST['fullname'];
-		$password 	= saltAndEncryptPassword($_POST['password']);
+		#$password 	= saltAndEncryptPassword($_POST['password']);
+		$password 	= $_POST['password'];
 		$isadmin  	= $_POST['isadmin'];
 		
 		#Create user account
@@ -71,16 +72,16 @@
 				$oldPassword = $row['password'];
 			}
 			
-			#Check to see if the new password is "6f96a1fd5faabd19a6c1a5b2f9a3e2ea29e3498b" (blank password with salt)
-			if ($newPassword == "6f96a1fd5faabd19a6c1a5b2f9a3e2ea29e3498b")	{
-				$newPassword = $oldPassword;
+			#Check to see if the new password was left blank
+			if ($password == "")	{
+				$password = $oldPassword;
 			}
 			else	{
-				$newPassword = $password;
-			}
+				$password = saltAndEncryptPassword($password);
+			} 
 			
 			$sql = "UPDATE $tablename SET username = ?, fullname = ?, password = ?, isadmin = ? WHERE staff_id = ?";
-			
+		
 			#Update table with prepared statement
 			$ps = $mysqli->prepare($sql);
 			if ( false === $ps )        {
@@ -88,7 +89,7 @@
 			}
 			
 			#Bind parameters
-			$rc = $ps->bind_param('ssssi', $username, $fullname, $newPassword, $isadmin, $id);
+			$rc = $ps->bind_param('ssssi', $username, $fullname, $password, $isadmin, $id);
 			if ( false === $rc )	{
 				die_and_display_nf('Binding parameters failed: ' . htmlspecialchars($ps->error));
 			}
@@ -99,7 +100,7 @@
 				die_and_display_nf('<div id="alert"><a class="alert">Executing import failed: ' . htmlspecialchars($ps->error) . '</a></div>');
 			}
 			
-			$output = "New password: $newPassword <br /> Old password: $oldPassword <br /> <div class=\"alert-box success\" width=\"60%\">User account updated.</div>";
+			$output = "<div class=\"alert-box success\" width=\"60%\">User account updated.</div>";
 			
 		}
 		
