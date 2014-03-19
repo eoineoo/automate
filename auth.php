@@ -67,7 +67,7 @@
 		$_SESSION['username'] = "$result_username";
 		$_SESSION['isadmin'] = "0";
 		echo "<div style=\"width:50%\" class=\"alert-box success\">Logged in! Redirecting...</div>";
-		header("refresh:2; url=http://localhost/automate/");
+		header("refresh:2; url=http://localhost/automate/home");
 	}	
 	#If they are an admin
 	else if(($result_password == $password) && ($result_username == $username) && ($result_isadmin == 'Yes')) {
@@ -81,7 +81,7 @@
 	else	{
 		$_SESSION['loggedin'] = "0";
 		echo "<div style=\"width:50%\" class=\"alert-box error\"><span>failed: </span>Invalid username or password combination.</div>";
-		header("refresh:2; url=http://localhost/automate/");
+		header("refresh:2; url=http://localhost/automate");
 	}
 	
 ?>	

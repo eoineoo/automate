@@ -24,7 +24,7 @@
 		$id 	  	= $_POST['id'];
 		$username 	= $_POST['username'];
 		$fullname 	= $_POST['fullname'];
-		#$password 	= saltAndEncryptPassword($_POST['password']);
+		$password_c = saltAndEncryptPassword($_POST['password']);
 		$password 	= $_POST['password'];
 		$isadmin  	= $_POST['isadmin'];
 		
@@ -40,7 +40,7 @@
 			}
 				
 			#Bind parameters
-			$rc = $ps->bind_param('ssss', $username, $fullname, $password, $isadmin);
+			$rc = $ps->bind_param('ssss', $username, $fullname, $password_c, $isadmin);
 			if ( false === $rc )	{
 				die_and_display_nf('Binding parameters failed: ' . htmlspecialchars($ps->error));
 			}
