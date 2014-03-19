@@ -1,10 +1,11 @@
 <?php
 
 	/**
-	* Modify User Accounts - Administrators only
-	* Select what modifications you want to make to the account, create a new one or delete the selected one
+	* Create User Accounts - Administrators only
+	* Basic form to enter username, password and select whether or not the user is an admin.
+	* Information sent to user_accounts_source.php, success/failure message returned, user then re-directed back to to requesting page.
 	*/
-	$pagetitle = "Admin - User Accounts";
+	$pagetitle = "Admin - Create Account";
 	
 	require_once("/../inc/config.php");  
 	require_once("/../inc/header.php");  
@@ -21,15 +22,16 @@
         $('#create').click(function(){
             
 			var jUsername = $('#username').val();
+			var jFullName = $('#fullname').val();
 			var jPassword = $('#password').val();
 			var jIsAdmin = $('#isadmin').val();
 			
-			$.post('/automate/admin/user_accounts_source.php',{action: "create", username:jUsername, password:jPassword, isadmin:jIsAdmin},function(res){
+			$.post('/automate/admin/user_accounts_source.php',{action: "create", username:jUsername, fullname:jFullName, password:jPassword, isadmin:jIsAdmin},function(res){
                 $('#result').html(res);				
             });
 		
-			//var delay = 3000;
-			//setTimeout(function(){ window.location = 'http://localhost/automate/admin/users';}, delay); 			
+			var delay = 4000;
+			setTimeout(function(){ window.location = 'http://localhost/automate/admin/users';}, delay); 			
 			
         });    
     });
@@ -37,6 +39,7 @@
 	//Disable all inputs after selecting the insert button
 	function disableFunction() {
 		document.getElementById("username").disabled = 'true';
+		document.getElementById("fullname").disabled = 'true';
 		document.getElementById("password").disabled = 'true';
 		document.getElementById("isadmin").disabled = 'true';
 		document.getElementById("create").disabled = 'true';
@@ -53,21 +56,28 @@
 				<tr>
 					<td>Username:</td>
 					<td>	
-						<input type="text" id="username" name="username"></td>
+						<input type="text" id="username" name="username" style="padding:4px;"></td>
+					</td>
+				</tr>
+				
+				<tr>
+					<td>Full Name:</td>
+					<td>	
+						<input type="text" id="fullname" name="fullname" style="padding:4px;"></td>
 					</td>
 				</tr>
 					
 				<tr>
 					<td>Password:</td>
 					<td>	
-						<input type="password" id="password" name="password"></td>
+						<input type="password" id="password" name="password" style="padding:4px;"></td>
 					</td>
 				</tr>
 					
 				<tr>
 					<td>Is Admin:</td>
 					<td>
-						<select name="isadmin" id="isadmin" style="width:150;">
+						<select name="isadmin" id="isadmin" style="width:160;padding:4px;">
 							<option value="No" selected="selected">No</option>
 							<option value="Yes">Yes</option>
 						</select>

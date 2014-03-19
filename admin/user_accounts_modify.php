@@ -72,7 +72,7 @@ $(function() {
 	});
 });
 </script>
-	<h2>Manage User Accounts</h2>
+	<h2>Modify User</h2>
 	<br />
 	<table id="result_table" cellpadding="0" cellspacing="0" border="1" class="hor-minimalist-a" style="padding: 50px 0 0 0;width: 60%;"> 
 	<thead>
