@@ -16,8 +16,8 @@
 <br />
 <table id="hor-minimalist-a" width="80%" border = 1>
 	<tr>
-		<td width="90"><a href="configuration_history.php"><img src="../images/config.png" /></a></td>
-		<td><a href="configuration_history.php">Config History</a></td>
+		<td width="90"><a href="config"><img src="../images/config.png" /></a></td>
+		<td><a href="config">Config History</a></td>
 	</tr>
 	
 	<tr>
@@ -26,8 +26,8 @@
 	</tr>
 	
 	<tr>
-		<td width="20%"><a href="import-history"><img src="../images/data_import_s.png" /></a></td>
-		<td width="80%"><a href="import-history">Import History</a></td>		
+		<td width="20%"><a href="imports"><img src="../images/data_import_s.png" /></a></td>
+		<td width="80%"><a href="imports">Import History</a></td>		
 	</tr>
 	
 	<tr>
@@ -46,8 +46,8 @@
 	</tr>
 	
 	<tr>
-		<td width="90"><a href="user_accounts.php"><img src="../images/accounts.png" /></a></td>
-		<td><a href="user_accounts.php">User Accounts</a></td>
+		<td width="90"><a href="users"><img src="../images/accounts.png" /></a></td>
+		<td><a href="users">User Accounts</a></td>
 	</tr>
 	
 	<tr>

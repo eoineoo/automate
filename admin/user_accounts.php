@@ -58,7 +58,7 @@
 		echo "<td>" . $row['ID'] . "</td>";
 		echo "<td>" . $row['username'] . "</td>";
 		echo "<td>" . $row['Is Admin'] . "</td>";
-		echo "<td width=\"10%\"><a href=\"user_accounts_modify.php?id=".$row['ID']."\"><img src=\"../images/edit.png\" /></a></td>";
+		echo "<td width=\"10%\"><a href=\"users/mod/".$row['ID']."\"><img src=\"../images/edit.png\" /></a></td>";
 		echo "</tr>";
 	}
 	echo "<tr class=\"spaceUnder\"></tr></tbody>";

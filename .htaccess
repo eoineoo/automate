@@ -99,38 +99,33 @@ RewriteRule ^import/mdt/execute/(\w+).csv/?$ import/mdt_execute.php?csv=$1
 #########################################################
 #Administration Rules									#
 #########################################################
+#   Input:  admin/config
+#   Output: configuration_history.php
+RewriteRule ^admin/config/?$ admin/configuration_history.php
 
-#   Input:  admin/import-history
+#   Input:  admin/imports
 #   Output: import_history.php
-RewriteRule ^admin/import-history/?$ admin/import_history.php
+RewriteRule ^admin/imports/?$ admin/import_history.php
 
 #   Input:  admin/tasks
 #   Output: scheduled_task_history.php
 RewriteRule ^admin/tasks/?$ admin/scheduled_task_history.php
 
+#   Input:  admin/users
+#   Output: user_accounts.php
+RewriteRule ^admin/users/?$ admin/user_accounts.php
 
+#   Input:  admin/users/4
+#   Output: user_accounts_modify.php?id=4
+RewriteRule ^admin/users/mod/(\w+)?$ admin/user_accounts_modify.php?id=$1
 
+#   Input:  admin/users/create
+#   Output: user_accounts_create_form.php
+RewriteRule ^admin/users/create/?$ admin/user_accounts_create_form.php
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#   Input:  admin/users/mod/4/edit
+#   Output: user_accounts_modify_form.php?id=4
+RewriteRule ^admin/users/mod/(\w+)/edit/?$ admin/user_accounts_modify_form.php?id=$1
 
 
 

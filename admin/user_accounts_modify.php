@@ -100,11 +100,9 @@ $(function() {
 		echo "<td>" . $row['ID'] . "</td>";
 		echo "<td>" . $row['username'] . "</td>";
 		echo "<td>" . $row['Is Admin'] . "</td>";
-		#echo "<td width=\"5%\"><input type=\"image\" src=\"../images/details_open.png\" id=\"createAccount\" ></td>";
-		#echo "<td width=\"5%\"><input type=\"image\" src=\"../images/edit.png\" id=\"modifyAccount\" ></td>";
-		echo "<td width=\"5%\"><a href=\"user_accounts_create_form.php \"><img src=\"../images/details_open.png \" /></a></td>";
-		echo "<td width=\"5%\"><a href=\"user_accounts_modify_form.php?id=" . $row['ID'] . "\"><img src=\"../images/edit.png \" /></a></td>";
-		echo "<td width=\"5%\"><input type=\"image\" src=\"../images/details_close.png\" id=\"deleteAccount\" ></td>";
+		echo "<td width=\"5%\"><a href=\"../create \"><img src=\"../../../images/details_open.png \" /></a></td>";
+		echo "<td width=\"5%\"><a href=\"" . $row['ID'] . "/edit\"><img src=\"../../../images/edit.png \" /></a></td>";
+		echo "<td width=\"5%\"><input type=\"image\" src=\"../../../images/details_close.png\" id=\"deleteAccount\" ></td>";
 		
 		echo "</tr>";
 		
