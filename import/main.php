@@ -17,8 +17,8 @@
 <br />
 <table id="hor-minimalist-a" border = 1>
 	<tr>
-		<td width="90"><a href="cmdb"><img src="../images/cmdb.png" /></a></td>
-		<td><a href="cmdb">Configuration Management Database</a></td>		
+		<td width="20%"><a href="cmdb"><img src="../images/cmdb.png" /></a></td>
+		<td width="80%"><a href="cmdb">Configuration Management Database</a></td>		
 	</tr>
 	
 	<tr>
@@ -27,8 +27,8 @@
 	</tr>
 	
 	<tr>
-		<td width="90"><a href="mdt"><img src="../images/mdt.jpg" /></a></td>
-		<td><a href="mdt">Microsoft Deployment Toolkit Database</a></td>
+		<td width="20%"><a href="mdt"><img src="../images/mdt.jpg" /></a></td>
+		<td width="80%"><a href="mdt">Microsoft Deployment Toolkit Database</a></td>
 	</tr>
 </table>
 

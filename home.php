@@ -15,9 +15,9 @@
 		</tr>
 		
 		<tr>
-			<td width=33%><a href="assets/">1. Lease Returns Management</a></td>
-			<td width=33%><a href="config/">2. Application Installations</a></td>
-			<td width=33%><a href="import/">3. Data Import</a></td>
+			<td width=33% style="padding:10px;"><a href="assets/">Lease Returns Management</a></td>
+			<td width=33%><a href="config/">Application Installations</a></td>
+			<td width=33%><a href="import/">Data Import</a></td>
 		</tr>
 		
 	</table>

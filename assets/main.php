@@ -14,15 +14,21 @@
 <br />
 <p class="stats">What do you want to do?</p>
 <br />
-<table id="hor-minimalist-a" width="80%">
-	<tr style="border: 1px solid black;">
+<table id="hor-minimalist-a" width="80%" border=1>
+	<!--<tr style="border: 1px solid black;">-->
+	<tr>
 		<td width="20%"><a href="lease"><img src="../images/cmdb.png" /></a></td>
 		<td width="80%"><a href="lease">View Lease Detail</a></td>		
 	</tr>
 	
-	<tr style="border: 1px solid black;">
-		<td width="90"><a href="search"><img src="../images/search.png" /></a></td>
-		<td><a href="search">Search</a></td>
+	<tr>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+	</tr>
+	
+	<tr>
+		<td width="20%"><a href="search"><img src="../images/search.png" /></a></td>
+		<td width="80%"><a href="search">Search</a></td>
 	</tr>
 	
 </table>
