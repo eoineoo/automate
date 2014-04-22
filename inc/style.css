@@ -3,7 +3,8 @@ margin: 0;
 padding: 0;
 }
 html, body{
-	background: #616161;
+	/**background: #616161;**/
+	background: #d3d3d3;
 	height: 95%;
 	font-family:Verdana, Arial, Helvetica, sans-serif;
 	line-height: 1.6em;
@@ -23,12 +24,16 @@ img {
 	height: 100%;
 }
 div#banner {
-	height: 200px;
-	text-align:center;
-    margin-top:0px;
-    margin-bottom:0px;
-    padding:0px;
-	width: 1050px;
+	background: #09c;
+	color: #000;
+	height: 150px;
+	width: auto;
+	border-top-style:solid;
+	border-top-width:10px;
+	border-top-color: #c0c0c0;
+	border-bottom-style:solid;
+	border-bottom-width:10px;
+	border-bottom-color: #c0c0c0;
 }
 #footer{
 	background: #09c;
@@ -36,6 +41,9 @@ div#banner {
 	height: 100px;
 	margin: -100px auto 0;
 	width: 1050px;
+	border-top-style:solid;
+	border-top-width:10px;
+	border-top-color: #c0c0c0;
 }
 #scheduledTaskForm	{
 

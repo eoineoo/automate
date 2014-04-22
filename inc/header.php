@@ -10,7 +10,8 @@
 		
 			<!-- New banner div -->
 			<div id="banner">
-				<img src="http://localhost/automate/images/banner.png" alt="Automate" />
+				<!-- <img src="http://localhost/automate/images/banner.png" alt="Automate" /> -->
+				<h1 style="color:white;font-size:3em;font-family:Verdana, Arial, Helvetica, sans-serif;text-align: center;vertical-align: middle;line-height: 150px;">Automate</h1>
 			</div>
 			<!-- end banner div --> 
 		
