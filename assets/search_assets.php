@@ -1,12 +1,18 @@
 <?php
 	
 	/**
-	* Search for assets by: asset tag, serial, or user
+	* Search_assets.php
+	* 
+	* Search for assets by POST'ing criteria to search_source.php
+	* Result returned and populated to "results" div
+	* Owner field will autocomplete by using search_autocomplete.php
 	*/
+	
 	$pagetitle = "Search For Asset";
 	require_once("/../inc/config.php");  
 	require_once("/../inc/header.php");  
 	require_once("/../inc/functions.php");
+	
 	checkLogin();
 	
 ?>
@@ -18,7 +24,7 @@
 	$(function(){
         $('#insert').click(function(){
             
-			//Set values to be blank if no input detected
+			/* Set values to be blank if no input detected */
 			if ($('#assetTag').val() == 'Asset tag')	{
 				var jAssetTag = '';
 			}
@@ -38,7 +44,7 @@
 				var jOwner = $('#owner').val();
 			}
 			
-			//Use JQuery to post values to search_source.php, return results to the 'results' div
+			/* Use JQuery to post values to search_source.php, return results to the 'results' div */
 			$.post('/automate/assets/search_source.php',{action: "insert", assetTag:jAssetTag, serialNumber:jSerialNum, owner:jOwner},function(res){
                 $('#results').html(res);				
             }); 			
@@ -47,7 +53,7 @@
     });
 	
 	$(function(){
-		//JQuery autocomplete function for the owner field
+		/* JQuery autocomplete function for the owner field */
 		$("#owner").autocomplete({
 			source: "search_autocomplete.php",
 			minLength: 3

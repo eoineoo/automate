@@ -1,7 +1,9 @@
 <?php
 
 	/**
-	* Recieve value(s) from modify_asset.php, pass into SQL update statement and return result (success/failure)
+	* Modify_source.php
+	* 
+	* Recieve value(s) from modify_asset.php, pass into SQL update statement (swdata.assets) and return result (success/failure)
 	*/
 	require_once("/../inc/config.php");  
 	require_once("/../inc/functions.php");

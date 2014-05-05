@@ -1,18 +1,26 @@
 <?php 
 	
 	/**
-	 * Scheduled task: Get list of users who have not yet logged a call, send an email to each one, store record of this email in automate.contact and output to /logs/<current_timestamp>.txt
+	 * Scheduled_task.php
+	 *
+	 * This file is executed as a Windows Scheduled Task.
+	 *
+	 * Get list of users who have not yet logged a call by querying swdata.opencall (along with the passed in parameters)
+	 * Send an email to each asset owner using the messageUser() function
+	 * Store record of this email by writing to automate.contact 
+	 * Log output output to /logs/<current_timestamp>.txt
+	 * 
+	 * @argv[1] = The selected invoice
+	 * @argv[2] = The selected job description 
 	 */
 	
 	require_once("/../inc/config.php");  
 	require_once("/../inc/functions.php");
 	require_once("/../resources/mailer/PHPMailerAutoLoad.php");
 	
-	#checkLogin();
-	
 	global $mail_counter;
 	
-	#The invoice is passed in to script as argv[1]
+	#The invoice and jobdesc are passed in to script as argv[1] and argv[2]
 	$invoice = $argv[1];
 	$jobdesc = $argv[2];
 	
@@ -23,7 +31,6 @@
 	$join_u	= "LEFT OUTER JOIN userdb ON userdb.fullname = assets.owner ";
 	$where 	= "WHERE purchase_order_number = $invoice AND callref IS NULL AND status_level = 'Assigned' AND jobdesc = '$jobdesc'";
 	$sql 	= $select . $from . $join . $join_u . $where;
-	echo $sql;
 	
 	$insert = "INSERT INTO contact(serial, purchase_order_number, owner, jobdesc, email, contents) VALUES (?, ?, ?, ?, ?, ?)";
 	

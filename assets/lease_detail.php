@@ -1,12 +1,17 @@
 <?php
 	
 	/**
-	* Display details of selected lease. Contact outstanding users.
+	* Lease_detail.php
+	*
+	* Display details of selected lease by querying swdata.assets, joining with automate.contact (for date call logged).
+	* DataTables used on main results table to allow filtering and sorting.
 	*/
+	
 	$pagetitle = "View Lease Detail";
 	require_once("/../inc/config.php");  
 	require_once("/../inc/header.php");  
 	require_once("/../inc/functions.php");
+	
 	checkLogin();
 	
 	#Determine what invoice file was selected
@@ -51,7 +56,7 @@
 	<script type="text/javascript" charset="utf-8">		
 		/* 
 		 * Filter data using text boxes 
-		 * http://datatables.net/examples/api/multi_filter.html
+		 * Referenced tutorial: http://datatables.net/examples/api/multi_filter.html
 		 */
 		var asInitVals = new Array();
 			
@@ -107,7 +112,6 @@
 				<th><input type="text" name="search_logon" size="10"/></th>
 				<th><input type="text" name="search_user" size="10"/></th>
 				<th><input type="text" name="search_owner" size="10"/></th>
-				<!--Added two extra fields-->
 				<th><input type="text" name="search_dept" size="10"/></th>
 				<th><input type="text" name="search_grade" size="10"/></th>
 				<th><input type="text" name="search_status" size="10"/></th>
@@ -172,7 +176,7 @@
 
 <?php
 
-	#Numbers - add CSS
+	#Display summary
 	echo "<p>Completed: $completed <br />Logged: $logged <br /> Outstanding: $outstanding</p>";
 	echo "<br />";
 

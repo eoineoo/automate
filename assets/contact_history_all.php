@@ -1,12 +1,17 @@
 <?php
 	
 	/**
-	* Display history of mails sent to all owner(s) of all assets for the current invoice
+	* Contact_history_all.php
+	* 
+	* Display history of mails sent to all owner(s) of all assets for the current invoice by querying automate.contact
 	*/
+	
 	$pagetitle = "View Contact History";
+	
 	require_once("/../inc/config.php");  
 	require_once("/../inc/header.php");  
 	require_once("/../inc/functions.php");
+	
 	checkLogin();
 	
 	#Determine what serial was selected
@@ -27,7 +32,7 @@
 	
 	#Query to return contact details
 	$select = "SELECT TIMESTAMP AS 'Time Sent', serial AS 'Serial', contents AS 'Contents', owner AS 'Owner' ";
-	$from 	= "FROM  contact ";
+	$from 	= "FROM contact ";
 	$where 	= "WHERE purchase_order_number = '$invoice' ";
 	$order 	= "ORDER BY timestamp DESC";
 	$sql	= $select . $from . $where . $order;

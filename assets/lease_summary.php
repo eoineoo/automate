@@ -1,9 +1,11 @@
 <?php
 	
 	/**
-	* Display summary of current lease
-	* Ideally this will involve simple JavaScript to display a slider or some other drop-down menu
+	* Lease_summary.php
+	*
+	* Display summary of current lease by querying assets.swdata
 	*/
+	
 	$pagetitle = "View Lease Summary";
 	require_once("/../inc/config.php");  
 	require_once("/../inc/header.php");  

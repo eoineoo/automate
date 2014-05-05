@@ -1,8 +1,12 @@
 <?php
 
 	/**
-	* Recieve value(s) from search_assets.php, pass into SQL query and return table of results
+	* Search_source.php
+	*
+	* Recieve POST'ed value(s) from search_assets.php, 
+	* Pass values into SQL query, return table of results
 	*/
+	
 	require_once("/../inc/config.php");  
 	require_once("/../inc/functions.php");
 	checkLogin();

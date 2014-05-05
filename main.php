@@ -2,7 +2,7 @@
 
 	/** 
 	 * Main.php
-	 * Tutorial: http://www.hauntednipple.co.uk/?p=94
+	 * Referenced tutorial: http://www.hauntednipple.co.uk/?p=94
 	 *
 	 * Main landing page with HTML form that posts username and password to auth.php
 	 */

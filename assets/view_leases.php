@@ -1,12 +1,17 @@
 <?php
 	
 	/**
-	* Display overview of all current leases by querying asset database.
+	* View_leases.php
+	* 
+	* Display overview of all current leases by querying swdata.assets
 	*/
+	
 	$pagetitle = "View Lease Agreements";
+	
 	require_once("/../inc/config.php");  
 	require_once("/../inc/header.php");  
 	require_once("/../inc/functions.php");
+	
 	checkLogin();
 	
 	#Connect

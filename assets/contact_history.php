@@ -1,12 +1,16 @@
 <?php
 	
 	/**
-	* Display history of mails sent to owner(s) of specific asset
+	* Contact_history.php
+	*
+	* Display history of mails sent to owner(s) of specific asset by querying automate.contact
 	*/
+	
 	$pagetitle = "View Lease Detail";
 	require_once("/../inc/config.php");  
 	require_once("/../inc/header.php");  
 	require_once("/../inc/functions.php");
+	
 	checkLogin();
 	
 	#Determine what serial was selected
@@ -27,7 +31,7 @@
 	
 	#Query to return contact details
 	$select = "SELECT TIMESTAMP AS 'Time Sent', serial AS 'Serial', contents AS 'Contents', owner AS 'Owner' ";
-	$from 	= "FROM  contact ";
+	$from 	= "FROM contact ";
 	$where 	= "WHERE serial = '$serial' ";
 	$order 	= "ORDER BY timestamp DESC";
 	$sql	= $select . $from . $where . $order;
@@ -41,7 +45,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<script type="text/javascript" charset="utf-8">
 		$(document).ready(function() {
-			//Alternate the color of the rows
+			/* Alternate the color of the rows */
 			$("tr:even").css("background-color", "#CEE8F0");
 		} );
 	</script>

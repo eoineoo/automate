@@ -1,8 +1,10 @@
 <?php
 
 	/**
-	 * Modify asset
-	 * Quickly and easily assign assets back into Spares, mark as retired, stolen etc.
+	 * Modify_asset.php
+	 *
+	 * Re-assign assets using JQuery to POST data to modify_source.php
+	 * Result returned to "results" div
 	 */
 	$pagetitle = "Modify Asset";
 	require_once("/../inc/config.php");  
@@ -51,10 +53,10 @@ $(function() {
 			draggable: false,
 			buttons:	{
 				"Move to Spares": function()	{
-					//Get serial number from table, assign to JavaScript variable that can be used in $.post
+					/* Get serial number from table, assign to JavaScript variable that can be used in $.post */
 					var jSerial = ($('#result_table td:nth(0)').html());
 				
-					//Use JQuery to post values to modify_source.php, return results to the 'results' div
+					/* Use JQuery to post values to modify_source.php, return results to the 'results' div */
 					$.post('/automate/assets/modify_source.php',{action: "spares", serial:jSerial},function(res){
 						$('#results').html(res);
 					});
@@ -69,7 +71,7 @@ $(function() {
 		
 	});
 	$('#markAsRetired').click(function() {
-		//Confirmation box
+		/* Confirmation box */
 		$( "#retire-confirm" ).dialog	({
 			resizable:false,
 			height: 'auto',
@@ -78,10 +80,10 @@ $(function() {
 			draggable: false,
 			buttons:	{
 				"Retire": function()	{
-					//Get serial number from table, assign to JavaScript variable that can be used in $.post
+					/* Get serial number from table, assign to JavaScript variable that can be used in $.post */
 					var jSerial = ($('#result_table td:nth(0)').html());
 				
-					//Use JQuery to post values to modify_source.php, return results to the 'results' div
+					/* Use JQuery to post values to modify_source.php, return results to the 'results' div */
 					$.post('/automate/assets/modify_source.php',{action: "retired", serial:jSerial},function(res){
 						$('#results').html(res);				
 					});
@@ -95,7 +97,7 @@ $(function() {
 		});
 	});
 	$('#markAsLost').click(function() {
-		//Confirmation box
+		/* Confirmation box */
 		$( "#lost-confirm" ).dialog	({
 			resizable:false,
 			height: 'auto',
@@ -104,10 +106,10 @@ $(function() {
 			draggable: false,
 			buttons:	{
 				"Mark As Lost": function()	{
-					//Get serial number from table, assign to JavaScript variable that can be used in $.post
+					/* Get serial number from table, assign to JavaScript variable that can be used in $.post */
 					var jSerial = ($('#result_table td:nth(0)').html());
 				
-					//Use JQuery to post values to modify_source.php, return results to the 'results' div
+					/* Use JQuery to post values to modify_source.php, return results to the 'results' div */
 					$.post('/automate/assets/modify_source.php',{action: "lost", serial:jSerial},function(res){
 						$('#results').html(res);				
 					});
@@ -121,7 +123,7 @@ $(function() {
 		});
 	});
 	$('#markAsStolen').click(function() {
-		//Confirmation box
+		/* Confirmation box */
 		$( "#stolen-confirm" ).dialog	({
 			resizable:false,
 			height: 'auto',
@@ -130,10 +132,10 @@ $(function() {
 			draggable: false,
 			buttons:	{
 				"Mark as stolen": function()	{
-					//Get serial number from table, assign to JavaScript variable that can be used in $.post
+					/* Get serial number from table, assign to JavaScript variable that can be used in $.post */
 					var jSerial = ($('#result_table td:nth(0)').html());
 				
-					//Use JQuery to post values to modify_source.php, return results to the 'results' div
+					/* Use JQuery to post values to modify_source.php, return results to the 'results' div */
 					$.post('/automate/assets/modify_source.php',{action: "stolen", serial:jSerial},function(res){
 						$('#results').html(res);				
 					});

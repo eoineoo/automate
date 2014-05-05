@@ -34,7 +34,7 @@
 		die();
 	}
 	
-	#Function to send email using PHPMailer and log it using writeToFile()
+	#Function to send email using PHPMailer and log it using writeToFile() - https://github.com/PHPMailer/PHPMailer
 	function messageUser($address, $owner, $serial, $grade)	{
 		
 		global $body; 

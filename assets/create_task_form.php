@@ -1,7 +1,9 @@
 <?php
 
 	/**
-	 * HTML form that posts information to create_task.php which creates a Scheduled Task on the server to email outstanding users
+	 * Create_task_form.php
+	 *
+	 * HTML form that posts information to create_task.php (create_task.php creates a Scheduled Task on the server to email outstanding users)
 	 * This page uses JQuery to post information and get the result back without the page having to reload
 	 */
 
@@ -25,7 +27,8 @@
 <script src="http://localhost/automate/resources/js/jquery-ui.js"></script>
 <script src="http://localhost/automate/resources/js/jquery-ui-timepicker-addon.js"></script>
 <script>
-	//http://blog.theonlytutorials.com/insert-show-records-jquery-ajax-php/
+	/* 	JQuery to POST information to create_task.php
+		Referenced tutorial: http://blog.theonlytutorials.com/insert-show-records-jquery-ajax-php/ */
     $(function(){
         $('#insert').click(function(){
             
@@ -44,13 +47,13 @@
     });
 
 	$(function() {
-		//http://trentrichardson.com/examples/timepicker/#slider_examples
+		/* http://trentrichardson.com/examples/timepicker/#slider_examples */
 		$('#timeToRun').timepicker();
 		$('#startDate').datepicker({ dateFormat: "dd/mm/yy", minDate: 0 });
 		$('#endDate').datepicker({ dateFormat: "dd/mm/yy", minDate: 1 });
 	});
 	
-	//Disable all inputs after selecting the insert button
+	/* Disable all inputs after selecting the insert button */
 	function disableFunction() {
 		document.getElementById("schedule").disabled = 'true';
 		document.getElementById("jobdesc").disabled = 'true';

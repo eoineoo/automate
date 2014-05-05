@@ -1,7 +1,9 @@
 <?php
 	
 	/**
-	* Basic HTML form that sends file to uploader.php
+	* Main.php
+	*
+	* Main Assets landing page that displays two available options (lease returns or search)
 	*/
 	$pagetitle = "Asset Management and Lease Returns";
 	require_once("/../inc/config.php");  

@@ -1,7 +1,10 @@
 <?php
     
 	/**
-	 * Creates a Windows Scheduled Task that executes scheduled_task.php, inserts record into automate.scheduled_tasks if successful
+	 * Create_task.php
+	 *
+	 * Creates a Windows Scheduled Task that executes scheduled_task.php, 
+	 * Inserts record into automate.scheduled_tasks if successful
 	 * Information received from create_task_form.php
 	 */
 	
@@ -20,7 +23,7 @@
 	$invoice  = $_POST['invoice'];
 	$jobdesc = $_POST['jobdesc'];
 	$name = $invoice . " " . ucfirst($jobdesc) . " Lease Return"; #e.g. 2011 Associate Lease Return
-	$user = "emccrann"; #Will capture currently logged in user when Sessions are sorted out
+	$user = $_SESSION['username'];
 	$schedule  = $_POST['schedule'];
 	$timeToRun  = $_POST['timeToRun'];
 	$startDate  = $_POST['startDate'];
@@ -29,7 +32,7 @@
 	
 	if($_POST['action'] == 'insert'){
 		
-		#Windows CLI command to create a scheduled task which executes a PHP file - may need to implement escapeshellarg()
+		#Windows CLI command to create a scheduled task which executes a PHP file
 		$command = "cmd /c schtasks /create /tn \"$name\" /tr \"C:\\xampp\\php\\php.exe -f C:\\xampp\\htdocs\\automate\\assets\\scheduled_task.php $invoice $jobdesc\" /sc $schedule /st $timeToRun /sd $startDate /ed $endDate /ru $runAs 2>&1";
 		$issued_command = shell_exec($command);
 		
@@ -59,6 +62,7 @@
 
 			echo "<div class=\"alert-box success\">$issued_command<br />Record added to DB.</div>";
 		}
+		
 		#Error-handling
 		else if(strpos($issued_command,'ERROR: Invalid syntax') !== false)	{
 			$failed = "Invalid syntax issued. Please ensure you have filled in all fields.";
