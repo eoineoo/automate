@@ -1,8 +1,12 @@
 <?php
 	
 	/**
-	* Display history of imports - Administrators only
+	* Scheduled_task_history.php 
+	*
+	* Administrators only
+	* Display history of scheduled task creation by querying automate.scheduled_tasks
 	*/
+	
 	$pagetitle = "Scheduled Task Creation History";
 	
 	require_once("/../inc/config.php");  
@@ -37,7 +41,7 @@
 	<script type="text/javascript" charset="utf-8">
 		/* 
 		 * Filter data using text boxes 
-		 * http://datatables.net/examples/api/multi_filter.html
+		 * Reference: http://datatables.net/examples/api/multi_filter.html
 		 */
 		var asInitVals = new Array();
 			
@@ -46,7 +50,6 @@
 					"oLanguage": {
 						"sSearch": "Search:"
 					},
-					//"bPaginate": false - leaving pagination on as I expect there to be lots and lots of entries in here eventually
 					"iDisplayLength": 50
 				} );
 				
@@ -71,7 +74,7 @@
 					}
 				} );
 				
-				//Alterate the color of the rows
+				/* Alterate the color of the rows */
 				$("tr:even").css("background-color", "#CEE8F0");
 			} );
 	</script>

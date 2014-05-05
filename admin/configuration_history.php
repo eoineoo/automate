@@ -1,8 +1,12 @@
 <?php
 	
 	/**
-	* Display history of laptop configurations
+	* Configuration_history.php
+	*
+	* Administrators only
+	* Display history of laptop configurations by querying automate.config
 	*/
+	
 	$pagetitle = "Laptop Configuration History";
 	
 	require_once("/../inc/config.php");  
@@ -34,7 +38,7 @@
 	<script type="text/javascript" charset="utf-8">		
 		/* 
 		 * Filter data using text boxes 
-		 * http://datatables.net/examples/api/multi_filter.html
+		 * Reference: http://datatables.net/examples/api/multi_filter.html
 		 */
 		var asInitVals = new Array();
 			
@@ -61,7 +65,7 @@
 						this.value = asInitVals[$("thead input").index(this)];
 					}
 				} );
-				//Alterate the color of the rows
+				/* Alterate the color of the rows */
 				$("tr:even").css("background-color", "#CEE8F0");
 			} );
 	</script>
@@ -78,6 +82,7 @@
 		<table cellpadding="0" cellspacing="0" border="1" class="hor-minimalist-a" id="configurations">
 			<thead>
 				<tr>
+					<!-- Input for filtering (DataTables) -->
 					<th><input type="text" name="search_user" style='width:100%'/></th>
 					<th><input type="text" name="search_enduser" style='width:100%'/></th>
 					<th><input type="text" name="search_machine" style='width:100%'/></th>

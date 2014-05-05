@@ -1,9 +1,14 @@
 <?php
 
 	/**
-	* Recieve value(s) from user_accounts_modify.php, user_accounts_modify_form.php or user_accounts_create_form.php
-	* Pass into relevant SQL statement (depending on what method has been posted) and return result (success/failure) to the requesting page
+	* User_accounts_source.php
+	* 
+	* Administrators only
+	* Recieve POST'ed value(s) from user_accounts_modify.php, user_accounts_modify_form.php or user_accounts_create_form.php
+	* Pass into relevant SQL statement (depending on what method has been posted)
+	* Return result (success/failure) to the requesting page
 	*/
+	
 	require_once("/../inc/config.php");  
 	require_once("/../inc/functions.php");
 	checkAdminLogin();
@@ -16,7 +21,7 @@
 		die_and_display_nf('<div id="alert"><a class="alert">Connection failed: ' . htmlspecialchars(mysqli_connect_error()) . "</a></div>");			
 	}
 	
-	#Assign to Spares, mark as Unassigned
+	#Determine what button was selected on the previous page
 	if(($_POST['action'] == 'create') || ($_POST['action'] == 'modify') || ($_POST['action'] == 'delete')) {
 		
 		#Set up variables

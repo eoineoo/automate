@@ -1,9 +1,16 @@
 <?php
 	
 	/**
-	* Modify User Accounts - Administrators only
-	* Select what modifications you want to make to the account, create a new one or delete the selected one
+	* User_accounts_modify.php
+	*
+	* Administrators only
+	* Modify existing user accounts or create new ones. Data transferred to other pages depending on function as per below:
+	* 
+	* Modify -> user_accounts_modify_form.php
+	* Delete -> user_accounts_source.php
+	* Create -> user_accounts_create_form.php
 	*/
+	
 	$pagetitle = "Admin - User Accounts";
 	
 	require_once("/../inc/config.php");  
@@ -43,7 +50,7 @@
 <script>
 $(function() {
 	$('#deleteAccount').click(function() {
-		//Confirmation box
+		/* Confirmation box */
 		$( "#delete-confirm" ).dialog	({
 			resizable:false,
 			height: 'auto',
@@ -52,10 +59,10 @@ $(function() {
 			draggable: false,
 			buttons:	{
 				"Delete User": function()	{
-					//Get serial number from table, assign to JavaScript variable that can be used in $.post
+					/* Get serial number from table, assign to JavaScript variable that can be used in $.post */
 					var jId = ($('#result_table td:nth(0)').html());
 				
-					//Use JQuery to post values to user_accounts_source.php, return results to the 'results' div
+					/* Use JQuery to post values to user_accounts_source.php, return results to the 'results' div */
 					$.post('/automate/admin/user_accounts_source.php',{action: "delete", id:jId},function(res){
 						$('#results').html(res);				
 					});

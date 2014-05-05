@@ -1,8 +1,12 @@
 <?php
 	
 	/**
-	* Display history of imports - Administrators only
+	* Import_history.php
+	* 
+	* Administrators only
+	* Display history of data imports by querying automate.csv_details
 	*/
+	
 	$pagetitle = "Asset Import History";
 	
 	require_once("/../inc/config.php");  
@@ -38,7 +42,7 @@
 	<script type="text/javascript" charset="utf-8">
 		/* 
 		 * Filter data using text boxes 
-		 * http://datatables.net/examples/api/multi_filter.	
+		 * Reference: http://datatables.net/examples/api/multi_filter.	
 		 */
 		var asInitVals = new Array();
 			
@@ -47,7 +51,6 @@
 					"oLanguage": {
 						"sSearch": "Search:"
 					},
-					//"bPaginate": false - leaving pagination on as I expect there to be lots and lots of entries in here eventually
 					"iDisplayLength": 50
 				} );
 				
@@ -72,7 +75,7 @@
 					}
 				} );
 				
-				//Alterate the color of the rows
+				/* Alterate the color of the rows */
 				$("tr:even").css("background-color", "#CEE8F0");
 			} );
 	</script>

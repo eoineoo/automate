@@ -1,10 +1,13 @@
 <?php
 	
 	/**
-	* Modify User Accounts - Administrators only
-	* Basic form to update username, fullname, password and select whether or not the user is an admin.
-	* Information sent to user_accounts_source.php, success/failure message returned, user then re-directed back to requesting page.
+	* User_accounts_modify_form.php
+	*
+	* Administrators only
+	* Form to update user details.
+	* Data submitted to user_accounts_source.php, success/failure message returned using JQuery.
 	*/
+	
 	$pagetitle = "Admin - Modify User Account";
 	
 	require_once("/../inc/config.php");  
@@ -49,7 +52,9 @@
 	
 	?>
 <script>
-	//http://blog.theonlytutorials.com/insert-show-records-jquery-ajax-php/
+	/* 	JQuery to update user details without reloading page
+		Data submitted to user_accounts_source.php
+		Reference: http://blog.theonlytutorials.com/insert-show-records-jquery-ajax-php/ */
     $(function(){
         $('#modify').click(function(){
             
@@ -69,7 +74,7 @@
         });    
     });
 	
-	//Disable all inputs after selecting the insert button
+	/* Disable all inputs after selecting the insert button */
 	function disableFunction() {
 		document.getElementById("username").disabled = 'true';
 		document.getElementById("fullname").disabled = 'true';

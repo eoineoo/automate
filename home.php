@@ -1,4 +1,12 @@
 <?php
+	
+	/** 
+	 * Home.php
+	 *
+	 * Main page once logged-in as non-Admin
+	 * Displays links to main areas of web application
+	 */
+
 	$pagetitle = "Home";
 	require_once("inc/functions.php");
 	require_once("inc/header.php");

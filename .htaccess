@@ -1,9 +1,12 @@
-#http://net.tutsplus.com/tutorials/other/a-deeper-look-at-mod_rewrite-for-apache/
+#############################################################
+# Rewrite rules for Automate, used to create friendly URL's	#
+# Tutorial: http://bit.ly/1okzMmF							#
+#############################################################
 RewriteEngine on 
 
-#########################################################
-#Main Rules												#
-#########################################################
+#############################################################
+#Main Rules													#
+#############################################################
 DirectoryIndex main.php
 
 #   Input:  /auth.php
@@ -18,9 +21,9 @@ RewriteRule ^home/?$ home.php
 #   Output: /logout
 RewriteRule ^logout/?$ logout.php
 
-#########################################################
-#Asset Management and Lease Returns Rules				#
-#########################################################
+#############################################################
+#Asset Management and Lease Returns Rules					#
+#############################################################
 
 #   Input:  assets/view
 #   Output: view_leases.php
@@ -54,15 +57,9 @@ RewriteRule ^assets/lease/(\w+)/history?$ assets/contact_history.php?serial=$1
 #   Output: search_assets.php
 RewriteRule ^assets/search/?$ assets/search_assets.php
 
-#########################################################
-#Laptop Configuration and Application Installation Rules#
-#########################################################
-
-
-
-#########################################################
-#Data Upload and Import Rules			 				#
-#########################################################
+#############################################################
+#Data Upload and Import Rules			 					#
+#############################################################
 
 #   Input:  import/cmdb
 #   Output: cmdb_file_selection.php
@@ -96,9 +93,9 @@ RewriteRule ^import/mdt/display-csv/(\w+).csv/?$ import/mdt_display_csv.php?csv=
 #   Output: mdt_execute.php?csv=mdt_52dd8987983b8bf_mdt_import.csv
 RewriteRule ^import/mdt/execute/(\w+).csv/?$ import/mdt_execute.php?csv=$1
 
-#########################################################
-#Administration Rules									#
-#########################################################
+#############################################################
+#Administration Rules										#
+#############################################################
 #   Input:  admin/config
 #   Output: configuration_history.php
 RewriteRule ^admin/config/?$ admin/configuration_history.php
@@ -126,12 +123,3 @@ RewriteRule ^admin/users/create/?$ admin/user_accounts_create_form.php
 #   Input:  admin/users/mod/4/edit
 #   Output: user_accounts_modify_form.php?id=4
 RewriteRule ^admin/users/mod/(\w+)/edit/?$ admin/user_accounts_modify_form.php?id=$1
-
-
-
-
-
-
-
-
-

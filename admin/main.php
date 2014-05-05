@@ -1,8 +1,12 @@
 <?php
 	
 	/**
-	* Admin main page - Administrators only
+	* Main.php
+	*
+	* Administrators only
+	* Admin main page, displays links to main areas available to Administrators
 	*/
+	
 	$pagetitle = "Administration";
 	
 	require_once("/../inc/config.php");  

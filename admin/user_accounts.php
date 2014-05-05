@@ -1,8 +1,12 @@
 <?php
 	
 	/**
-	* Manage User Accounts - Administrators only
+	* User_accounts.php
+	*
+	* Administrators only
+	* Displays a list of user accounts by querying automate.users
 	*/
+	
 	$pagetitle = "Admin - User Accounts";
 	
 	require_once("/../inc/config.php");  
