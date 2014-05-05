@@ -8,7 +8,14 @@ html, body{
 	height: 95%;
 	font-family:Verdana, Arial, Helvetica, sans-serif;
 	line-height: 1.6em;
-	}
+}
+a	{
+	text-decoration: none;
+}
+a:hover	{
+	color: #FF8C00;
+	text-decoration: none;
+}
 img {
     display: block;
     margin: 0 auto;
@@ -79,7 +86,7 @@ tr.not_admin	{
 p.footer	{
 	padding: 35 0 0 0;
 }
-#clearfooter{ /* same height as footer */
+#clearfooter{
 	clear:both;
 	height:90px;
 } 
@@ -92,8 +99,7 @@ p.navigation	{
 	width: 1050px;
 	overflow: scroll;
 }
-/* Table for user accounts: http://coding.smashingmagazine.com/2008/08/13/top-10-css-table-designs/
-	- Might need to be tweaked for gap between footer and main content on some pages*/
+/* Table for user accounts: http://coding.smashingmagazine.com/2008/08/13/top-10-css-table-designs */
 #hor-minimalist-a
 {
 	font-size: 12px;

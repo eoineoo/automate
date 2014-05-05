@@ -16,7 +16,7 @@
 		if ( isset($_FILES["file"]) ) {
 			
 			#File Details
-			$user 			= 	"emccrann"; # Will capture currently logged-in user
+			$user 			= 	$_SESSION['username'];
 			$db_name		= 	"MDT";
 			$filename 		= 	$_FILES["file"]["name"];
 			$filetype 		= 	$_FILES["file"]["type"];
