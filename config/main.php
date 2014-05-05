@@ -1,12 +1,18 @@
 <?php
-	session_start();
 	/**
-	* Laptop Config main page
+	* Main.php
+	*
+	* Laptop Config main page, contains lists of all available applications.
+	* JavaScript used to determine what checkboxes are selected
+	* Selected values passed into PHP array 'config' and POST'ed to Download.php
 	*/
+	
 	$pagetitle = "Laptop Configuration and Application Installation";
+	
 	require_once("/../inc/config.php");  
 	require_once("/../inc/header.php");  
 	require_once("/../inc/functions.php");
+	
 	checkLogin();
 	
 	#Variable - array that will contain the values of what is selected
@@ -20,14 +26,14 @@
 
 
 <script type="text/javascript">
-
+/* Select/unselect checkboxes depending on what radio button is clicked */
 $(function() {
 	$('#audit').click(function(){      
-		//deselect everything first
+		/* deselect everything first */
 		$('input[type=checkbox]').each(function() { 
 			this.checked = false; 
 		});
-		//select audit applications
+		/* select audit applications */
 		$('#afile').attr('checked', true);
 		$('#sage').attr('checked', true);
 		$('#paperchase').attr('checked', true);
@@ -35,11 +41,11 @@ $(function() {
 	});
 
 	$('#tax').click(function(){  
-		//deselect everything first
+		/* deselect everything first */
 		$('input[type=checkbox]').each(function() { 
 			this.checked = false; 
 		});
-		//select tax applications
+		/* select tax applications */
 		$('#afile').attr('checked', true);
 		$('#ade').attr('checked', true);
 		$('#ptm').attr('checked', true);
@@ -49,11 +55,11 @@ $(function() {
 	}); 
 
 	$('#advisory').click(function(){
-		//deselect everything first
+		/* deselect everything first */
 		$('input[type=checkbox]').each(function() { 
 			this.checked = false; 
 		});
-		//select advisory applications
+		/* select advisory applications */
 		$('#afile').attr('checked', true);
 		$('#visio').attr('checked', true);
 		$('#project').attr('checked', true);
@@ -62,11 +68,11 @@ $(function() {
 	});
 
 	$('#support').click(function(){
-		//deselect everything first
+		/* deselect everything first */
 		$('input[type=checkbox]').each(function() { 
 			this.checked = false; 
 		});
-		//select support applications	
+		/* select support applications */
 		$('#afile').attr('checked', true);
 		$('#paperchase').attr('checked', true);
 		$('#g2dic').attr('checked', true);
@@ -75,11 +81,11 @@ $(function() {
 	}); 
 
 	$('#it').click(function(){
-		//deselect everything first
+		/* deselect everything first */
 		$('input[type=checkbox]').each(function() { 
 			this.checked = false; 
 		});
-		//select IT applications
+		/* select IT applications */
 		$('#afile').attr('checked', true);
 		$('#adug').attr('checked', true);
 		$('#chrome').attr('checked', true);
@@ -92,7 +98,7 @@ $(function() {
 	}); 
 	
 	$('#none').click(function(){
-		//deselect everything first
+		/* deselect everything first */
 		$('input[type=checkbox]').each(function() { 
 			this.checked = false; 
 		});
@@ -219,18 +225,4 @@ $(function() {
 	$_SESSION['array'] = $_POST['config'];	
 	
 	require_once("/../inc/footer.php");
-?>	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+?>

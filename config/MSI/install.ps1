@@ -1,4 +1,6 @@
-#Install any MSI files that are in the \source\ directory - http://powershell.com/cs/forums/t/12742.aspx
+#Install any MSI files that are in the \source\ directory
+#Referenced tutorial: http://powershell.com/cs/forums/t/12742.aspx
+
 $CurrentLocation = "C:\temp\automate\filerepo"
 $CurrentScriptFullPathName = $MyInvocation.MyCommand.Definition
 
@@ -24,7 +26,7 @@ foreach ($msifile in $apps)	{
 [System.Reflection.Assembly]::LoadWithPartialName("System.Windows.Forms") > $null
 [System.Windows.Forms.MessageBox]::Show("Laptop configuration complete. Check C:\temp\automate\logs for output." , "Complete")
 
-#Clean-up
+#Delete un-needed folders once complete (log file folder remains)
 cd ..
 Remove-Item .\filerepo -Force -Recurse
 Remove-Item .\scripts -Force -Recurse

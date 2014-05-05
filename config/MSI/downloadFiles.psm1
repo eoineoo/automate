@@ -1,4 +1,5 @@
-#Uses WebClient to download file with a graphical progress bar - http://blogs.msdn.com/b/jasonn/archive/2013/06/11/8594493.aspx
+#Uses WebClient to download file with a graphical progress bar
+#Referenced tutorial: http://blogs.msdn.com/b/jasonn/archive/2013/06/11/8594493.aspx
 
 function DownloadFile($url, $targetFile)	{
 
