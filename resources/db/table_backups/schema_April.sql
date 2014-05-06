@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.6
+-- version 4.0.4.1
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 07, 2014 at 12:08 AM
--- Server version: 5.6.16
--- PHP Version: 5.5.9
+-- Generation Time: Apr 22, 2014 at 10:38 PM
+-- Server version: 5.5.32
+-- PHP Version: 5.4.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -314,7 +314,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `isadmin` varchar(3) NOT NULL,
   PRIMARY KEY (`staff_id`),
   KEY `username` (`username`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `users`
@@ -322,8 +322,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`staff_id`, `username`, `password`, `fullname`, `isadmin`) VALUES
 (4, 'emccrann', '76a7274804170464a31c6070ba4ccb05ff429f13', '', 'Yes'),
-(5, 'testing_account', '76a7274804170464a31c6070ba4ccb05ff429f13', 'Test User', 'No'),
-(6, 'pcarty', '76a7274804170464a31c6070ba4ccb05ff429f13', 'Paul Carty', 'No');
+(5, 'testing_account', '76a7274804170464a31c6070ba4ccb05ff429f13', 'Test User', 'No');
 --
 -- Database: `swdata`
 --
@@ -382,7 +381,37 @@ INSERT INTO `asset_details` (`id`, `serial`, `name`, `model`, `it_owner`, `it_ad
 (27, '9348HM', 'IE9348HM', 'ProBook 6550b', 'Padraig McNamara', 'Max Power', 'Yes'),
 (28, '1722DF', 'IE1722DF', 'ProBook 6550b', 'Padraig McNamara', 'Max Power', 'Yes'),
 (29, '3406OK', 'IE3406OK', 'ProBook 6550b', 'Padraig McNamara', 'Max Power', 'Yes'),
-(30, '7739AH', 'IE7739AH', 'ProBook 6550b', 'Padraig McNamara', 'Max Power', 'Yes');
+(30, '7739AH', 'IE7739AH', 'ProBook 6550b', 'Padraig McNamara', 'Max Power', 'Yes'),
+(123, 'TMQI', 'IETMQI', 'ThunkPud T440', 'Padraig McNamara', 'Max Power', 'Yes'),
+(124, 'SEFK', 'IESEFK', 'ThunkPud T440', 'Padraig McNamara', 'Max Power', 'Yes'),
+(125, 'EKPB', 'IEEKPB', 'ThunkPud T440', 'Padraig McNamara', 'Max Power', 'Yes'),
+(126, 'ZUMB', 'IEZUMB', 'ThunkPud T440', 'Padraig McNamara', 'Max Power', 'Yes'),
+(127, 'NFSZ', 'IENFSZ', 'ThunkPud T440', 'Padraig McNamara', 'Max Power', 'Yes'),
+(128, 'HTTZ', 'IEHTTZ', 'ThunkPud T440', 'Padraig McNamara', 'Max Power', 'Yes'),
+(129, 'ODME', 'IEODME', 'ThunkPud T440', 'Padraig McNamara', 'Max Power', 'Yes'),
+(130, 'BMGI', 'IEBMGI', 'ThunkPud T440', 'Padraig McNamara', 'Max Power', 'Yes'),
+(131, 'GWVH', 'IEGWVH', 'ThunkPud T440', 'Padraig McNamara', 'Max Power', 'Yes'),
+(132, 'MRJL', 'IEMRJL', 'ThunkPud T440', 'Padraig McNamara', 'Max Power', 'Yes'),
+(133, 'HHOD', 'IEHHOD', 'ThunkPud T440', 'Padraig McNamara', 'Max Power', 'Yes'),
+(134, 'TJAF', 'IETJAF', 'ThunkPud T440', 'Padraig McNamara', 'Max Power', 'Yes'),
+(135, 'HQIU', 'IEHQIU', 'ThunkPud T440', 'Padraig McNamara', 'Max Power', 'Yes'),
+(136, 'NSTH', 'IENSTH', 'ThunkPud T440', 'Padraig McNamara', 'Max Power', 'Yes'),
+(137, 'JEYL', 'IEJEYL', 'ThunkPud T440', 'Padraig McNamara', 'Max Power', 'Yes'),
+(138, 'FVDR', 'IEFVDR', 'ThunkPud T440', 'Padraig McNamara', 'Max Power', 'Yes'),
+(139, 'XAPY', 'IEXAPY', 'ThunkPud T440', 'Padraig McNamara', 'Max Power', 'Yes'),
+(140, 'CKMV', 'IECKMV', 'ThunkPud T440', 'Padraig McNamara', 'Max Power', 'Yes'),
+(141, 'EUFN', 'IEEUFN', 'ThunkPud T440', 'Padraig McNamara', 'Max Power', 'Yes'),
+(142, 'XIRY', 'IEXIRY', 'ThunkPud T440', 'Padraig McNamara', 'Max Power', 'Yes'),
+(143, 'CDLT', 'IECDLT', 'ThunkPud T440', 'Padraig McNamara', 'Max Power', 'Yes'),
+(144, 'UAUX', 'IEUAUX', 'ThunkPud T440', 'Padraig McNamara', 'Max Power', 'Yes'),
+(145, 'BBEO', 'IEBBEO', 'ThunkPud T440', 'Padraig McNamara', 'Max Power', 'Yes'),
+(146, 'POLT', 'IEPOLT', 'ThunkPud T440', 'Padraig McNamara', 'Max Power', 'Yes'),
+(147, 'AAQN', 'IEAAQN', 'ThunkPud T440', 'Padraig McNamara', 'Max Power', 'Yes'),
+(148, 'WQZD', 'IEWQZD', 'ThunkPud T440', 'Padraig McNamara', 'Max Power', 'Yes'),
+(149, 'TRHN', 'IETRHN', 'ThunkPud T440', 'Padraig McNamara', 'Max Power', 'Yes'),
+(150, 'CIGG', 'IECIGG', 'ThunkPud T440', 'Padraig McNamara', 'Max Power', 'Yes'),
+(151, 'QQOG', 'IEQQOG', 'ThunkPud T440', 'Padraig McNamara', 'Max Power', 'Yes'),
+(152, 'ZTEF', 'IEZTEF', 'ThunkPud T440', 'Padraig McNamara', 'Max Power', 'Yes');
 
 -- --------------------------------------------------------
 
@@ -453,7 +482,37 @@ INSERT INTO `assets` (`id`, `impacted`, `deactivated`, `faulty`, `baseline`, `ur
 (27, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Hewlett-Packard', 'Laptop', '9348HM', 'mrose', 'Assigned', 'Mark Rose', 'eoinmc@gmail.com', 'Yes', 'IE9348HM', '2011', '15026', 'Active', 1288569600, 1385856000, '03/12/2013'),
 (28, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Hewlett-Packard', 'Laptop', '1722DF', 'zreilly', 'Assigned', 'Zeph Reilly', 'eoinmc@gmail.com', 'Yes', 'IE1722DF', '2011', '15027', 'Active', 1288569600, 1385856000, '03/12/2013'),
 (29, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Hewlett-Packard', 'Laptop', '3406OK', 'lcruz', 'Assigned', 'Luke Cruz', 'eoinmc@gmail.com', 'Yes', 'IE3406OK', '2011', '15028', 'Active', 1288569600, 1385856000, '03/12/2013'),
-(30, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Hewlett-Packard', 'Laptop', '7739AH', 'kwolf', 'Assigned', 'Kenneth Wolf', 'eoinmc@gmail.com', 'Yes', 'IE7739AH', '2011', '15029', 'Active', 1288569600, 1385856000, '03/12/2013');
+(30, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Hewlett-Packard', 'Laptop', '7739AH', 'kwolf', 'Assigned', 'Kenneth Wolf', 'eoinmc@gmail.com', 'Yes', 'IE7739AH', '2011', '15029', 'Active', 1288569600, 1385856000, '03/12/2013'),
+(123, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Lenovo', 'Laptop', 'TMQI', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IETMQI', '2013', '17018', 'Active', 1376006400, 1470700800, ''),
+(124, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Lenovo', 'Laptop', 'SEFK', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IESEFK', '2013', '17019', 'Active', 1376006400, 1470700800, ''),
+(125, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Lenovo', 'Laptop', 'EKPB', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IEEKPB', '2013', '17020', 'Active', 1376006400, 1470700800, ''),
+(126, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Lenovo', 'Laptop', 'ZUMB', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IEZUMB', '2013', '17021', 'Active', 1376006400, 1470700800, ''),
+(127, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Lenovo', 'Laptop', 'NFSZ', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IENFSZ', '2013', '17022', 'Active', 1376006400, 1470700800, ''),
+(128, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Lenovo', 'Laptop', 'HTTZ', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IEHTTZ', '2013', '17023', 'Active', 1376006400, 1470700800, ''),
+(129, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Lenovo', 'Laptop', 'ODME', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IEODME', '2013', '17024', 'Active', 1376006400, 1470700800, ''),
+(130, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Lenovo', 'Laptop', 'BMGI', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IEBMGI', '2013', '17025', 'Active', 1376006400, 1470700800, ''),
+(131, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Lenovo', 'Laptop', 'GWVH', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IEGWVH', '2013', '17026', 'Active', 1376006400, 1470700800, ''),
+(132, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Lenovo', 'Laptop', 'MRJL', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IEMRJL', '2013', '17027', 'Active', 1376006400, 1470700800, ''),
+(133, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Lenovo', 'Laptop', 'HHOD', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IEHHOD', '2013', '17028', 'Active', 1376006400, 1470700800, ''),
+(134, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Lenovo', 'Laptop', 'TJAF', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IETJAF', '2013', '17029', 'Active', 1376006400, 1470700800, ''),
+(135, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Lenovo', 'Laptop', 'HQIU', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IEHQIU', '2013', '17030', 'Active', 1376006400, 1470700800, ''),
+(136, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Lenovo', 'Laptop', 'NSTH', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IENSTH', '2013', '17031', 'Active', 1376006400, 1470700800, ''),
+(137, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Lenovo', 'Laptop', 'JEYL', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IEJEYL', '2013', '17032', 'Active', 1376006400, 1470700800, ''),
+(138, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Lenovo', 'Laptop', 'FVDR', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IEFVDR', '2013', '17033', 'Active', 1376006400, 1470700800, ''),
+(139, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Lenovo', 'Laptop', 'XAPY', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IEXAPY', '2013', '17034', 'Active', 1376006400, 1470700800, ''),
+(140, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Lenovo', 'Laptop', 'CKMV', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IECKMV', '2013', '17035', 'Active', 1376006400, 1470700800, ''),
+(141, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Lenovo', 'Laptop', 'EUFN', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IEEUFN', '2013', '17036', 'Active', 1376006400, 1470700800, ''),
+(142, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Lenovo', 'Laptop', 'XIRY', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IEXIRY', '2013', '17037', 'Active', 1376006400, 1470700800, ''),
+(143, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Lenovo', 'Laptop', 'CDLT', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IECDLT', '2013', '17038', 'Active', 1376006400, 1470700800, ''),
+(144, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Lenovo', 'Laptop', 'UAUX', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IEUAUX', '2013', '17039', 'Active', 1376006400, 1470700800, ''),
+(145, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Lenovo', 'Laptop', 'BBEO', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IEBBEO', '2013', '17040', 'Active', 1376006400, 1470700800, ''),
+(146, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Lenovo', 'Laptop', 'POLT', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IEPOLT', '2013', '17041', 'Active', 1376006400, 1470700800, ''),
+(147, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Lenovo', 'Laptop', 'AAQN', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IEAAQN', '2013', '17042', 'Active', 1376006400, 1470700800, ''),
+(148, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Lenovo', 'Laptop', 'WQZD', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IEWQZD', '2013', '17043', 'Active', 1376006400, 1470700800, ''),
+(149, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Lenovo', 'Laptop', 'TRHN', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IETRHN', '2013', '17044', 'Active', 1376006400, 1470700800, ''),
+(150, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Lenovo', 'Laptop', 'CIGG', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IECIGG', '2013', '17045', 'Active', 1376006400, 1470700800, ''),
+(151, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Lenovo', 'Laptop', 'QQOG', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IEQQOG', '2013', '17046', 'Active', 1376006400, 1470700800, ''),
+(152, 'No', 'No', 'No', 1, 'Low', 'Yes', 'Low', 'Lenovo', 'Laptop', 'ZTEF', 'Spares', 'Unassigned', 'Spares', '', 'Yes', 'IEZTEF', '2013', '17047', 'Active', 1376006400, 1470700800, '');
 
 -- --------------------------------------------------------
 
