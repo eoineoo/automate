@@ -1,13 +1,15 @@
 <?php
 	
 	/**
-	* Sources:
-	* 	1) http://stackoverflow.com/questions/5593473/how-to-upload-and-parse-a-csv-file-in-php
-	* 	2) http://us2.php.net/manual/en/features.file-upload.post-method.php
-	* 	3) http://stackoverflow.com/questions/17153624/using-php-to-upload-file-and-add-the-path-to-mysql-database
-	*
-	* Uploads a CSV file to the "/csv" directory and writes its details (e.g. filename, number of rows etc.) to the database using a prepared statement
-	*/
+	 * CMDB_file_upload.php
+	 *
+	 * Referenced tutorials and sources:
+	 * 	1) http://stackoverflow.com/questions/5593473/how-to-upload-and-parse-a-csv-file-in-php
+	 * 	2) http://us2.php.net/manual/en/features.file-upload.post-method.php
+	 * 	3) http://stackoverflow.com/questions/17153624/using-php-to-upload-file-and-add-the-path-to-mysql-database
+	 *
+	 * Uploads a CSV file to the "/csv" directory and writes its details (e.g. filename, number of rows etc.) to the database using a prepared statement
+	 */
 	
 	$pagetitle = "Uploader";
 	require_once("/../inc/config.php");  

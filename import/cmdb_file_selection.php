@@ -1,16 +1,21 @@
 <?php
 	
 	/**
-	* Basic HTML form that sends file to uploader.php
-	*/
+	 * CMDB_file_selection.php
+	 *
+	 * Basic HTML form that POST's file to uploader.php
+	 */
+	
 	$pagetitle = "CMDB File Selection Form";
+	
 	require_once("/../inc/config.php");  
 	require_once("/../inc/header.php"); 
 	require_once("/../inc/functions.php");
+	
 	checkLogin();
 ?>
 
-<!-- File upload form -->
+	<!-- File upload form -->
 	<table width="600">
 		<form id="cmdbForm" action="cmdb/file-upload" method="post" enctype="multipart/form-data">
 			<tr>

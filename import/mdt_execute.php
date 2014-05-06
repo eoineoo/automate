@@ -1,12 +1,25 @@
 <?php
 
 	/**
-	* Sources:
-	*/
+	 * MDT_Execute.php 
+	 *
+	 * Referenced tutorials and sources:
+	 *  1) http://technet.microsoft.com/en-us/library/bb978526.aspx
+	 *	2) http://blogs.technet.com/b/mniehaus/archive/2009/05/15/manipulating-the-microsoft-deployment-toolkit-database-using-powershell.aspx
+	 *  3) http://stackoverflow.com/questions/5317315/executing-a-powershell-script-from-php
+	 *
+	 * Import assets to MDT database using PowerShell
+	 *
+	 * Execute PowerShell script "mdt_import.ps1" using PHP's exec() function
+	 * Uploaded CSV file is passed in to the exec() function as a parameter 
+	 */
+	
 	$pagetitle = "Executing import..";
+	
 	require_once("/../inc/config.php");  
 	require_once("/../inc/header.php"); 
 	require_once("/../inc/functions.php");
+	
 	checkLogin();
 	
 	#Determine what CSV file was selected

@@ -1,15 +1,15 @@
 <?php
 	
 	/**
-	* User_accounts_modify.php
-	*
-	* Administrators only
-	* Modify existing user accounts or create new ones. Data transferred to other pages depending on function as per below:
-	* 
-	* Modify -> user_accounts_modify_form.php
-	* Delete -> user_accounts_source.php
-	* Create -> user_accounts_create_form.php
-	*/
+	 * User_accounts_modify.php
+	 *
+	 * Administrators only
+	 * Modify existing user accounts or create new ones. Data transferred to other pages depending on function as per below:
+	 * 
+	 * Modify -> user_accounts_modify_form.php
+	 * Delete -> user_accounts_source.php
+	 * Create -> user_accounts_create_form.php
+	 */
 	
 	$pagetitle = "Admin - User Accounts";
 	

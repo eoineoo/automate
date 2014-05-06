@@ -1,13 +1,25 @@
 <?php
 
 	/**
-	* Sources:
-	*
-	*/
+	 * MDT_display_csv.php
+	 *
+	 * Referenced tutorials and sources:
+	 * 	1) http://www.php.net/manual/en/function.fopen.php
+	 *	2) http://php.net/manual/en/function.fgetcsv.php
+	 *
+	 * Display contents of CSV file in a HTML table (visual validation of file contents)
+	 *
+	 * Get CSV file and loop through each row using PHP's fopen() function 
+	 * Display each item in the row using the fgetcsv() function
+	 * Highlight rows depending on number of columns
+	 */
+	
 	$pagetitle = "Automate - Import Using Loop";
+	
 	require_once("/../inc/config.php");  
 	require_once("/../inc/header.php");  
 	require_once("/../inc/functions.php");
+	
 	checkLogin();
 	
 	#Determine what CSV file was selected
@@ -62,7 +74,6 @@
 	}
 	
 	#Execute PHP import script
-	#echo "<br /><h2><a href=\"mdt_execute.php?csv=$csv.csv\">>> Import values <<</a></h2><br />";	
 	echo "<br /><h2><a href=\"../execute/$csv\">>> Import values <<</a></h2><br />";	
 	
 	require_once("/../inc/footer.php");  

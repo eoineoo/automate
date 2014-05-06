@@ -1,12 +1,17 @@
 <?php
 	
 	/**
-	* Basic HTML form that sends file to uploader.php
-	*/
+	 * Main.php
+	 *
+	 * Importer main page, static HTML paeg that displays available databases to import to.
+	 */
+	
 	$pagetitle = "Upload and Import";
+	
 	require_once("/../inc/config.php");  
 	require_once("/../inc/header.php"); 
 	require_once("/../inc/functions.php");
+	
 	checkLogin();
 	
 ?>

@@ -1,25 +1,31 @@
 <?php
 
 	/**
-	* Sources:
-	*         	1) http://stackoverflow.com/questions/16340086/looping-through-a-csv-file-to-insert-data-to-mysql-using-php-mysqli-prepared-sta
-	*         	2) http://stackoverflow.com/questions/19106963/php-prepared-statements-and-transactions-in-a-loop
-	*         	3) http://php.net/manual/en/function.fgetcsv.php
-	*        	4) http://php.net/manual/en/mysqli-stmt.bind-param.php
-	*        	5) http://us2.php.net/mysqli_fetch_array
-	*        	6) http://stackoverflow.com/questions/2552545/mysqli-prepared-statements-error-reporting
-	*        	7) http://www.iconfinder.com
-	*         	8) http://www.mind-it.info/2009/10/02/transactions-prepared-statements-and-php-mysqli/
-	*         
-	*         	1. An INSERT statement to insert the first row of the main import to config_itemi.
-	*         	2. SELECT LAST_INSERT_ID()
-	*         	3. Last_insert_ID stored and used to insert into citype_genhdw.
-	*         	4. Go back to step 1 and begin on row 2.
-	*/
+	 * CMDB_Execute.php 
+	 *
+	 * Referenced tutorials and sources:
+	 *  1) http://stackoverflow.com/questions/16340086/looping-through-a-csv-file-to-insert-data-to-mysql-using-php-mysqli-prepared-sta
+	 *  2) http://stackoverflow.com/questions/19106963/php-prepared-statements-and-transactions-in-a-loop
+	 *  3) http://php.net/manual/en/function.fgetcsv.php
+	 *  4) http://php.net/manual/en/mysqli-stmt.bind-param.php
+	 *  5) http://us2.php.net/mysqli_fetch_array
+	 *  6) http://stackoverflow.com/questions/2552545/mysqli-prepared-statements-error-reporting
+	 *  7) http://www.iconfinder.com
+	 *  8) http://www.mind-it.info/2009/10/02/transactions-prepared-statements-and-php-mysqli/
+	 *
+	 * Perform MySQL import operations to swdata.assets and swdata.asset_detail
+	 *
+	 * Get uploaded CSV file, get first line and import to swdata.assets
+	 * Using "LAST_INSERT_ID()", import rest of the data to swdata.asset_details
+	 * Start again on line 2, perform same steps and continue through entire CSV file
+	 */
+	
 	$pagetitle = "Executing import..";
+	
 	require_once("/../inc/config.php");  
 	require_once("/../inc/header.php");  
 	require_once("/../inc/functions.php");
+	
 	checkLogin();
 	
 	#Determine what CSV file was selected
@@ -40,8 +46,8 @@
 	$sql_hdw        = "INSERT INTO $tablename_hdw(id, serial, name, model, it_owner, it_admin, encryption_level) VALUES (?, ?, ?, ?, ?, ?, ?)";
 	
 	#Create the prepared statement
-	$stmt_cmdb         = $mysqli->prepare($sql_cmdb);
-	$stmt_hdw         = $mysqli->prepare($sql_hdw);
+	$stmt_cmdb      = $mysqli->prepare($sql_cmdb);
+	$stmt_hdw       = $mysqli->prepare($sql_hdw);
 	
 	#Error checking the prepared statement
 	if ( false === $stmt_cmdb )        {
