@@ -7,21 +7,21 @@ require_once("inc/functions.php");
  
 class db_connect_automate	{
 
-	//Constructor
+	#Constructor
 	function __construct()	{
 		$this->connect();
 	}
 
-	//Destructor
+	#Destructor
 	function __destruct()	{
 		$this->close();
 	}
 
-	//Connection function
+	#Connection function
 	function connect()	{
 
-		//Use the connection details from dbconfig.php
-		require_once __DIR__ . '/db_config_automate.php'; //__DIR__ gets the current path of the script
+		#Use the connection details from dbconfig.php
+		require_once __DIR__ . '/db_config_automate.php'; #__DIR__ gets the current path of the script
 
 		$con = mysql_connect(server, user, password) or die_and_display(mysql_error());
 
@@ -30,7 +30,7 @@ class db_connect_automate	{
 		return $con;		
 	}
 
-	//Close connection
+	#Close connection
 	function close()	{
 		mysql_close();
 	}	

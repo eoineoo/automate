@@ -1,17 +1,20 @@
 <?php
 	
-	/** 
-	 * Home.php
-	 *
-	 * Main page once logged-in as non-Admin
-	 * Displays links to main areas of web application
-	 */
+   /** 
+	* Home.php
+	*
+	* Main page once logged-in as non-Admin
+	* Displays links to main areas of web application
+	*/
 
 	$pagetitle = "Home";
+	
 	require_once("inc/functions.php");
 	require_once("inc/header.php");
 	error_reporting(0);
+	
 	checkLogin();
+	
 ?>
 	
 	<p class="mainPage">Welcome <strong><?php echo $_SESSION['username']; ?></strong> to <em>Automate</em>, a web application dedicated to automating manual tasks.</p>

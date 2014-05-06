@@ -1,15 +1,16 @@
 <?php
 
-	/**
-	 * Auth.php
-	 * Referenced tutorial: http:#www.hauntednipple.co.uk/?p=94
-	 *
-	 * Username and password variables posted from login.php are compared against database values
-	 * Session variables created and assigned
-	 * User re-directed to home.php if credentials are accepted
-	 */
+   /**
+	* Auth.php
+	* Referenced tutorial: http://www.hauntednipple.co.uk/?p=94
+	*
+	* Username and password variables posted from login.php are compared against database values
+	* Session variables created and assigned
+	* User re-directed to home.php if credentials are accepted
+	*/
 
 	$pagetitle = 'Auth';
+	
 	require_once("inc/config.php");  
 	require_once("inc/functions.php");
 	require_once("inc/db_connect_automate.php");  

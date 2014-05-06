@@ -1,24 +1,24 @@
 <?php
 
-	/**
-	 * CMDB_Execute.php 
-	 *
-	 * Referenced tutorials and sources:
-	 *  1) http://stackoverflow.com/questions/16340086/looping-through-a-csv-file-to-insert-data-to-mysql-using-php-mysqli-prepared-sta
-	 *  2) http://stackoverflow.com/questions/19106963/php-prepared-statements-and-transactions-in-a-loop
-	 *  3) http://php.net/manual/en/function.fgetcsv.php
-	 *  4) http://php.net/manual/en/mysqli-stmt.bind-param.php
-	 *  5) http://us2.php.net/mysqli_fetch_array
-	 *  6) http://stackoverflow.com/questions/2552545/mysqli-prepared-statements-error-reporting
-	 *  7) http://www.iconfinder.com
-	 *  8) http://www.mind-it.info/2009/10/02/transactions-prepared-statements-and-php-mysqli/
-	 *
-	 * Perform MySQL import operations to swdata.assets and swdata.asset_detail
-	 *
-	 * Get uploaded CSV file, get first line and import to swdata.assets
-	 * Using "LAST_INSERT_ID()", import rest of the data to swdata.asset_details
-	 * Start again on line 2, perform same steps and continue through entire CSV file
-	 */
+   /**
+	* CMDB_Execute.php 
+	*
+	* Referenced tutorials and sources:
+	*  1) http://stackoverflow.com/questions/16340086/looping-through-a-csv-file-to-insert-data-to-mysql-using-php-mysqli-prepared-sta
+	*  2) http://stackoverflow.com/questions/19106963/php-prepared-statements-and-transactions-in-a-loop
+	*  3) http://php.net/manual/en/function.fgetcsv.php
+	*  4) http://php.net/manual/en/mysqli-stmt.bind-param.php
+	*  5) http://us2.php.net/mysqli_fetch_array
+	*  6) http://stackoverflow.com/questions/2552545/mysqli-prepared-statements-error-reporting
+	*  7) http://www.iconfinder.com
+	*  8) http://www.mind-it.info/2009/10/02/transactions-prepared-statements-and-php-mysqli/
+	*
+	* Perform MySQL import operations to swdata.assets and swdata.asset_detail
+	*
+	* Get uploaded CSV file, get first line and import to swdata.assets
+	* Using "LAST_INSERT_ID()", import rest of the data to swdata.asset_details
+	* Start again on line 2, perform same steps and continue through entire CSV file
+	*/
 	
 	$pagetitle = "Executing import..";
 	

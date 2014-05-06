@@ -1,15 +1,18 @@
 <?php
 
-	/**
-	 * Modify_asset.php
-	 *
-	 * Re-assign assets using JQuery to POST data to modify_source.php
-	 * Result returned to "results" div
-	 */
+   /**
+	* Modify_asset.php
+	*
+	* Re-assign assets using JQuery to POST data to modify_source.php
+	* Result returned to "results" div
+	*/
+	
 	$pagetitle = "Modify Asset";
+	
 	require_once("/../inc/config.php");  
 	require_once("/../inc/header.php");  
 	require_once("/../inc/functions.php");  
+	
 	checkLogin();
 	
 	#Determine what serial is selected

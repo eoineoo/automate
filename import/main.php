@@ -1,10 +1,10 @@
 <?php
 	
-	/**
-	 * Main.php
-	 *
-	 * Importer main page, static HTML paeg that displays available databases to import to.
-	 */
+   /**
+	* Main.php
+	*
+	* Importer main page, static HTML paeg that displays available databases to import to.
+	*/
 	
 	$pagetitle = "Upload and Import";
 	

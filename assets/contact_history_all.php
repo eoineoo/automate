@@ -1,6 +1,6 @@
 <?php
 	
-	/**
+   /**
 	* Contact_history_all.php
 	* 
 	* Display history of mails sent to all owner(s) of all assets for the current invoice by querying automate.contact

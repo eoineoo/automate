@@ -1,12 +1,12 @@
-<?php
+ <?php
     
-	/**
-	 * Create_task.php
-	 *
-	 * Creates a Windows Scheduled Task that executes scheduled_task.php, 
-	 * Inserts record into automate.scheduled_tasks if successful
-	 * Information received from create_task_form.php
-	 */
+   /**
+	* Create_task.php
+	*
+	* Creates a Windows Scheduled Task that executes scheduled_task.php, 
+	* Inserts record into automate.scheduled_tasks if successful
+	* Information received from create_task_form.php
+	*/
 	
 	require_once("/../inc/config.php");  
 	require_once("/../inc/functions.php");

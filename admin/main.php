@@ -1,6 +1,6 @@
 <?php
 	
-	/**
+   /**
 	* Main.php
 	*
 	* Administrators only

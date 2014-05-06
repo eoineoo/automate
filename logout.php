@@ -1,11 +1,11 @@
 <?php
 	
-	/**
-	 * Logout.php
-	 * 
-	 * Clears session variables
-	 * Redirects user to login.php
-	 */
+   /**
+	* Logout.php
+	* 
+	* Clears session variables
+	* Redirects user to login.php
+	*/
 	
 	$pagetitle = "Logging out..";
 	

@@ -1,13 +1,13 @@
 <?php 
 	
-	/**
-	 * Contact_users.php	
-	 * 
-	 * Get list of users who have not yet logged a call by querying swdata.assets, joining with swdata.opencall and swdata.userdb
-	 * Send an email to each one using the messageUser() function
-	 * Store record of this email by writing to automate.contact
-	 * Display results of mailings in tabular format
-	 */
+   /**
+	* Contact_users.php	
+	* 
+	* Get list of users who have not yet logged a call by querying swdata.assets, joining with swdata.opencall and swdata.userdb
+	* Send an email to each one using the messageUser() function
+	* Store record of this email by writing to automate.contact
+	* Display results of mailings in tabular format
+	*/
 	
 	$pagetitle = "Contact Outstanding Users";
 	

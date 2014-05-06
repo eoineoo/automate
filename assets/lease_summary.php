@@ -1,15 +1,17 @@
 <?php
 	
-	/**
+   /**
 	* Lease_summary.php
 	*
 	* Display summary of current lease by querying assets.swdata
 	*/
 	
 	$pagetitle = "View Lease Summary";
+	
 	require_once("/../inc/config.php");  
 	require_once("/../inc/header.php");  
 	require_once("/../inc/functions.php");
+	
 	checkLogin();
 	
 	#Determine what serial was selected

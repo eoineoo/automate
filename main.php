@@ -1,18 +1,20 @@
 <?php
 
-	/** 
-	 * Main.php
-	 * Referenced tutorial: http://www.hauntednipple.co.uk/?p=94
-	 *
-	 * Main landing page with HTML form that posts username and password to auth.php
-	 */
+   /** 
+	* Main.php
+	* Referenced tutorial: http://www.hauntednipple.co.uk/?p=94
+	*
+	* Main landing page with HTML form that posts username and password to auth.php
+	*/
 
 	$pagetitle = 'Login';
 	require_once("inc/config.php");  
 	require_once("inc/functions.php");
+	
 ?>
 
 <html>
+	
 	<head>
 		<?php echo "<title>Automate - $pagetitle</title>"; ?>
 		<link rel="stylesheet" type="text/css" href="http://localhost/automate/inc/style.css">
@@ -22,12 +24,9 @@
 	<body>
 		<div id="wrapper">
 		
-			<!-- New banner div -->
 			<div id="banner">
-				<!--<h1 style="color:white;font-size:3em;font-family:Verdana, Arial, Helvetica, sans-serif;text-align: center;vertical-align: middle;line-height: 150px;">Automate</h1>-->
 				<img src="http://localhost/automate/images/banner.jpg" />
 			</div>
-			<!-- end banner div --> 
 			
 			<div id="spacer">&nbsp;</div>
 			<div id="spacer">&nbsp;</div>

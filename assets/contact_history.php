@@ -1,12 +1,13 @@
 <?php
 	
-	/**
+   /**
 	* Contact_history.php
 	*
 	* Display history of mails sent to owner(s) of specific asset by querying automate.contact
 	*/
 	
 	$pagetitle = "View Lease Detail";
+	
 	require_once("/../inc/config.php");  
 	require_once("/../inc/header.php");  
 	require_once("/../inc/functions.php");

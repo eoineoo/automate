@@ -1,6 +1,6 @@
 <?php
 
-	/**
+   /**
 	* User_accounts_create_form.php
 	*
 	* Administrators only

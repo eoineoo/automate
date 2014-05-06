@@ -2,20 +2,22 @@
 	
 	session_start();
 	
-	/**
+   /**
 	* Download.php
 	*
 	* PHP array passed from main.php, contents of array echo'ed out so they become part of the PowerShell Script array
 	* PowerShell script downloaded and should be executed on end-user computer
 	*/
+	
 	$pagetitle = "";
 	require_once("/../inc/config.php");  
 	require_once("/../inc/functions.php");
+	
 	checkLogin();
 	
 	$array = $_POST['config'];
 	
-	#Dirty hack to get the PowerShell array formatted correctly, e.g. $apps = @("RDCMan.msi", "config.msi")
+	#Hack to get the PowerShell array formatted correctly, e.g. $apps = @("RDCMan.msi", "config.msi")
 	echo '$apps = @(';
 	foreach ($array as $item)	{
 		echo '"' . $item . '", ';

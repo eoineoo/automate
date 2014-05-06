@@ -1,16 +1,18 @@
 <?php
 
-	/**
-	 * Create_task_form.php
-	 *
-	 * HTML form that posts information to create_task.php (create_task.php creates a Scheduled Task on the server to email outstanding users)
-	 * This page uses JQuery to post information and get the result back without the page having to reload
-	 */
+   /**
+	* Create_task_form.php
+	*
+	* HTML form that posts information to create_task.php (create_task.php creates a Scheduled Task on the server to email outstanding users)
+	* This page uses JQuery to post information and get the result back without the page having to reload
+	*/
 
 	$pagetitle = "Create Scheduled Task";
+	
 	require_once("/../inc/config.php");  
 	require_once("/../inc/header.php");  
 	require_once("/../inc/functions.php");  
+	
 	checkLogin();
 
 	#Determine what invoice file was selected

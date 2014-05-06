@@ -1,10 +1,10 @@
 <?php
 	
-	/**
-	 * CMDB_file_selection.php
-	 *
-	 * Basic HTML form that POST's file to uploader.php
-	 */
+   /**
+	* CMDB_file_selection.php
+	*
+	* Basic HTML form that POST's file to uploader.php
+	*/
 	
 	$pagetitle = "CMDB File Selection Form";
 	

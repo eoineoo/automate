@@ -1,6 +1,6 @@
 <?php
 	
-	/**
+   /**
 	* Lease_detail.php
 	*
 	* Display details of selected lease by querying swdata.assets, joining with automate.contact (for date call logged).
@@ -8,6 +8,7 @@
 	*/
 	
 	$pagetitle = "View Lease Detail";
+	
 	require_once("/../inc/config.php");  
 	require_once("/../inc/header.php");  
 	require_once("/../inc/functions.php");

@@ -1,18 +1,18 @@
 <?php
 
-	/**
-	 * MDT_display_csv.php
-	 *
-	 * Referenced tutorials and sources:
-	 * 	1) http://www.php.net/manual/en/function.fopen.php
-	 *	2) http://php.net/manual/en/function.fgetcsv.php
-	 *
-	 * Display contents of CSV file in a HTML table (visual validation of file contents)
-	 *
-	 * Get CSV file and loop through each row using PHP's fopen() function 
-	 * Display each item in the row using the fgetcsv() function
-	 * Highlight rows depending on number of columns
-	 */
+   /**
+	* MDT_display_csv.php
+	*
+	* Referenced tutorials and sources:
+	* 	1) http://www.php.net/manual/en/function.fopen.php
+	*	2) http://php.net/manual/en/function.fgetcsv.php
+	*
+	* Display contents of CSV file in a HTML table (visual validation of file contents)
+	*
+	* Get CSV file and loop through each row using PHP's fopen() function 
+	* Display each item in the row using the fgetcsv() function
+	* Highlight rows depending on number of columns
+	*/
 	
 	$pagetitle = "Automate - Import Using Loop";
 	

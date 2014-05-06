@@ -1,5 +1,11 @@
 <?php
 
+   /**
+	* Functions.php
+	*
+	* List of functions used through-out project.
+	*/
+
 	#Write to a log file
 	function writeToFile($output)	{
 		

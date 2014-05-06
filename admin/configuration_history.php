@@ -1,6 +1,6 @@
 <?php
 	
-	/**
+   /**
 	* Configuration_history.php
 	*
 	* Administrators only

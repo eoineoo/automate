@@ -1,18 +1,18 @@
 <?php 
 	
-	/**
-	 * Scheduled_task.php
-	 *
-	 * This file is executed as a Windows Scheduled Task.
-	 *
-	 * Get list of users who have not yet logged a call by querying swdata.opencall (along with the passed in parameters)
-	 * Send an email to each asset owner using the messageUser() function
-	 * Store record of this email by writing to automate.contact 
-	 * Log output output to /logs/<current_timestamp>.txt
-	 * 
-	 * @argv[1] = The selected invoice
-	 * @argv[2] = The selected job description 
-	 */
+   /**
+	* Scheduled_task.php
+	*
+	* This file is executed as a Windows Scheduled Task.
+	*
+	* Get list of users who have not yet logged a call by querying swdata.opencall (along with the passed in parameters)
+	* Send an email to each asset owner using the messageUser() function
+	* Store record of this email by writing to automate.contact 
+	* Log output output to /logs/<current_timestamp>.txt
+	* 
+	* @argv[1] = The selected invoice
+	* @argv[2] = The selected job description 
+	*/
 	
 	require_once("/../inc/config.php");  
 	require_once("/../inc/functions.php");

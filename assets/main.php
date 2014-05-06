@@ -1,14 +1,17 @@
 <?php
 	
-	/**
+   /**
 	* Main.php
 	*
 	* Main Assets landing page that displays two available options (lease returns or search)
 	*/
+	
 	$pagetitle = "Asset Management and Lease Returns";
+	
 	require_once("/../inc/config.php");  
 	require_once("/../inc/header.php");  
 	require_once("/../inc/functions.php");
+	
 	checkLogin();
 ?>
 
@@ -17,7 +20,7 @@
 <p class="stats">What do you want to do?</p>
 <br />
 <table id="hor-minimalist-a" width="80%" border=1>
-	<!--<tr style="border: 1px solid black;">-->
+	
 	<tr>
 		<td width="20%"><a href="lease"><img src="../images/cmdb.png" /></a></td>
 		<td width="80%"><a href="lease">View Lease Detail</a></td>		

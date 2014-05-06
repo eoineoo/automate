@@ -1,5 +1,6 @@
 <?php
-	/**
+	
+   /**
 	* Main.php
 	*
 	* Laptop Config main page, contains lists of all available applications.
@@ -17,6 +18,7 @@
 	
 	#Variable - array that will contain the values of what is selected
 	$_POST['config'] = array("");
+	
 ?>
 
 <div style="width: 60%;">
@@ -24,8 +26,8 @@
 	<div class="alert-box warning"><span>note: </span>Select individual applications from the form below or choose a preconfigured list. This will prompt you to download a PowerShell script that must be executed from a command line shell. Batch file included in all scripts.<br />Example usage: <b>powershell -noexit "&" "<em>&#60;path_to file&#62;</em>\config.ps1"</b></div>
 </div>
 
-
 <script type="text/javascript">
+
 /* Select/unselect checkboxes depending on what radio button is clicked */
 $(function() {
 	$('#audit').click(function(){      

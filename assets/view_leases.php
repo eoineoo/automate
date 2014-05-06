@@ -1,6 +1,6 @@
 <?php
 	
-	/**
+   /**
 	* View_leases.php
 	* 
 	* Display overview of all current leases by querying swdata.assets
