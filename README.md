@@ -12,7 +12,7 @@ Automate is an application that will automate manual tasks normally performed by
 Automate aims to reduce administrative burden in a number of areas. It will be accessed via a client web application which will have sections for managing the laptop lease returns process, configuring a laptop and uploading information directly into a database.
 
 Notes
-========
+-----------
 
 Automate uses absolute references in the following files:
 
@@ -23,7 +23,7 @@ Automate uses absolute references in the following files:
 
 Automate will work "as is" if you:
 
-1. Install XAMPP to the root of C:\ (Automate was created with version 1.8.3)
+1. Install XAMPP to the root of C: (Automate was created with version 1.8.3)
 2. Place /automate inside the "/htdocs" folder
 3. Create a folder "C:\xampp\ps" with PowerShell.exe inside
 4. Ensure that php.exe resides in C:\xampp\php\php.exe
