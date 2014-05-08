@@ -28,3 +28,4 @@ Automate will work "as is" if you:
 3. Create a folder "C:\xampp\ps" with PowerShell.exe inside
 4. Ensure that php.exe resides in C:\xampp\php\php.exe
 5. Import /automate/resources/schema.sql in phpMyAdmin to recreate database schema
+6. Login credentials are: "emccrann" / "password"
